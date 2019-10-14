@@ -115,20 +115,19 @@ def train(epoch):
 
     for i in range(sample_ammount):
         if(random.uniform(0,1) <= prob_pos):
-            # positive example
+            # positive examples
             try:
                 data = next(train_iter_pos).to(device)
                 data = augmentate_data(data)
             except StopIteration:
-                # reset train_loader_pos, train_iter_pos
                 train_loader_pos = DataLoader(train_dataset_pos, batch_size, shuffle=True, drop_last=True, num_workers=6)
                 train_iter_pos = iter(train_loader_pos)
                 data = next(train_iter_pos).to(device)
         else:
+            # negative examples
             try:
                 data = next(train_iter_neg).to(device)
             except StopIteration:
-                # reset train_loader_neg, train_iter_neg
                 train_loader_neg = DataLoader(train_dataset_neg, batch_size, shuffle=True, drop_last=True, num_workers=6)
                 train_iter_neg = iter(train_loader_neg)
                 data = next(train_iter_neg).to(device)
