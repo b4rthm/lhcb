@@ -33,7 +33,9 @@ assert(len(train_dataset_pos) + len(train_dataset_neg) + len(test_dataset) == le
 
 # train and test dataloader, iterator
 # the batch will contain the same label for every example
-batch_size = 1
+# 8
+
+batch_size = 8
 
 train_loader_pos = DataLoader(train_dataset_pos, batch_size, shuffle=True, drop_last=True, num_workers=6)
 train_loader_neg = DataLoader(train_dataset_neg, batch_size, shuffle=True, drop_last=True, num_workers=6) 
@@ -73,7 +75,7 @@ class Net(torch.nn.Module):
         self.lin3 = Lin(64, 1)
 
     def forward(self, pos, batch):
-        edge_index = radius_graph(pos, r=0.5, batch=batch)
+        edge_index = radius_graph(pos, r=0.1, batch=batch)
         # print(degree(edge_index[0], num_nodes=pos.size(0)).mean())
         # print(degree(edge_index[1], num_nodes=pos.size(0)).mean())
 
@@ -91,11 +93,14 @@ class Net(torch.nn.Module):
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = Net().to(device)
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+# 0.001
+# 0.01
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
 
 sample_ammount = int(20000/batch_size)
-prob_pos = 0.66 # probability to sample a positive example 
+prob_pos = 0.5 # probability to sample a positive example
 
 def train(epoch):
     global train_iter_pos
@@ -128,8 +133,7 @@ def train(epoch):
         total_loss += loss.item() * data.y.size(0)
 
         if i > 0 and i % 200 == 0:
-            print('Epoch: {:03d}, {:04d}/{:04d}'.format(
-                epoch, i, sample_ammount))
+            print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, sample_ammount))
             #test(small_train_loader)
             #test(small_test_loader)
 
@@ -168,7 +172,7 @@ for epoch in range(1, 101):
     print('Loss: {:.5f}'.format(loss))
 
     print('-- BEGIN COMPLETE TEST RUN ---')
-    test(small_test_loader)
-#    test(test_loader)
+#    test(small_test_loader)
+    test(test_loader)
     print('--- END COMPLETE TEST RUN ----')
 #   torch.save(model.state_dict(), 'model_{:03d}.pt'.format(epoch))
