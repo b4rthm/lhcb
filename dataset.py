@@ -30,44 +30,34 @@ class LHCbDataset(InMemoryDataset):
         print('process')
         paths = glob.glob('{}{}*{}*.json'.format(self.raw_dir, os.sep, os.sep))
 
-        data_list = []
+        data_list_pos = []
+        data_list_neg = []
         i = 0
         for path in sorted(paths):
-            print(i, '/', len(paths))
+            if i % 100 == 0:
+                print(i, '/', len(paths))
             i += 1
-            data = self.process_example(path, 1)
-            if data is not None:
-                if self.pre_filter is not None and not self.pre_filter(data):
-                    continue
-                if self.pre_transform is not None:
-                    data = self.pre_transform(data)
-                data_list.append(data)
+            data = self.process_example(path)
 
-        i = 0
-        for path in sorted(paths):
-            print(i, '/', len(paths))
-            i += 1
-            data = self.process_example(path, 0)
-            if data is not None:
-                if self.pre_filter is not None and not self.pre_filter(data):
-                    continue
-                if self.pre_transform is not None:
-                    data = self.pre_transform(data)
-                data_list.append(data)
+            if data is None:
+                continue
+            if self.pre_filter is not None and not self.pre_filter(data):
+                continue
+            if self.pre_transform is not None:
+                data = self.pre_transform(data)
+            if data.y == 1:
+                data_list_pos.append(data)
+            else:
+                data_list_neg.append(data)
 
+        data_list_pos.extend(data_list_neg)
+        torch.save(self.collate(data_list_pos), self.processed_paths[0])
 
-        torch.save(self.collate(data_list), self.processed_paths[0])
-
-    # process example with desired label d_y
-    def process_example(self, path, d_y):
+    def process_example(self, path):
         with open(path, 'r') as f:
             obj = json.load(f)
 
         y = 1 if obj['BCount'] > 0 else 0
-
-        if not y == d_y:
-            return None
-        print(y)
         y = torch.tensor([y], dtype=torch.long)
 
         etas = []
@@ -81,14 +71,17 @@ class LHCbDataset(InMemoryDataset):
         positions = []
         for key, item in obj['VPClusters'].items():
             is_valid = False
+
             for particle in item['MCPs']:
                 eta_value = eta[particle_assoc[int(particle)]].item()
                 if (eta_value >= 2) and (eta_value <= 5):
                     is_valid = True
             if is_valid:
                 positions.append([item['z'], item['y'], item['x']])
-        pos = torch.tensor(positions, dtype=torch.float)
 
+        pos = torch.tensor(positions, dtype=torch.float)
+        if pos.size(0) == 0:
+           return None
         return Data(pos=pos, y=y)
 
 if __name__ == '__main__':

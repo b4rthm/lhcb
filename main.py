@@ -12,6 +12,7 @@ from torch_geometric.utils import degree  # noqa
 from torch_geometric.transforms import RandomRotate
 
 from dataset import LHCbDataset
+from sampler import ImbalancedDatasetSampler
 
 warnings.filterwarnings(action='ignore', category=UndefinedMetricWarning)
 
@@ -33,6 +34,7 @@ test_dataset = dataset[num_train_examples_pos:(num_train_examples_pos + num_test
 train_dataset_neg = dataset[(num_train_examples_pos + num_test_examples):]
 
 assert(len(train_dataset_pos) + len(train_dataset_neg) + len(test_dataset) == len(dataset))
+train_dataset = train_dataset_pos.__add__(train_dataset_neg)
 
 # to test positive and negative examples seperately
 num_test_examples_pos = num_pos_examples - num_train_examples_pos
@@ -41,13 +43,15 @@ test_dataset_neg = test_dataset[num_test_examples_pos:]
 
 # train and test dataloader, iterator
 # the batch will contain the same label for every example
-batch_size = 2
+batch_size = 48
 
-train_loader_pos = DataLoader(train_dataset_pos, batch_size, shuffle=True, drop_last=True, num_workers=6)
-train_iter_pos = iter(train_loader_pos)
+train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=6,
+                          sampler=ImbalancedDatasetSampler(train_dataset))
 
-train_loader_neg = DataLoader(train_dataset_neg, batch_size, shuffle=True, drop_last=True, num_workers=6) 
-train_iter_neg = iter(train_loader_neg)
+#train_loader_pos = DataLoader(train_dataset_pos, batch_size, shuffle=False, drop_last=True, num_workers=6)
+#train_iter_pos = iter(train_loader_pos)
+#train_loader_neg = DataLoader(train_dataset_neg, batch_size, shuffle=False, drop_last=True, num_workers=6) 
+#train_iter_neg = iter(train_loader_neg)
 
 test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=6)
 test_loader_pos = DataLoader(test_dataset_pos, batch_size, shuffle=False, drop_last=True, num_workers=6)
@@ -60,7 +64,7 @@ def MLP(arg1, arg2, arg3):
 
 def augmentate_data(data):
     r = random.randint(0,3)
-    if False and r == 0:
+    if r == 0:
         degree = random.randint(-180,180)
         data = RandomRotate(degree)(data)
     return data
@@ -77,7 +81,8 @@ class Net(torch.nn.Module):
         self.lin3 = Lin(64, 1)
 
     def forward(self, pos, batch):
-        edge_index = radius_graph(pos, r=0.05, batch=batch)
+        edge_index = radius_graph(pos, r=0.01, batch=batch)
+
 
         # print(degree(edge_index[0], num_nodes=pos.size(0)).mean())
         # print(degree(edge_index[1], num_nodes=pos.size(0)).mean())
@@ -103,34 +108,35 @@ model = Net().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 
-sample_ammount = int(10000/batch_size)
-prob_pos = 0.75 # probability to sample a positive example
+#class CustomDataset(torch.utils.data.Dataset):
+#    def __init__(self, pos_dataset, neg_dataset):
+#        self.pos_dataset = pos_dataset
+#        self.neg_dataset = neg_dataset
+#        self.length_pos = len(pos_dataset)
+
+#    def __len__(self):
+#        return 2 * self.length
+
+#    def __getitem__(self, idx):
+#        if idx < self.length:
+            # sample neg
+#        else:
+            #sample pos
+
+#        return data
+
 
 def train(epoch):
-    global train_iter_pos
-    global train_iter_neg
-
     model.train()
     total_loss = 0
 
-    for i in range(sample_ammount):
-        if(random.uniform(0,1) <= prob_pos):
-            # positive examples
-            try:
-                data = next(train_iter_pos).to(device)
-                data = augmentate_data(data)
-            except StopIteration:
-                train_loader_pos = DataLoader(train_dataset_pos, batch_size, shuffle=True, drop_last=True, num_workers=6)
-                train_iter_pos = iter(train_loader_pos)
-                data = next(train_iter_pos).to(device)
-        else:
-            # negative examples
-            try:
-                data = next(train_iter_neg).to(device)
-            except StopIteration:
-                train_loader_neg = DataLoader(train_dataset_neg, batch_size, shuffle=True, drop_last=True, num_workers=6)
-                train_iter_neg = iter(train_loader_neg)
-                data = next(train_iter_neg).to(device)
+    i = 0
+    dict = {'0':0, '1':0 , '=':0}
+    for data in train_loader:
+        data.to(device)
+
+        # check which label dominates
+        dict = update_dict(data, dict)
 
         optimizer.zero_grad()
         out = model(data.pos, data.batch)
@@ -139,13 +145,23 @@ def train(epoch):
         optimizer.step()
         total_loss += loss.item() * data.y.size(0)
 
-        if i > 0 and i % 200 == 0:
-            print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, sample_ammount))
+        i += 1
+        if i > 0 and i % 100 == 0:
+            print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, len(train_loader)))
             #test(small_train_loader)
             #test(small_test_loader)
+    print(dict)
+    return total_loss / len(train_loader)
 
-    return total_loss / sample_ammount
 
+def update_dict(data,dict):
+    if (data.y == 0).sum() > batch_size/2:
+        dict['0'] += 1
+    elif (data.y == 0).sum() < batch_size/2:
+        dict['1'] += 1
+    else:
+        dict['='] += 1
+    return dict
 
 def test(loader):
     model.eval()
@@ -153,6 +169,8 @@ def test(loader):
     logits, target = [], []
     for data in loader:
         data = data.to(device)
+        if data.pos.size(0) == 0:
+            continue
         target.append(data.y)
         with torch.no_grad():
             logits.append(torch.sigmoid(model(data.pos, data.batch)))
@@ -163,23 +181,23 @@ def test(loader):
     print(target)
 
     accs, f1s = [], []
-    # for t in range(1, 21):  # Try out different thresholds.
-    #    pred = (logits > (t / 20)).to(torch.long)
-    #    accs.append(pred.eq(target).sum().item() / len(loader.dataset))
-    #    f1s.append(metrics.f1_score(target, pred))
+    for t in range(1, 21):  # Try out different thresholds.
+        pred = (logits > (t / 20)).to(torch.long)
+        accs.append(pred.eq(target).sum().item() / len(loader.dataset))
+        f1s.append(metrics.f1_score(target, pred))
 
 
-    #acc = torch.tensor(accs).max().item()
-    #f1 = torch.tensor(f1s).max().item()
-    #auc = metrics.roc_auc_score(target, logits)
+    acc = torch.tensor(accs).max().item()
+    f1 = torch.tensor(f1s).max().item()
+    auc = metrics.roc_auc_score(target, logits)
 
-    #print('Acc: {:.4f}, F1: {:.4f}, AUC: {:.4f}'.format(acc, f1, auc))
-    pred = (logits > 0.5).to(torch.long)
-    acc = pred.eq(target).sum().item() / len(loader.dataset)
-    f1 = metrics.f1_score(target, pred)
-    auc = 0
+    print('Acc: {:.4f}, F1: {:.4f}, AUC: {:.4f}'.format(acc, f1, auc))
 
-    print('Acc: {:.4f}, F1: {:.4f}'.format(acc, f1))
+    #pred = (logits > 0.5).to(torch.long)
+    #acc = pred.eq(target).sum().item() / len(loader.dataset)
+    #f1 = metrics.f1_score(target, pred)
+    #auc = 0
+    #print('Acc: {:.4f}, F1: {:.4f}'.format(acc, f1))
 
     return acc, f1, auc
 
@@ -189,7 +207,6 @@ for epoch in range(1, 101):
     print('Loss: {:.5f}'.format(loss))
 
     print('--- BEGIN COMPLETE TEST RUN ---')
-    print('--- TEST ALL ---')
     test(test_loader)
 #    print('--- TEST POSITIVE EXAMPLES ---')
 #    test(test_loader_pos)
