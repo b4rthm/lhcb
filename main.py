@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from torch.nn import Sequential as Seq, Linear as Lin, ReLU, BatchNorm1d as BN
 from sklearn import metrics
 from sklearn.exceptions import UndefinedMetricWarning
-from torch_geometric.data import DataLoader
+from torch_geometric.data import Data, DataLoader
 from torch_geometric.nn import PointConv, radius_graph, global_max_pool
 from torch_geometric.utils import degree  # noqa
 from torch_geometric.transforms import RandomRotate
@@ -19,54 +19,49 @@ warnings.filterwarnings(action='ignore', category=UndefinedMetricWarning)
 dataset = LHCbDataset(root='LHC-data')
 dataset.data.pos = dataset.data.pos / 50.0  # Rescale points.
 
-num_neg_examples = (dataset.data.y == 0).sum().item()
-num_pos_examples = (dataset.data.y == 1).sum().item()
+dataset_neg = dataset[dataset.data.y == 0]
+dataset_pos = dataset[dataset.data.y == 1]
+
+num_neg_examples = len(dataset_neg)
+num_pos_examples = len(dataset_pos)
 pos_weight = torch.tensor(num_pos_examples / num_neg_examples)
 
-# seperating positive and negative examples, with train and test data for each
-num_train_examples_pos = int(0.8 * num_pos_examples)
-num_train_examples_neg = int(0.8 * num_neg_examples)
-num_test_examples = len(dataset) - num_train_examples_pos - num_train_examples_neg
+train_dataset_neg = dataset_neg[:int(0.8 * num_neg_examples)]
+train_dataset_pos = dataset_pos[:int(0.8 * num_pos_examples)]
 
-# dataset is sorted with positive examples first, data = train_pos, test_pos, test_neg, train_neg
-train_dataset_pos = dataset[:num_train_examples_pos]
-test_dataset = dataset[num_train_examples_pos:(num_train_examples_pos + num_test_examples)]
-train_dataset_neg = dataset[(num_train_examples_pos + num_test_examples):]
+# Train ConcatDataset
+train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 
-assert(len(train_dataset_pos) + len(train_dataset_neg) + len(test_dataset) == len(dataset))
-train_dataset = train_dataset_pos.__add__(train_dataset_neg)
+test_dataset_neg = dataset_neg[int(0.8 * num_neg_examples):]
+test_dataset_pos = dataset_pos[int(0.8 * num_pos_examples):]
 
-# to test positive and negative examples seperately
-num_test_examples_pos = num_pos_examples - num_train_examples_pos
-test_dataset_pos = test_dataset[:num_test_examples_pos]
-test_dataset_neg = test_dataset[num_test_examples_pos:]
+# Test ConcatDataset
+test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-# train and test dataloader, iterator
-# the batch will contain the same label for every example
+# DataLoader
 batch_size = 48
+num_workers = 6
 
-train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=6,
+train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
                           sampler=ImbalancedDatasetSampler(train_dataset))
 
-#train_loader_pos = DataLoader(train_dataset_pos, batch_size, shuffle=False, drop_last=True, num_workers=6)
-#train_iter_pos = iter(train_loader_pos)
-#train_loader_neg = DataLoader(train_dataset_neg, batch_size, shuffle=False, drop_last=True, num_workers=6) 
-#train_iter_neg = iter(train_loader_neg)
-
-test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=6)
-test_loader_pos = DataLoader(test_dataset_pos, batch_size, shuffle=False, drop_last=True, num_workers=6)
-test_loader_neg = DataLoader(test_dataset_neg, batch_size, shuffle=False, drop_last=True, num_workers=6)
+test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
+test_loader_pos = DataLoader(test_dataset_pos, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
+test_loader_neg = DataLoader(test_dataset_neg, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 
 
 def MLP(arg1, arg2, arg3):
     return Seq(Lin(arg1, arg2), ReLU(), Lin(arg2, arg3))
 
 
-def augmentate_data(data):
+def augmentate(data):
+    data_pos = Data(pos=data.pos[(data.y == 1)[data.batch]])
     r = random.randint(0,3)
+    # Rotate with probability of 0.25
     if r == 0:
         degree = random.randint(-180,180)
-        data = RandomRotate(degree)(data)
+        data_pos = RandomRotate(degree, axis=0)(data_pos)
+        data.pos[(data.y == 1)[data.batch]] = data_pos.pos 
     return data
 
 class Net(torch.nn.Module):
@@ -102,29 +97,7 @@ class Net(torch.nn.Module):
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = Net().to(device)
 
-# 0.001
-# 0.01
-# 0.0001
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-
-
-#class CustomDataset(torch.utils.data.Dataset):
-#    def __init__(self, pos_dataset, neg_dataset):
-#        self.pos_dataset = pos_dataset
-#        self.neg_dataset = neg_dataset
-#        self.length_pos = len(pos_dataset)
-
-#    def __len__(self):
-#        return 2 * self.length
-
-#    def __getitem__(self, idx):
-#        if idx < self.length:
-            # sample neg
-#        else:
-            #sample pos
-
-#        return data
-
 
 def train(epoch):
     model.train()
@@ -134,6 +107,7 @@ def train(epoch):
     dict = {'0':0, '1':0 , '=':0}
     for data in train_loader:
         data.to(device)
+        data = augmentate(data)
 
         # check which label dominates
         dict = update_dict(data, dict)
