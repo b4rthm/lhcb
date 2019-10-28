@@ -3,7 +3,7 @@ import random
 
 import torch
 import torch.nn.functional as F
-from torch.nn import Sequential as Seq, Linear as Lin, ReLU, BatchNorm1d as BN
+from torch.nn import DataParallel, Sequential as Seq, Linear as Lin, ReLU, BatchNorm1d as BN
 from sklearn import metrics
 from sklearn.exceptions import UndefinedMetricWarning
 from torch_geometric.data import Data, DataLoader
@@ -31,6 +31,9 @@ train_dataset_pos = dataset_pos[:int(0.8 * num_pos_examples)]
 
 # Train ConcatDataset
 train_dataset = train_dataset_neg.__add__(train_dataset_pos)
+_p = 0.01
+small_train_dataset = train_dataset_neg[:int(_p*len(train_dataset_neg))].__add__(\
+                          train_dataset_pos[:int(_p*len(train_dataset_pos))])
 
 test_dataset_neg = dataset_neg[int(0.8 * num_neg_examples):]
 test_dataset_pos = dataset_pos[int(0.8 * num_pos_examples):]
@@ -38,13 +41,23 @@ test_dataset_pos = dataset_pos[int(0.8 * num_pos_examples):]
 # Test ConcatDataset
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-# DataLoader
-batch_size = 48
-num_workers = 6
 
+
+batch_size = 8
+num_workers = 6
+radius = 0.6 # 0.7
+lr = 0.001
+augment = False
+
+# Remove later
+print_degree = True
+
+
+# DataLoader
+small_train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers,
+                                sampler=ImbalancedDatasetSampler(small_train_dataset))
 train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
                           sampler=ImbalancedDatasetSampler(train_dataset))
-
 test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 test_loader_pos = DataLoader(test_dataset_pos, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 test_loader_neg = DataLoader(test_dataset_neg, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
@@ -54,33 +67,41 @@ def MLP(arg1, arg2, arg3):
     return Seq(Lin(arg1, arg2), ReLU(), Lin(arg2, arg3))
 
 
-def augmentate(data):
+def augment_pos(data):
     data_pos = Data(pos=data.pos[(data.y == 1)[data.batch]])
     r = random.randint(0,3)
-    # Rotate with probability of 0.25
     if r == 0:
         degree = random.randint(-180,180)
         data_pos = RandomRotate(degree, axis=0)(data_pos)
-        data.pos[(data.y == 1)[data.batch]] = data_pos.pos 
+        data.pos[(data.y == 1)[data.batch]] = data_pos.pos
     return data
 
 class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
-        self.conv2 = PointConv(MLP(64 + 3, 128, 128))
-        self.conv3 = PointConv(MLP(128 + 3, 128, 256))
-        self.lin1 = Lin(64 + 128 + 256, 128)  # Jumping Knowledge.
-        self.lin2 = Lin(128, 64)
-        self.lin3 = Lin(64, 1)
+        #self.conv1 = PointConv(MLP(00 + 3, 64, 64))
+        #self.conv2 = PointConv(MLP(64 + 3, 128, 128))
+        #self.conv3 = PointConv(MLP(128 + 3, 128, 256))
+        #self.lin1 = Lin(64 + 128 + 256, 128)  # Jumping Knowledge.
+        #self.lin2 = Lin(128, 64)
+        #self.lin3 = Lin(64, 1)
+
+        self.conv1 = PointConv(MLP(00 + 3, 128, 128))
+        self.conv2 = PointConv(MLP(128 + 3, 256, 256 ))
+        self.conv3 = PointConv(MLP(256 + 3, 512, 512))
+        self.lin1 = Lin(128 + 256 + 512, 512)  # Jumping Knowledge.
+        self.lin2 = Lin(512, 128)
+        self.lin3 = Lin(128, 1)
 
     def forward(self, pos, batch):
-        edge_index = radius_graph(pos, r=0.01, batch=batch)
+        global print_degree
+        edge_index = radius_graph(pos, r=radius, batch=batch)
 
-
-        # print(degree(edge_index[0], num_nodes=pos.size(0)).mean())
-        # print(degree(edge_index[1], num_nodes=pos.size(0)).mean())
+        if print_degree:
+          print(degree(edge_index[0], num_nodes=pos.size(0)).mean())
+          print(degree(edge_index[1], num_nodes=pos.size(0)).mean())
+          print_degree = False
 
         x1 = F.relu(self.conv1(None, pos, edge_index))
         x2 = F.relu(self.conv2(x1, pos, edge_index))
@@ -94,20 +115,22 @@ class Net(torch.nn.Module):
         return x.flatten()
 
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 model = Net().to(device)
+#model = DataParallel(model)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-def train(epoch):
+def train(epoch, loader):
     model.train()
     total_loss = 0
 
     i = 0
     dict = {'0':0, '1':0 , '=':0}
-    for data in train_loader:
+    for data in loader:
         data.to(device)
-        data = augmentate(data)
+        if augment:
+            data = augment_pos(data)
 
         # check which label dominates
         dict = update_dict(data, dict)
@@ -124,7 +147,7 @@ def train(epoch):
             print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, len(train_loader)))
             #test(small_train_loader)
             #test(small_test_loader)
-    print(dict)
+    # print(dict)
     return total_loss / len(train_loader)
 
 
@@ -151,8 +174,12 @@ def test(loader):
     logits = torch.cat(logits, dim=0).to('cpu')
     target = torch.cat(target, dim=0).to('cpu')
 
-    print(logits)
-    print(target)
+    logits_0 = logits[target == 0]
+    logits_1 = logits[target == 1]
+    print('Target 0 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}'.format(\
+        logits_0.mean().item(), logits_0.min().item(), logits_0.max().item(), logits_0.median().item()))
+    print('Target 1 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}'.format(\
+        logits_1.mean().item(), logits_1.min().item(), logits_1.max().item(), logits_1.median().item()))
 
     accs, f1s = [], []
     for t in range(1, 21):  # Try out different thresholds.
@@ -177,14 +204,19 @@ def test(loader):
 
 
 for epoch in range(1, 101):
-    loss = train(epoch)
-    print('Loss: {:.5f}'.format(loss))
+    #loss = train(epoch, train_loader)
+    loss = train(epoch, small_train_loader)
+    print('Loss: {:.5f}\n'.format(loss))
 
     print('--- BEGIN COMPLETE TEST RUN ---')
+    print('--- TESTING TRAIN DATA ---')
+    test(small_train_loader)
+    print('--- TESTING TEST DATA ---')
     test(test_loader)
-#    print('--- TEST POSITIVE EXAMPLES ---')
-#    test(test_loader_pos)
-#    print('--- TEST NEGATIVE EXAMPLES ---')
-#    test(test_loader_neg)
+
+    #print('--- TEST POSITIVE EXAMPLES ---')
+    #test(test_loader_pos)
+    #print('--- TEST NEGATIVE EXAMPLES ---')
+    #test(test_loader_neg)
     print('--- END COMPLETE TEST RUN ----\n')
-#   torch.save(model.state_dict(), 'model_{:03d}.pt'.format(epoch))
+    #torch.save(model.state_dict(), 'model_{:03d}.pt'.format(epoch))
