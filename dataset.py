@@ -68,21 +68,62 @@ class LHCbDataset(InMemoryDataset):
         particle_assoc = to_assoc(particle_indices)
         eta = torch.tensor(etas, dtype=torch.float)
 
-        positions = []
+        clusters = []
+        cluster_indices = []
         for key, item in obj['VPClusters'].items():
-            is_valid = False
+#            is_valid = False
+#
+#            for particle in item['MCPs']:
+#                eta_value = eta[particle_assoc[int(particle)]].item()
+#                if (eta_value >= 2) and (eta_value <= 5):
+#                    is_valid = True
+#
+#            if is_valid:
+                clusters.append([item['z'], item['y'], item['x']])
+                cluster_indices.append(int(key))
+        cluster_assoc = to_assoc(cluster_indices)
+        cluster_indices = torch.tensor(cluster_indices)
 
-            for particle in item['MCPs']:
-                eta_value = eta[particle_assoc[int(particle)]].item()
-                if (eta_value >= 2) and (eta_value <= 5):
-                    is_valid = True
-            if is_valid:
-                positions.append([item['z'], item['y'], item['x']])
-
-        pos = torch.tensor(positions, dtype=torch.float)
-        if pos.size(0) == 0:
+        clusters = torch.tensor(clusters, dtype=torch.float)
+        if clusters.size(0) == 0:
            return None
-        return Data(pos=pos, y=y)
+
+        tracks = []
+        track_indices = []
+        for key, item in obj['VeloTracks'].items():
+           tracks.append([cluster_assoc[int(c)].item() for c in item['LHCbIDs']])
+           track_indices.append(int(key))
+        track_assoc = to_assoc(track_indices)
+
+        edge_index_0 = []
+        edge_index_1 = []
+        for track in tracks:
+            for i in range(len(track) - 1):
+                edge_index_0.append(track[i])
+                edge_index_1.append(track[i+1])
+        edge_index_tracks = torch.tensor([edge_index_0, edge_index_1])
+
+
+        edge_index_0 = []
+        edge_index_1 = []
+        zs = []
+        for i in range(len(clusters)):
+          z_ci = clusters[i][0]
+          if z_ci in zs:
+            continue
+          else:
+            zs.append(z_ci)
+            clusters_z_ci = cluster_indices[clusters[:,0] == z_ci]
+
+            for j in range(len(clusters_z_ci)):
+              for k in range(len(clusters_z_ci)):
+                 # Selfloops?
+                 if j != k:
+                   edge_index_0.append(cluster_assoc[cluster_indices[j]])
+                   edge_index_1.append(cluster_assoc[cluster_indices[k]])
+        edge_index_z = torch.tensor([edge_index_0, edge_index_1])
+
+        return Data(pos=clusters, y=y, edge_index_tracks=edge_index_tracks, edge_index_z=edge_index_z)
 
 if __name__ == '__main__':
     dataset = LHCbDataset(root='LHC-data')

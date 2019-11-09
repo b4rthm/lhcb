@@ -24,14 +24,13 @@ dataset_pos = dataset[dataset.data.y == 1]
 
 num_neg_examples = len(dataset_neg)
 num_pos_examples = len(dataset_pos)
-pos_weight = torch.tensor(num_pos_examples / num_neg_examples)
 
 train_dataset_neg = dataset_neg[:int(0.8 * num_neg_examples)]
 train_dataset_pos = dataset_pos[:int(0.8 * num_pos_examples)]
 
 # Train ConcatDataset
 train_dataset = train_dataset_neg.__add__(train_dataset_pos)
-_p = 0.01
+_p = 0.2
 small_train_dataset = train_dataset_neg[:int(_p*len(train_dataset_neg))].__add__(\
                           train_dataset_pos[:int(_p*len(train_dataset_pos))])
 
@@ -45,7 +44,7 @@ test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
 batch_size = 8
 num_workers = 6
-radius = 0.6 # 0.7
+radius = 0.7  # 0.7
 lr = 0.001
 augment = False
 
@@ -107,7 +106,7 @@ class Net(torch.nn.Module):
         x2 = F.relu(self.conv2(x1, pos, edge_index))
         x3 = F.relu(self.conv3(x2, pos, edge_index))
         x = torch.cat([x1, x2, x3], dim=-1)
-        x = global_max_pool(x, batch, size=batch_size) #48?
+        x = global_max_pool(x, batch, size=batch_size)
 
         x = F.relu(self.lin1(x))
         x = F.relu(self.lin2(x))
@@ -137,18 +136,18 @@ def train(epoch, loader):
 
         optimizer.zero_grad()
         out = model(data.pos, data.batch)
-        loss = F.binary_cross_entropy_with_logits(out, data.y.to(out.dtype), pos_weight=pos_weight)
+        loss = F.binary_cross_entropy_with_logits(out, data.y.to(out.dtype))
         loss.backward()
         optimizer.step()
         total_loss += loss.item() * data.y.size(0)
 
         i += 1
         if i > 0 and i % 100 == 0:
-            print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, len(train_loader)))
+            print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, len(loader)))
             #test(small_train_loader)
             #test(small_test_loader)
-    # print(dict)
-    return total_loss / len(train_loader)
+    print(dict)
+    return total_loss / len(loader.dataset)
 
 
 def update_dict(data,dict):
@@ -166,8 +165,6 @@ def test(loader):
     logits, target = [], []
     for data in loader:
         data = data.to(device)
-        if data.pos.size(0) == 0:
-            continue
         target.append(data.y)
         with torch.no_grad():
             logits.append(torch.sigmoid(model(data.pos, data.batch)))
@@ -194,12 +191,6 @@ def test(loader):
 
     print('Acc: {:.4f}, F1: {:.4f}, AUC: {:.4f}'.format(acc, f1, auc))
 
-    #pred = (logits > 0.5).to(torch.long)
-    #acc = pred.eq(target).sum().item() / len(loader.dataset)
-    #f1 = metrics.f1_score(target, pred)
-    #auc = 0
-    #print('Acc: {:.4f}, F1: {:.4f}'.format(acc, f1))
-
     return acc, f1, auc
 
 
@@ -209,14 +200,11 @@ for epoch in range(1, 101):
     print('Loss: {:.5f}\n'.format(loss))
 
     print('--- BEGIN COMPLETE TEST RUN ---')
+
     print('--- TESTING TRAIN DATA ---')
     test(small_train_loader)
     print('--- TESTING TEST DATA ---')
     test(test_loader)
 
-    #print('--- TEST POSITIVE EXAMPLES ---')
-    #test(test_loader_pos)
-    #print('--- TEST NEGATIVE EXAMPLES ---')
-    #test(test_loader_neg)
     print('--- END COMPLETE TEST RUN ----\n')
     #torch.save(model.state_dict(), 'model_{:03d}.pt'.format(epoch))

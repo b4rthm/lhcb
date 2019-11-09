@@ -1,6 +1,9 @@
 import json
 import os.path as osp
 
+# remove later
+import numpy
+
 import torch
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D  # noqa
@@ -57,6 +60,7 @@ def read_data(path):
         etas.append(item['eta'])
     particle = torch.tensor(particles, dtype=torch.float)
     particle_assoc = to_assoc(particle_indices)
+
     eta = torch.tensor(etas, dtype=torch.float)
     eta_mask = (eta >= 2) & (eta <= 5)
     print('Particles', particle.size(), particle_assoc.size())
@@ -64,17 +68,19 @@ def read_data(path):
     clusters = []
     cluster_indices = []
     for key, item in data['VPClusters'].items():
-        drin = 0
-        for p in item['MCPs']:
-#            print(p)
-            particle_id = particle_assoc[int(p)]
-            drin = max(drin, eta_mask[particle_id].item())
-        if drin:
+        #drin = 0
+        #for p in item['MCPs']:
+        #    particle_id = particle_assoc[int(p)]
+        #    drin = max(drin, eta_mask[particle_id].item())
+        #if drin:
             clusters.append([item['x'], item['y'], item['z']])
             cluster_indices.append(int(key))
-    cluster = torch.tensor(clusters, dtype=torch.float)
+    clusters = torch.tensor(clusters, dtype=torch.float)
     cluster_assoc = to_assoc(cluster_indices)
-    print('Clusters', cluster.size(), cluster_assoc.size())
+    cluster_indices = torch.tensor(cluster_indices)
+
+    print('Clusters', clusters.size(), cluster_assoc.size())
+
 
     tracks = []
     track_indices = []
@@ -82,9 +88,42 @@ def read_data(path):
         tracks.append([cluster_assoc[int(c)].item() for c in item['LHCbIDs']])
         track_indices.append(int(key))
     track_assoc = to_assoc(track_indices)
-    print('Clusters', len(tracks), track_assoc.size())
+    print('Tracks', len(tracks), track_assoc.size())
 
-    visualize(cluster, vertex, particle, tracks)
+
+    edge_index_0 = []
+    edge_index_1 = []
+    for track in tracks:
+        for i in range(len(track) - 1):
+            edge_index_0.append(track[i])
+            edge_index_1.append(track[i+1])
+    edge_index_tracks = torch.tensor([edge_index_0, edge_index_1])
+    print('Edge Index Tracks:', edge_index_tracks.size())
+
+
+    z = 2
+    edge_index_0 = []
+    edge_index_1 = []
+    zs = []
+    for i in range(len(clusters)):
+        z_ci = clusters[i][z]
+        if z_ci in zs:
+            continue
+        else:
+            zs.append(z_ci)
+            clusters_z_ci = cluster_indices[clusters[:,z] == z_ci]
+
+            for j in range(len(clusters_z_ci)):
+                for k in range(len(clusters_z_ci)):
+                    if j != k:
+                        edge_index_0.append(cluster_assoc[cluster_indices[j]])
+                        edge_index_1.append(cluster_assoc[cluster_indices[k]])
+    edge_index_z = torch.tensor([edge_index_0, edge_index_1])
+    print('Edge Index Z:', edge_index_z.size())
+
+
+
+    # visualize(clusters, vertex, particle, tracks)
 
 
 if __name__ == '__main__':
