@@ -32,10 +32,24 @@ def visualize(cluster, vertex, particle, tracks):
 
 
 def to_assoc(indices):
-    index = torch.tensor(indices, dtype=torch.long)
-    assoc = torch.full((index.max() + 1, ), -1, dtype=torch.long)
-    assoc[index] = torch.arange(index.size(0))
+#    index = torch.tensor(indices, dtype=torch.long)
+#    assoc = torch.full((index.max() + 1, ), -1, dtype=torch.long)
+#    assoc[index] = torch.arange(index.size(0))
+#    return assoc
+
+    assoc = {} # catch KeyError
+    count = 0
+    for i in indices:
+        assoc[i] = count
+        count += 1
     return assoc
+
+
+def from_assoc(assoc, idx):
+    try:
+        return assoc[idx]
+    except KeyError:
+        return -1
 
 
 def read_data(path):
@@ -49,7 +63,7 @@ def read_data(path):
         vertex_indices.append(int(key))
     vertex = torch.tensor(vertices, dtype=torch.float)
     vertex_assoc = to_assoc(vertex_indices)
-    print('Vertices', vertex.size(), vertex_assoc.size())
+    print('Vertices', vertex.size(), len(vertex_assoc))
 
     particles = []
     particle_indices = []
@@ -63,14 +77,14 @@ def read_data(path):
 
     eta = torch.tensor(etas, dtype=torch.float)
     eta_mask = (eta >= 2) & (eta <= 5)
-    print('Particles', particle.size(), particle_assoc.size())
+    print('Particles', particle.size(), len(particle_assoc))
 
     clusters = []
     cluster_indices = []
     for key, item in data['VPClusters'].items():
         #drin = 0
         #for p in item['MCPs']:
-        #    particle_id = particle_assoc[int(p)]
+        #    particle_id = from_assoc(particle_assoc, int(p))
         #    drin = max(drin, eta_mask[particle_id].item())
         #if drin:
             clusters.append([item['x'], item['y'], item['z']])
@@ -79,16 +93,16 @@ def read_data(path):
     cluster_assoc = to_assoc(cluster_indices)
     cluster_indices = torch.tensor(cluster_indices)
 
-    print('Clusters', clusters.size(), cluster_assoc.size())
+    print('Clusters', clusters.size(), len(cluster_assoc))
 
 
     tracks = []
     track_indices = []
     for key, item in data['VeloTracks'].items():
-        tracks.append([cluster_assoc[int(c)].item() for c in item['LHCbIDs']])
+        tracks.append([from_assoc(cluster_assoc, int(c)) for c in item['LHCbIDs']])
         track_indices.append(int(key))
     track_assoc = to_assoc(track_indices)
-    print('Tracks', len(tracks), track_assoc.size())
+    print('Tracks', len(tracks), len(track_assoc))
 
 
     edge_index_0 = []
@@ -116,11 +130,10 @@ def read_data(path):
             for j in range(len(clusters_z_ci)):
                 for k in range(len(clusters_z_ci)):
                     if j != k:
-                        edge_index_0.append(cluster_assoc[cluster_indices[j]])
-                        edge_index_1.append(cluster_assoc[cluster_indices[k]])
+                        edge_index_0.append(from_assoc(cluster_assoc, cluster_indices[j]))
+                        edge_index_1.append(from_assoc(cluster_assoc, cluster_indices[k]))
     edge_index_z = torch.tensor([edge_index_0, edge_index_1])
     print('Edge Index Z:', edge_index_z.size())
-
 
 
     # visualize(clusters, vertex, particle, tracks)
