@@ -25,7 +25,7 @@ class LHCbDataset(Dataset):
 
     @property
     def processed_file_names(self):
-        return ['data_{}.pt'.format(i) for i in range(0, 25)]
+        return ['data_{}.pt'.format(i) for i in range(0, 99999)]
 
     def __len__(self):
         return len(self.processed_file_names)
