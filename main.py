@@ -44,7 +44,7 @@ train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-batch_size = 4
+batch_size = 8
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
@@ -86,30 +86,30 @@ class Net(torch.nn.Module):
         super(Net, self).__init__()
 
         self.conv1 = PointConv(MLP(00 + 3, 64, 64))
-        #self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
+        self.conv1_2 = PointConv(MLP(00 + 3, 64, 64))
 
         self.conv2 = PointConv(MLP(64 + 3, 128, 128))
-        #self.conv2_2 = PointConv(MLP(128 + 3, 128, 128))
+        self.conv2_2 = PointConv(MLP(64 + 3, 128, 128))
 
         self.conv3 = PointConv(MLP(128 + 3, 256, 256))
-        #self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
+        self.conv3_2 = PointConv(MLP(128 + 3, 256, 256))
 
-        self.lin1 = Lin(64 + 128 + 256, 128)  # Jumping Knowledge.
+        self.lin1 = Lin(2*256, 128)  # Jumping Knowledge.
         self.lin2 = Lin(128, 64)
         self.lin3 = Lin(64, 1)
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
-        x1 = F.relu(self.conv1(None, pos, edge_index_z))
-        #x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
+        x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
+        x1_2 = F.relu(self.conv1_2(None, pos, edge_index_z))
 
-        x2 = F.relu(self.conv2(x1, pos, edge_index_z))
-        #x2_2 = F.relu(self.conv2_2(x2, pos, edge_index_z))
+        x2 = F.relu(self.conv2(x1, pos, edge_index_tracks))
+        x2_2 = F.relu(self.conv2_2(x1_2, pos, edge_index_z))
 
-        x3 = F.relu(self.conv3(x2, pos, edge_index_z))
-        #x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
+        x3 = F.relu(self.conv3(x2, pos, edge_index_tracks))
+        x3_2 = F.relu(self.conv3_2(x2_2, pos, edge_index_z))
 
-        x = torch.cat([x1,x2,x3], dim=-1)
+        x = torch.cat([x3, x3_2], dim=-1)
         x = global_max_pool(x, batch, size=batch_size)
 
         x = F.relu(self.lin1(x))
@@ -118,7 +118,7 @@ class Net(torch.nn.Module):
         return x.flatten()
 
 
-device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 model = Net().to(device)
 #model = DataParallel(model)
 
