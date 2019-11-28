@@ -44,8 +44,7 @@ train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-
-batch_size = 8
+batch_size = 4
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
@@ -56,12 +55,16 @@ print_degree = True
 
 
 # DataLoader
+train_with_small = True
+
 train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
                           sampler=ImbalancedDatasetSampler(train_dataset))
 small_train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers,
                           sampler=ImbalancedDatasetSampler(small_train_dataset))
 test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 
+
+if train_with_small: print('Training with small_train_loader')
 
 print('DataLoader Ready, Time Elapsed {:.0f}min'.format((time.time() - s_time)/60))
 
@@ -83,30 +86,30 @@ class Net(torch.nn.Module):
         super(Net, self).__init__()
 
         self.conv1 = PointConv(MLP(00 + 3, 64, 64))
-        self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
+        #self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
 
         self.conv2 = PointConv(MLP(64 + 3, 128, 128))
-        self.conv2_2 = PointConv(MLP(128 + 3, 128, 128))
+        #self.conv2_2 = PointConv(MLP(128 + 3, 128, 128))
 
         self.conv3 = PointConv(MLP(128 + 3, 256, 256))
-        self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
+        #self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
 
-        self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
+        self.lin1 = Lin(64 + 128 + 256, 128)  # Jumping Knowledge.
         self.lin2 = Lin(128, 64)
         self.lin3 = Lin(64, 1)
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
         x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
-        x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
+        #x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
-        x2 = F.relu(self.conv2(x1_2, pos, edge_index_tracks))
-        x2_2 = F.relu(self.conv2_2(x2, pos, edge_index_z))
+        x2 = F.relu(self.conv2(x1, pos, edge_index_tracks))
+        #x2_2 = F.relu(self.conv2_2(x2, pos, edge_index_z))
 
-        x3 = F.relu(self.conv3(x2_2, pos, edge_index_tracks))
-        x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
+        x3 = F.relu(self.conv3(x2, pos, edge_index_tracks))
+        #x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
 
-        x = torch.cat([x1,x1_2,x2,x2_2,x3,x3_2], dim=-1)
+        x = torch.cat([x1,x2,x3], dim=-1)
         x = global_max_pool(x, batch, size=batch_size)
 
         x = F.relu(self.lin1(x))
@@ -201,8 +204,12 @@ def test(loader):
 
 
 for epoch in range(1, 101):
-    loss = train(epoch, train_loader)
-    #loss = train(epoch, small_train_loader)
+
+    if train_with_small:
+        loss = train(epoch, small_train_loader)
+    else:
+        loss = train(epoch, train_loader)
+
     print('TRAINING LOSS: {:.5f}\n'.format(loss))
 
     print('--- TESTING TRAIN DATA ---')
