@@ -100,13 +100,13 @@ class Net(torch.nn.Module):
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
-        x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
+        x1 = F.relu(self.conv1(None, pos, edge_index_z))
         #x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
-        x2 = F.relu(self.conv2(x1, pos, edge_index_tracks))
+        x2 = F.relu(self.conv2(x1, pos, edge_index_z))
         #x2_2 = F.relu(self.conv2_2(x2, pos, edge_index_z))
 
-        x3 = F.relu(self.conv3(x2, pos, edge_index_tracks))
+        x3 = F.relu(self.conv3(x2, pos, edge_index_z))
         #x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
 
         x = torch.cat([x1,x2,x3], dim=-1)

@@ -1,0 +1,80 @@
+Training with small_train_loader
+DataLoader Ready, Time Elapsed 3min
+Epoch: 001, 0500/3999
+Epoch: 001, 1000/3999
+Epoch: 001, 1500/3999
+Epoch: 001, 2000/3999
+Epoch: 001, 2500/3999
+Epoch: 001, 3000/3999
+Epoch: 001, 3500/3999
+TRAINING LOSS: 0.69313
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5056  Min: 0.5056  Max: 0.5056  Median: 0.5056
+Target 1 Logit Mean: 0.5056  Min: 0.5056  Max: 0.5056  Median: 0.5056
+Acc: 0.5004, Recall: 1.0000, Prec: 0.5005, F1: 0.6671, AUC: 0.5000
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5056  Min: 0.5056  Max: 0.5056  Median: 0.5056
+Target 1 Logit Mean: 0.5056  Min: 0.5056  Max: 0.5056  Median: 0.5056
+Acc: 0.0652, Recall: 1.0000, Prec: 0.0652, F1: 0.1223, AUC: 0.5000
+
+Epoch: 002, 0500/3999
+Epoch: 002, 1000/3999
+Epoch: 002, 1500/3999
+Epoch: 002, 2000/3999
+Epoch: 002, 2500/3999
+Epoch: 002, 3000/3999
+Epoch: 002, 3500/3999
+TRAINING LOSS: 0.69314
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4948  Min: 0.4948  Max: 0.4948  Median: 0.4948
+Target 1 Logit Mean: 0.4948  Min: 0.4948  Max: 0.4948  Median: 0.4948
+Acc: 0.5053, Recall: 1.0000, Prec: 0.5054, F1: 0.6714, AUC: 0.5000
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4948  Min: 0.4948  Max: 0.4948  Median: 0.4948
+Target 1 Logit Mean: 0.4948  Min: 0.4948  Max: 0.4948  Median: 0.4948
+Acc: 0.0652, Recall: 1.0000, Prec: 0.0652, F1: 0.1223, AUC: 0.5000
+
+Epoch: 003, 0500/3999
+Epoch: 003, 1000/3999
+Epoch: 003, 1500/3999
+Epoch: 003, 2000/3999
+Epoch: 003, 2500/3999
+Epoch: 003, 3000/3999
+Epoch: 003, 3500/3999
+TRAINING LOSS: 0.69314
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5024  Min: 0.5024  Max: 0.5024  Median: 0.5024
+Target 1 Logit Mean: 0.5024  Min: 0.5024  Max: 0.5024  Median: 0.5024
+Acc: 0.5005, Recall: 1.0000, Prec: 0.5006, F1: 0.6672, AUC: 0.5000
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5024  Min: 0.5024  Max: 0.5024  Median: 0.5024
+Target 1 Logit Mean: 0.5024  Min: 0.5024  Max: 0.5024  Median: 0.5024
+Acc: 0.0652, Recall: 1.0000, Prec: 0.0652, F1: 0.1223, AUC: 0.5000
+
+Epoch: 004, 0500/3999
+Epoch: 004, 1000/3999
+Epoch: 004, 1500/3999
+Epoch: 004, 2000/3999
+Epoch: 004, 2500/3999
+Epoch: 004, 3000/3999
+Epoch: 004, 3500/3999
+TRAINING LOSS: 0.69309
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4997  Min: 0.4997  Max: 0.4997  Median: 0.4997
+Target 1 Logit Mean: 0.4997  Min: 0.4997  Max: 0.4997  Median: 0.4997
+Acc: 0.4990, Recall: 1.0000, Prec: 0.4991, F1: 0.6659, AUC: 0.5000
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4997  Min: 0.4997  Max: 0.4997  Median: 0.4997
+Target 1 Logit Mean: 0.4997  Min: 0.4997  Max: 0.4997  Median: 0.4997
+Acc: 0.0652, Recall: 1.0000, Prec: 0.0652, F1: 0.1223, AUC: 0.5000
+
+Epoch: 005, 0500/3999
+Epoch: 005, 1000/3999
