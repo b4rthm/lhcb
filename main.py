@@ -31,13 +31,17 @@ num_neg_examples = len(dataset_neg)
 num_pos_examples = len(dataset_pos)
 
 train_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples)))
-test_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples), num_neg_examples))
-
 train_dataset_pos = Subset(dataset_pos, range(int(0.8 * num_pos_examples)))
+
+small_train_dataset_neg = Subset(train_dataset_neg, range(int(0.2 * len(train_dataset_neg))))
+small_train_dataset_pos = Subset(train_dataset_pos, range(int(0.2 * len(train_dataset_pos))))
+
+test_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples), num_neg_examples))
 test_dataset_pos = Subset(dataset_pos, range(int(0.8 * num_pos_examples), num_pos_examples))
 
 # concatenating datasets
 train_dataset = train_dataset_neg.__add__(train_dataset_pos)
+small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
 
@@ -54,6 +58,8 @@ print_degree = True
 # DataLoader
 train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
                           sampler=ImbalancedDatasetSampler(train_dataset))
+small_train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers,
+                          sampler=ImbalancedDatasetSampler(small_train_dataset))
 test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 
 
@@ -137,9 +143,9 @@ def train(epoch, loader):
         total_loss += loss.item() * data.y.size(0)
 
         i += 1
-        if i > 0 and i % 1000 == 0:
+        if i > 0 and i % 500 == 0:
             print('Epoch: {:03d}, {:04d}/{:04d}'.format(epoch, i, len(loader)))
-    print(dict)
+    # print(dict)
     return total_loss / len(loader.dataset)
 
 
@@ -171,18 +177,25 @@ def test(loader):
     print('Target 1 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}'.format(\
         logits_1.mean().item(), logits_1.min().item(), logits_1.max().item(), logits_1.median().item()))
 
-    accs, f1s = [], []
+    accs, recalls, precs, f1s = [], [], [], []
     for t in range(1, 21):  # Try out different thresholds.
         pred = (logits > (t / 20)).to(torch.long)
         accs.append(pred.eq(target).sum().item() / len(loader.dataset))
-        f1s.append(metrics.f1_score(target, pred))
+        recalls.append(metrics.recall_score(target, pred, [1]))
+        precs.append(metrics.precision_score(target, pred, [1]))
+        f1s.append(metrics.f1_score(target, pred, [1]))
 
+    f1s = torch.tensor(f1s)
+    i = f1s.argmax()
 
-    acc = torch.tensor(accs).max().item()
-    f1 = torch.tensor(f1s).max().item()
+    f1 = f1s[i].item()
+    acc = torch.tensor(accs)[i].item()
+    recall = torch.tensor(recalls)[i].item()
+    prec = torch.tensor(precs)[i].item()
+
     auc = metrics.roc_auc_score(target, logits)
 
-    print('Acc: {:.4f}, F1: {:.4f}, AUC: {:.4f}'.format(acc, f1, auc))
+    print('Acc: {:.4f}, Recall: {:.4f}, Prec: {:.4f}, F1: {:.4f}, AUC: {:.4f}\n'.format(acc, recall, prec, f1, auc))
 
     return acc, f1, auc
 
@@ -190,14 +203,12 @@ def test(loader):
 for epoch in range(1, 101):
     loss = train(epoch, train_loader)
     #loss = train(epoch, small_train_loader)
-    print('Loss: {:.5f}\n'.format(loss))
+    print('TRAINING LOSS: {:.5f}\n'.format(loss))
 
-    #print('--- BEGIN COMPLETE TEST RUN ---')
+    print('--- TESTING TRAIN DATA ---')
+    test(small_train_loader)
 
-    #print('--- TESTING TRAIN DATA ---')
-    #test(small_train_loader)
     print('--- TESTING TEST DATA ---')
     test(test_loader)
 
-    #print('--- END COMPLETE TEST RUN ----\n')
     #torch.save(model.state_dict(), 'model_{:03d}.pt'.format(epoch))

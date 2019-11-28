@@ -1,0 +1,3101 @@
+DataLoader Ready, Time Elapsed 3min
+Epoch: 001, 0500/9999
+Epoch: 001, 1000/9999
+Epoch: 001, 1500/9999
+Epoch: 001, 2000/9999
+Epoch: 001, 2500/9999
+Epoch: 001, 3000/9999
+Epoch: 001, 3500/9999
+Epoch: 001, 4000/9999
+Epoch: 001, 4500/9999
+Epoch: 001, 5000/9999
+Epoch: 001, 5500/9999
+Epoch: 001, 6000/9999
+Epoch: 001, 6500/9999
+Epoch: 001, 7000/9999
+Epoch: 001, 7500/9999
+Epoch: 001, 8000/9999
+Epoch: 001, 8500/9999
+Epoch: 001, 9000/9999
+Epoch: 001, 9500/9999
+TRAINING LOSS: 0.66062
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4895  Min: 0.0240  Max: 0.8072  Median: 0.4965
+Target 1 Logit Mean: 0.5474  Min: 0.1706  Max: 0.8698  Median: 0.5396
+Acc: 0.5865, Recall: 0.9110, Prec: 0.5527, F1: 0.6880, AUC: 0.6631
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4872  Min: 0.0238  Max: 0.8297  Median: 0.4950
+Target 1 Logit Mean: 0.5450  Min: 0.1792  Max: 0.8248  Median: 0.5412
+Acc: 0.7418, Recall: 0.4513, Prec: 0.1167, F1: 0.1855, AUC: 0.6696
+
+Epoch: 002, 0500/9999
+Epoch: 002, 1000/9999
+Epoch: 002, 1500/9999
+Epoch: 002, 2000/9999
+Epoch: 002, 2500/9999
+Epoch: 002, 3000/9999
+Epoch: 002, 3500/9999
+Epoch: 002, 4000/9999
+Epoch: 002, 4500/9999
+Epoch: 002, 5000/9999
+Epoch: 002, 5500/9999
+Epoch: 002, 6000/9999
+Epoch: 002, 6500/9999
+Epoch: 002, 7000/9999
+Epoch: 002, 7500/9999
+Epoch: 002, 8000/9999
+Epoch: 002, 8500/9999
+Epoch: 002, 9000/9999
+Epoch: 002, 9500/9999
+TRAINING LOSS: 0.65136
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5010  Min: 0.0093  Max: 0.8625  Median: 0.5239
+Target 1 Logit Mean: 0.5769  Min: 0.1090  Max: 0.9131  Median: 0.5730
+Acc: 0.5765, Recall: 0.9334, Prec: 0.5454, F1: 0.6885, AUC: 0.6656
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5001  Min: 0.0091  Max: 0.8936  Median: 0.5227
+Target 1 Logit Mean: 0.5750  Min: 0.1376  Max: 0.8869  Median: 0.5743
+Acc: 0.7855, Recall: 0.3845, Prec: 0.1256, F1: 0.1894, AUC: 0.6724
+
+Epoch: 003, 0500/9999
+Epoch: 003, 1000/9999
+Epoch: 003, 1500/9999
+Epoch: 003, 2000/9999
+Epoch: 003, 2500/9999
+Epoch: 003, 3000/9999
+Epoch: 003, 3500/9999
+Epoch: 003, 4000/9999
+Epoch: 003, 4500/9999
+Epoch: 003, 5000/9999
+Epoch: 003, 5500/9999
+Epoch: 003, 6000/9999
+Epoch: 003, 6500/9999
+Epoch: 003, 7000/9999
+Epoch: 003, 7500/9999
+Epoch: 003, 8000/9999
+Epoch: 003, 8500/9999
+Epoch: 003, 9000/9999
+Epoch: 003, 9500/9999
+TRAINING LOSS: 0.64818
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4934  Min: 0.0256  Max: 0.8642  Median: 0.5113
+Target 1 Logit Mean: 0.5794  Min: 0.1694  Max: 0.9002  Median: 0.5883
+Acc: 0.5551, Recall: 0.9682, Prec: 0.5291, F1: 0.6843, AUC: 0.6752
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4935  Min: 0.0256  Max: 0.8914  Median: 0.5148
+Target 1 Logit Mean: 0.5738  Min: 0.1586  Max: 0.8816  Median: 0.5787
+Acc: 0.7542, Recall: 0.4359, Prec: 0.1196, F1: 0.1877, AUC: 0.6636
+
+Epoch: 004, 0500/9999
+Epoch: 004, 1000/9999
+Epoch: 004, 1500/9999
+Epoch: 004, 2000/9999
+Epoch: 004, 2500/9999
+Epoch: 004, 3000/9999
+Epoch: 004, 3500/9999
+Epoch: 004, 4000/9999
+Epoch: 004, 4500/9999
+Epoch: 004, 5000/9999
+Epoch: 004, 5500/9999
+Epoch: 004, 6000/9999
+Epoch: 004, 6500/9999
+Epoch: 004, 7000/9999
+Epoch: 004, 7500/9999
+Epoch: 004, 8000/9999
+Epoch: 004, 8500/9999
+Epoch: 004, 9000/9999
+Epoch: 004, 9500/9999
+TRAINING LOSS: 0.64387
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4636  Min: 0.0019  Max: 0.8501  Median: 0.4924
+Target 1 Logit Mean: 0.5558  Min: 0.0316  Max: 0.8897  Median: 0.5620
+Acc: 0.5783, Recall: 0.9529, Prec: 0.5487, F1: 0.6964, AUC: 0.6793
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4640  Min: 0.0019  Max: 0.8865  Median: 0.4941
+Target 1 Logit Mean: 0.5527  Min: 0.0592  Max: 0.8724  Median: 0.5607
+Acc: 0.8059, Recall: 0.3400, Prec: 0.1278, F1: 0.1858, AUC: 0.6738
+
+Epoch: 005, 0500/9999
+Epoch: 005, 1000/9999
+Epoch: 005, 1500/9999
+Epoch: 005, 2000/9999
+Epoch: 005, 2500/9999
+Epoch: 005, 3000/9999
+Epoch: 005, 3500/9999
+Epoch: 005, 4000/9999
+Epoch: 005, 4500/9999
+Epoch: 005, 5000/9999
+Epoch: 005, 5500/9999
+Epoch: 005, 6000/9999
+Epoch: 005, 6500/9999
+Epoch: 005, 7000/9999
+Epoch: 005, 7500/9999
+Epoch: 005, 8000/9999
+Epoch: 005, 8500/9999
+Epoch: 005, 9000/9999
+Epoch: 005, 9500/9999
+TRAINING LOSS: 0.64246
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4410  Min: 0.0003  Max: 0.8418  Median: 0.4745
+Target 1 Logit Mean: 0.5434  Min: 0.0402  Max: 0.8734  Median: 0.5552
+Acc: 0.5769, Recall: 0.9448, Prec: 0.5410, F1: 0.6880, AUC: 0.6805
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4416  Min: 0.0003  Max: 0.8555  Median: 0.4750
+Target 1 Logit Mean: 0.5415  Min: 0.0898  Max: 0.8781  Median: 0.5530
+Acc: 0.8122, Recall: 0.3285, Prec: 0.1293, F1: 0.1856, AUC: 0.6788
+
+Epoch: 006, 0500/9999
+Epoch: 006, 1000/9999
+Epoch: 006, 1500/9999
+Epoch: 006, 2000/9999
+Epoch: 006, 2500/9999
+Epoch: 006, 3000/9999
+Epoch: 006, 3500/9999
+Epoch: 006, 4000/9999
+Epoch: 006, 4500/9999
+Epoch: 006, 5000/9999
+Epoch: 006, 5500/9999
+Epoch: 006, 6000/9999
+Epoch: 006, 6500/9999
+Epoch: 006, 7000/9999
+Epoch: 006, 7500/9999
+Epoch: 006, 8000/9999
+Epoch: 006, 8500/9999
+Epoch: 006, 9000/9999
+Epoch: 006, 9500/9999
+TRAINING LOSS: 0.63965
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4007  Min: 0.0001  Max: 0.7930  Median: 0.4183
+Target 1 Logit Mean: 0.4959  Min: 0.0383  Max: 0.8459  Median: 0.5062
+Acc: 0.5715, Recall: 0.9730, Prec: 0.5386, F1: 0.6934, AUC: 0.6748
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3993  Min: 0.0001  Max: 0.8209  Median: 0.4138
+Target 1 Logit Mean: 0.4926  Min: 0.0435  Max: 0.8169  Median: 0.5073
+Acc: 0.8011, Recall: 0.3477, Prec: 0.1265, F1: 0.1855, AUC: 0.6775
+
+Epoch: 007, 0500/9999
+Epoch: 007, 1000/9999
+Epoch: 007, 1500/9999
+Epoch: 007, 2000/9999
+Epoch: 007, 2500/9999
+Epoch: 007, 3000/9999
+Epoch: 007, 3500/9999
+Epoch: 007, 4000/9999
+Epoch: 007, 4500/9999
+Epoch: 007, 5000/9999
+Epoch: 007, 5500/9999
+Epoch: 007, 6000/9999
+Epoch: 007, 6500/9999
+Epoch: 007, 7000/9999
+Epoch: 007, 7500/9999
+Epoch: 007, 8000/9999
+Epoch: 007, 8500/9999
+Epoch: 007, 9000/9999
+Epoch: 007, 9500/9999
+TRAINING LOSS: 0.64079
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4464  Min: 0.0000  Max: 0.8218  Median: 0.4725
+Target 1 Logit Mean: 0.5422  Min: 0.1514  Max: 0.8674  Median: 0.5571
+Acc: 0.5925, Recall: 0.9325, Prec: 0.5552, F1: 0.6960, AUC: 0.6767
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4471  Min: 0.0000  Max: 0.8523  Median: 0.4722
+Target 1 Logit Mean: 0.5380  Min: 0.0581  Max: 0.8451  Median: 0.5549
+Acc: 0.7000, Recall: 0.5188, Prec: 0.1118, F1: 0.1839, AUC: 0.6729
+
+Epoch: 008, 0500/9999
+Epoch: 008, 1000/9999
+Epoch: 008, 1500/9999
+Epoch: 008, 2000/9999
+Epoch: 008, 2500/9999
+Epoch: 008, 3000/9999
+Epoch: 008, 3500/9999
+Epoch: 008, 4000/9999
+Epoch: 008, 4500/9999
+Epoch: 008, 5000/9999
+Epoch: 008, 5500/9999
+Epoch: 008, 6000/9999
+Epoch: 008, 6500/9999
+Epoch: 008, 7000/9999
+Epoch: 008, 7500/9999
+Epoch: 008, 8000/9999
+Epoch: 008, 8500/9999
+Epoch: 008, 9000/9999
+Epoch: 008, 9500/9999
+TRAINING LOSS: 0.64099
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4319  Min: 0.0000  Max: 0.8660  Median: 0.4441
+Target 1 Logit Mean: 0.5384  Min: 0.0998  Max: 0.8874  Median: 0.5386
+Acc: 0.5953, Recall: 0.9218, Prec: 0.5613, F1: 0.6978, AUC: 0.6847
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4333  Min: 0.0000  Max: 0.8911  Median: 0.4421
+Target 1 Logit Mean: 0.5318  Min: 0.0616  Max: 0.9045  Median: 0.5346
+Acc: 0.7463, Recall: 0.4536, Prec: 0.1193, F1: 0.1889, AUC: 0.6768
+
+Epoch: 009, 0500/9999
+Epoch: 009, 1000/9999
+Epoch: 009, 1500/9999
+Epoch: 009, 2000/9999
+Epoch: 009, 2500/9999
+Epoch: 009, 3000/9999
+Epoch: 009, 3500/9999
+Epoch: 009, 4000/9999
+Epoch: 009, 4500/9999
+Epoch: 009, 5000/9999
+Epoch: 009, 5500/9999
+Epoch: 009, 6000/9999
+Epoch: 009, 6500/9999
+Epoch: 009, 7000/9999
+Epoch: 009, 7500/9999
+Epoch: 009, 8000/9999
+Epoch: 009, 8500/9999
+Epoch: 009, 9000/9999
+Epoch: 009, 9500/9999
+TRAINING LOSS: 0.63954
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4565  Min: 0.0001  Max: 0.8821  Median: 0.4751
+Target 1 Logit Mean: 0.5485  Min: 0.1788  Max: 0.8973  Median: 0.5578
+Acc: 0.5820, Recall: 0.9388, Prec: 0.5467, F1: 0.6910, AUC: 0.6725
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4565  Min: 0.0001  Max: 0.8649  Median: 0.4748
+Target 1 Logit Mean: 0.5474  Min: 0.1135  Max: 0.8917  Median: 0.5576
+Acc: 0.8029, Recall: 0.3523, Prec: 0.1290, F1: 0.1889, AUC: 0.6747
+
+Epoch: 010, 0500/9999
+Epoch: 010, 1000/9999
+Epoch: 010, 1500/9999
+Epoch: 010, 2000/9999
+Epoch: 010, 2500/9999
+Epoch: 010, 3000/9999
+Epoch: 010, 3500/9999
+Epoch: 010, 4000/9999
+Epoch: 010, 4500/9999
+Epoch: 010, 5000/9999
+Epoch: 010, 5500/9999
+Epoch: 010, 6000/9999
+Epoch: 010, 6500/9999
+Epoch: 010, 7000/9999
+Epoch: 010, 7500/9999
+Epoch: 010, 8000/9999
+Epoch: 010, 8500/9999
+Epoch: 010, 9000/9999
+Epoch: 010, 9500/9999
+TRAINING LOSS: 0.63760
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4455  Min: 0.0000  Max: 0.8726  Median: 0.4750
+Target 1 Logit Mean: 0.5561  Min: 0.0634  Max: 0.9091  Median: 0.5680
+Acc: 0.5905, Recall: 0.9200, Prec: 0.5556, F1: 0.6928, AUC: 0.6742
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4450  Min: 0.0000  Max: 0.9051  Median: 0.4737
+Target 1 Logit Mean: 0.5561  Min: 0.0077  Max: 0.8956  Median: 0.5725
+Acc: 0.7739, Recall: 0.4167, Prec: 0.1262, F1: 0.1937, AUC: 0.6810
+
+Epoch: 011, 0500/9999
+Epoch: 011, 1000/9999
+Epoch: 011, 1500/9999
+Epoch: 011, 2000/9999
+Epoch: 011, 2500/9999
+Epoch: 011, 3000/9999
+Epoch: 011, 3500/9999
+Epoch: 011, 4000/9999
+Epoch: 011, 4500/9999
+Epoch: 011, 5000/9999
+Epoch: 011, 5500/9999
+Epoch: 011, 6000/9999
+Epoch: 011, 6500/9999
+Epoch: 011, 7000/9999
+Epoch: 011, 7500/9999
+Epoch: 011, 8000/9999
+Epoch: 011, 8500/9999
+Epoch: 011, 9000/9999
+Epoch: 011, 9500/9999
+TRAINING LOSS: 0.63807
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4115  Min: 0.0000  Max: 0.8050  Median: 0.4527
+Target 1 Logit Mean: 0.5190  Min: 0.0076  Max: 0.8228  Median: 0.5303
+Acc: 0.5795, Recall: 0.9557, Prec: 0.5431, F1: 0.6926, AUC: 0.6798
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4137  Min: 0.0000  Max: 0.8465  Median: 0.4511
+Target 1 Logit Mean: 0.5126  Min: 0.0002  Max: 0.8218  Median: 0.5306
+Acc: 0.7583, Recall: 0.4221, Prec: 0.1188, F1: 0.1854, AUC: 0.6735
+
+Epoch: 012, 0500/9999
+Epoch: 012, 1000/9999
+Epoch: 012, 1500/9999
+Epoch: 012, 2000/9999
+Epoch: 012, 2500/9999
+Epoch: 012, 3000/9999
+Epoch: 012, 3500/9999
+Epoch: 012, 4000/9999
+Epoch: 012, 4500/9999
+Epoch: 012, 5000/9999
+Epoch: 012, 5500/9999
+Epoch: 012, 6000/9999
+Epoch: 012, 6500/9999
+Epoch: 012, 7000/9999
+Epoch: 012, 7500/9999
+Epoch: 012, 8000/9999
+Epoch: 012, 8500/9999
+Epoch: 012, 9000/9999
+Epoch: 012, 9500/9999
+TRAINING LOSS: 0.63565
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4026  Min: 0.0000  Max: 0.8639  Median: 0.4508
+Target 1 Logit Mean: 0.5296  Min: 0.0434  Max: 0.8829  Median: 0.5526
+Acc: 0.5803, Recall: 0.9682, Prec: 0.5438, F1: 0.6964, AUC: 0.6832
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4067  Min: 0.0000  Max: 0.8779  Median: 0.4527
+Target 1 Logit Mean: 0.5255  Min: 0.0055  Max: 0.8999  Median: 0.5518
+Acc: 0.7137, Recall: 0.5058, Prec: 0.1148, F1: 0.1871, AUC: 0.6761
+
+Epoch: 013, 0500/9999
+Epoch: 013, 1000/9999
+Epoch: 013, 1500/9999
+Epoch: 013, 2000/9999
+Epoch: 013, 2500/9999
+Epoch: 013, 3000/9999
+Epoch: 013, 3500/9999
+Epoch: 013, 4000/9999
+Epoch: 013, 4500/9999
+Epoch: 013, 5000/9999
+Epoch: 013, 5500/9999
+Epoch: 013, 6000/9999
+Epoch: 013, 6500/9999
+Epoch: 013, 7000/9999
+Epoch: 013, 7500/9999
+Epoch: 013, 8000/9999
+Epoch: 013, 8500/9999
+Epoch: 013, 9000/9999
+Epoch: 013, 9500/9999
+TRAINING LOSS: 0.63770
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4789  Min: 0.0000  Max: 0.8688  Median: 0.5096
+Target 1 Logit Mean: 0.5689  Min: 0.0251  Max: 0.8778  Median: 0.5707
+Acc: 0.5846, Recall: 0.9532, Prec: 0.5475, F1: 0.6956, AUC: 0.6785
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4773  Min: 0.0000  Max: 0.8825  Median: 0.5098
+Target 1 Logit Mean: 0.5604  Min: 0.0195  Max: 0.8668  Median: 0.5672
+Acc: 0.7934, Recall: 0.3684, Prec: 0.1267, F1: 0.1886, AUC: 0.6685
+
+Epoch: 014, 0500/9999
+Epoch: 014, 1000/9999
+Epoch: 014, 1500/9999
+Epoch: 014, 2000/9999
+Epoch: 014, 2500/9999
+Epoch: 014, 3000/9999
+Epoch: 014, 3500/9999
+Epoch: 014, 4000/9999
+Epoch: 014, 4500/9999
+Epoch: 014, 5000/9999
+Epoch: 014, 5500/9999
+Epoch: 014, 6000/9999
+Epoch: 014, 6500/9999
+Epoch: 014, 7000/9999
+Epoch: 014, 7500/9999
+Epoch: 014, 8000/9999
+Epoch: 014, 8500/9999
+Epoch: 014, 9000/9999
+Epoch: 014, 9500/9999
+TRAINING LOSS: 0.63745
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4573  Min: 0.0000  Max: 0.8630  Median: 0.4700
+Target 1 Logit Mean: 0.5530  Min: 0.1992  Max: 0.8779  Median: 0.5541
+Acc: 0.5863, Recall: 0.9451, Prec: 0.5522, F1: 0.6971, AUC: 0.6780
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4575  Min: 0.0000  Max: 0.8996  Median: 0.4717
+Target 1 Logit Mean: 0.5466  Min: 0.0342  Max: 0.9049  Median: 0.5545
+Acc: 0.6996, Recall: 0.5142, Prec: 0.1109, F1: 0.1824, AUC: 0.6705
+
+Epoch: 015, 0500/9999
+Epoch: 015, 1000/9999
+Epoch: 015, 1500/9999
+Epoch: 015, 2000/9999
+Epoch: 015, 2500/9999
+Epoch: 015, 3000/9999
+Epoch: 015, 3500/9999
+Epoch: 015, 4000/9999
+Epoch: 015, 4500/9999
+Epoch: 015, 5000/9999
+Epoch: 015, 5500/9999
+Epoch: 015, 6000/9999
+Epoch: 015, 6500/9999
+Epoch: 015, 7000/9999
+Epoch: 015, 7500/9999
+Epoch: 015, 8000/9999
+Epoch: 015, 8500/9999
+Epoch: 015, 9000/9999
+Epoch: 015, 9500/9999
+TRAINING LOSS: 0.63351
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4766  Min: 0.0000  Max: 0.9124  Median: 0.4973
+Target 1 Logit Mean: 0.5833  Min: 0.1750  Max: 0.9079  Median: 0.5932
+Acc: 0.6091, Recall: 0.9217, Prec: 0.5700, F1: 0.7044, AUC: 0.6847
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4813  Min: 0.0000  Max: 0.9164  Median: 0.5076
+Target 1 Logit Mean: 0.5771  Min: 0.1060  Max: 0.9235  Median: 0.5912
+Acc: 0.7280, Recall: 0.4658, Prec: 0.1134, F1: 0.1824, AUC: 0.6687
+
+Epoch: 016, 0500/9999
+Epoch: 016, 1000/9999
+Epoch: 016, 1500/9999
+Epoch: 016, 2000/9999
+Epoch: 016, 2500/9999
+Epoch: 016, 3000/9999
+Epoch: 016, 3500/9999
+Epoch: 016, 4000/9999
+Epoch: 016, 4500/9999
+Epoch: 016, 5000/9999
+Epoch: 016, 5500/9999
+Epoch: 016, 6000/9999
+Epoch: 016, 6500/9999
+Epoch: 016, 7000/9999
+Epoch: 016, 7500/9999
+Epoch: 016, 8000/9999
+Epoch: 016, 8500/9999
+Epoch: 016, 9000/9999
+Epoch: 016, 9500/9999
+TRAINING LOSS: 0.63353
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4900  Min: 0.0000  Max: 0.9168  Median: 0.5272
+Target 1 Logit Mean: 0.6013  Min: 0.1745  Max: 0.9246  Median: 0.6173
+Acc: 0.6010, Recall: 0.9208, Prec: 0.5606, F1: 0.6969, AUC: 0.6783
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4888  Min: 0.0000  Max: 0.9191  Median: 0.5250
+Target 1 Logit Mean: 0.5950  Min: 0.0416  Max: 0.9325  Median: 0.6163
+Acc: 0.7793, Recall: 0.3891, Prec: 0.1229, F1: 0.1868, AUC: 0.6719
+
+Epoch: 017, 0500/9999
+Epoch: 017, 1000/9999
+Epoch: 017, 1500/9999
+Epoch: 017, 2000/9999
+Epoch: 017, 2500/9999
+Epoch: 017, 3000/9999
+Epoch: 017, 3500/9999
+Epoch: 017, 4000/9999
+Epoch: 017, 4500/9999
+Epoch: 017, 5000/9999
+Epoch: 017, 5500/9999
+Epoch: 017, 6000/9999
+Epoch: 017, 6500/9999
+Epoch: 017, 7000/9999
+Epoch: 017, 7500/9999
+Epoch: 017, 8000/9999
+Epoch: 017, 8500/9999
+Epoch: 017, 9000/9999
+Epoch: 017, 9500/9999
+TRAINING LOSS: 0.63383
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4202  Min: 0.0000  Max: 0.8002  Median: 0.4576
+Target 1 Logit Mean: 0.5184  Min: 0.0187  Max: 0.8549  Median: 0.5289
+Acc: 0.5957, Recall: 0.9284, Prec: 0.5581, F1: 0.6971, AUC: 0.6770
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4226  Min: 0.0000  Max: 0.8477  Median: 0.4581
+Target 1 Logit Mean: 0.5089  Min: 0.0020  Max: 0.8565  Median: 0.5266
+Acc: 0.7610, Recall: 0.4098, Prec: 0.1175, F1: 0.1826, AUC: 0.6603
+
+Epoch: 018, 0500/9999
+Epoch: 018, 1000/9999
+Epoch: 018, 1500/9999
+Epoch: 018, 2000/9999
+Epoch: 018, 2500/9999
+Epoch: 018, 3000/9999
+Epoch: 018, 3500/9999
+Epoch: 018, 4000/9999
+Epoch: 018, 4500/9999
+Epoch: 018, 5000/9999
+Epoch: 018, 5500/9999
+Epoch: 018, 6000/9999
+Epoch: 018, 6500/9999
+Epoch: 018, 7000/9999
+Epoch: 018, 7500/9999
+Epoch: 018, 8000/9999
+Epoch: 018, 8500/9999
+Epoch: 018, 9000/9999
+Epoch: 018, 9500/9999
+TRAINING LOSS: 0.63194
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4332  Min: 0.0000  Max: 0.8957  Median: 0.4701
+Target 1 Logit Mean: 0.5494  Min: 0.0201  Max: 0.9532  Median: 0.5604
+Acc: 0.6027, Recall: 0.9324, Prec: 0.5642, F1: 0.7030, AUC: 0.6881
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4335  Min: 0.0000  Max: 0.9047  Median: 0.4693
+Target 1 Logit Mean: 0.5369  Min: 0.0002  Max: 0.8999  Median: 0.5560
+Acc: 0.6984, Recall: 0.5249, Prec: 0.1122, F1: 0.1848, AUC: 0.6719
+
+Epoch: 019, 0500/9999
+Epoch: 019, 1000/9999
+Epoch: 019, 1500/9999
+Epoch: 019, 2000/9999
+Epoch: 019, 2500/9999
+Epoch: 019, 3000/9999
+Epoch: 019, 3500/9999
+Epoch: 019, 4000/9999
+Epoch: 019, 4500/9999
+Epoch: 019, 5000/9999
+Epoch: 019, 5500/9999
+Epoch: 019, 6000/9999
+Epoch: 019, 6500/9999
+Epoch: 019, 7000/9999
+Epoch: 019, 7500/9999
+Epoch: 019, 8000/9999
+Epoch: 019, 8500/9999
+Epoch: 019, 9000/9999
+Epoch: 019, 9500/9999
+TRAINING LOSS: 0.63078
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4382  Min: 0.0000  Max: 0.9498  Median: 0.4634
+Target 1 Logit Mean: 0.5439  Min: 0.0144  Max: 0.9992  Median: 0.5500
+Acc: 0.5878, Recall: 0.9234, Prec: 0.5531, F1: 0.6918, AUC: 0.6752
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4351  Min: 0.0000  Max: 0.9949  Median: 0.4600
+Target 1 Logit Mean: 0.5339  Min: 0.0041  Max: 0.9362  Median: 0.5473
+Acc: 0.8048, Recall: 0.3346, Prec: 0.1256, F1: 0.1826, AUC: 0.6666
+
+Epoch: 020, 0500/9999
+Epoch: 020, 1000/9999
+Epoch: 020, 1500/9999
+Epoch: 020, 2000/9999
+Epoch: 020, 2500/9999
+Epoch: 020, 3000/9999
+Epoch: 020, 3500/9999
+Epoch: 020, 4000/9999
+Epoch: 020, 4500/9999
+Epoch: 020, 5000/9999
+Epoch: 020, 5500/9999
+Epoch: 020, 6000/9999
+Epoch: 020, 6500/9999
+Epoch: 020, 7000/9999
+Epoch: 020, 7500/9999
+Epoch: 020, 8000/9999
+Epoch: 020, 8500/9999
+Epoch: 020, 9000/9999
+Epoch: 020, 9500/9999
+TRAINING LOSS: 0.63271
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4354  Min: 0.0000  Max: 0.7897  Median: 0.4528
+Target 1 Logit Mean: 0.5124  Min: 0.1161  Max: 0.9610  Median: 0.5136
+Acc: 0.5788, Recall: 0.9548, Prec: 0.5457, F1: 0.6944, AUC: 0.6803
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4361  Min: 0.0000  Max: 0.9362  Median: 0.4507
+Target 1 Logit Mean: 0.5057  Min: 0.0051  Max: 0.9159  Median: 0.5099
+Acc: 0.8177, Recall: 0.3208, Prec: 0.1315, F1: 0.1866, AUC: 0.6728
+
+Epoch: 021, 0500/9999
+Epoch: 021, 1000/9999
+Epoch: 021, 1500/9999
+Epoch: 021, 2000/9999
+Epoch: 021, 2500/9999
+Epoch: 021, 3000/9999
+Epoch: 021, 3500/9999
+Epoch: 021, 4000/9999
+Epoch: 021, 4500/9999
+Epoch: 021, 5000/9999
+Epoch: 021, 5500/9999
+Epoch: 021, 6000/9999
+Epoch: 021, 6500/9999
+Epoch: 021, 7000/9999
+Epoch: 021, 7500/9999
+Epoch: 021, 8000/9999
+Epoch: 021, 8500/9999
+Epoch: 021, 9000/9999
+Epoch: 021, 9500/9999
+TRAINING LOSS: 0.63030
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4169  Min: 0.0000  Max: 0.8917  Median: 0.4490
+Target 1 Logit Mean: 0.5385  Min: 0.0131  Max: 0.9259  Median: 0.5475
+Acc: 0.5703, Recall: 0.9841, Prec: 0.5424, F1: 0.6994, AUC: 0.6761
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4161  Min: 0.0000  Max: 0.9424  Median: 0.4464
+Target 1 Logit Mean: 0.5329  Min: 0.0050  Max: 0.9201  Median: 0.5474
+Acc: 0.7972, Recall: 0.3584, Prec: 0.1267, F1: 0.1872, AUC: 0.6756
+
+Epoch: 022, 0500/9999
+Epoch: 022, 1000/9999
+Epoch: 022, 1500/9999
+Epoch: 022, 2000/9999
+Epoch: 022, 2500/9999
+Epoch: 022, 3000/9999
+Epoch: 022, 3500/9999
+Epoch: 022, 4000/9999
+Epoch: 022, 4500/9999
+Epoch: 022, 5000/9999
+Epoch: 022, 5500/9999
+Epoch: 022, 6000/9999
+Epoch: 022, 6500/9999
+Epoch: 022, 7000/9999
+Epoch: 022, 7500/9999
+Epoch: 022, 8000/9999
+Epoch: 022, 8500/9999
+Epoch: 022, 9000/9999
+Epoch: 022, 9500/9999
+TRAINING LOSS: 0.63083
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4758  Min: 0.0000  Max: 0.8811  Median: 0.5096
+Target 1 Logit Mean: 0.5971  Min: 0.1467  Max: 0.9407  Median: 0.6095
+Acc: 0.5762, Recall: 0.9801, Prec: 0.5418, F1: 0.6978, AUC: 0.6927
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4783  Min: 0.0000  Max: 0.9794  Median: 0.5095
+Target 1 Logit Mean: 0.5851  Min: 0.0001  Max: 0.9280  Median: 0.6021
+Acc: 0.7072, Recall: 0.5081, Prec: 0.1127, F1: 0.1844, AUC: 0.6750
+
+Epoch: 023, 0500/9999
+Epoch: 023, 1000/9999
+Epoch: 023, 1500/9999
+Epoch: 023, 2000/9999
+Epoch: 023, 2500/9999
+Epoch: 023, 3000/9999
+Epoch: 023, 3500/9999
+Epoch: 023, 4000/9999
+Epoch: 023, 4500/9999
+Epoch: 023, 5000/9999
+Epoch: 023, 5500/9999
+Epoch: 023, 6000/9999
+Epoch: 023, 6500/9999
+Epoch: 023, 7000/9999
+Epoch: 023, 7500/9999
+Epoch: 023, 8000/9999
+Epoch: 023, 8500/9999
+Epoch: 023, 9000/9999
+Epoch: 023, 9500/9999
+TRAINING LOSS: 0.62874
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4252  Min: 0.0000  Max: 0.9221  Median: 0.4672
+Target 1 Logit Mean: 0.5544  Min: 0.0007  Max: 0.9839  Median: 0.5688
+Acc: 0.5873, Recall: 0.9530, Prec: 0.5501, F1: 0.6976, AUC: 0.6912
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4272  Min: 0.0000  Max: 0.9452  Median: 0.4651
+Target 1 Logit Mean: 0.5384  Min: 0.0000  Max: 0.9365  Median: 0.5597
+Acc: 0.6887, Recall: 0.5334, Prec: 0.1101, F1: 0.1825, AUC: 0.6696
+
+Epoch: 024, 0500/9999
+Epoch: 024, 1000/9999
+Epoch: 024, 1500/9999
+Epoch: 024, 2000/9999
+Epoch: 024, 2500/9999
+Epoch: 024, 3000/9999
+Epoch: 024, 3500/9999
+Epoch: 024, 4000/9999
+Epoch: 024, 4500/9999
+Epoch: 024, 5000/9999
+Epoch: 024, 5500/9999
+Epoch: 024, 6000/9999
+Epoch: 024, 6500/9999
+Epoch: 024, 7000/9999
+Epoch: 024, 7500/9999
+Epoch: 024, 8000/9999
+Epoch: 024, 8500/9999
+Epoch: 024, 9000/9999
+Epoch: 024, 9500/9999
+TRAINING LOSS: 0.62852
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4406  Min: 0.0000  Max: 0.8848  Median: 0.4603
+Target 1 Logit Mean: 0.5429  Min: 0.0983  Max: 0.8927  Median: 0.5506
+Acc: 0.5919, Recall: 0.9325, Prec: 0.5542, F1: 0.6952, AUC: 0.6866
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4386  Min: 0.0000  Max: 0.9237  Median: 0.4582
+Target 1 Logit Mean: 0.5302  Min: 0.0159  Max: 0.8688  Median: 0.5487
+Acc: 0.7159, Recall: 0.4942, Prec: 0.1136, F1: 0.1848, AUC: 0.6690
+
+Epoch: 025, 0500/9999
+Epoch: 025, 1000/9999
+Epoch: 025, 1500/9999
+Epoch: 025, 2000/9999
+Epoch: 025, 2500/9999
+Epoch: 025, 3000/9999
+Epoch: 025, 3500/9999
+Epoch: 025, 4000/9999
+Epoch: 025, 4500/9999
+Epoch: 025, 5000/9999
+Epoch: 025, 5500/9999
+Epoch: 025, 6000/9999
+Epoch: 025, 6500/9999
+Epoch: 025, 7000/9999
+Epoch: 025, 7500/9999
+Epoch: 025, 8000/9999
+Epoch: 025, 8500/9999
+Epoch: 025, 9000/9999
+Epoch: 025, 9500/9999
+TRAINING LOSS: 0.63478
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4762  Min: 0.0000  Max: 0.9704  Median: 0.5161
+Target 1 Logit Mean: 0.5873  Min: 0.0427  Max: 0.9880  Median: 0.6091
+Acc: 0.5889, Recall: 0.9023, Prec: 0.5527, F1: 0.6855, AUC: 0.6756
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4760  Min: 0.0000  Max: 1.0000  Median: 0.5140
+Target 1 Logit Mean: 0.5738  Min: 0.0003  Max: 0.9172  Median: 0.6022
+Acc: 0.8036, Recall: 0.3331, Prec: 0.1242, F1: 0.1809, AUC: 0.6573
+
+Epoch: 026, 0500/9999
+Epoch: 026, 1000/9999
+Epoch: 026, 1500/9999
+Epoch: 026, 2000/9999
+Epoch: 026, 2500/9999
+Epoch: 026, 3000/9999
+Epoch: 026, 3500/9999
+Epoch: 026, 4000/9999
+Epoch: 026, 4500/9999
+Epoch: 026, 5000/9999
+Epoch: 026, 5500/9999
+Epoch: 026, 6000/9999
+Epoch: 026, 6500/9999
+Epoch: 026, 7000/9999
+Epoch: 026, 7500/9999
+Epoch: 026, 8000/9999
+Epoch: 026, 8500/9999
+Epoch: 026, 9000/9999
+Epoch: 026, 9500/9999
+TRAINING LOSS: 0.62834
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4295  Min: 0.0000  Max: 0.9269  Median: 0.4411
+Target 1 Logit Mean: 0.5413  Min: 0.1196  Max: 0.9617  Median: 0.5386
+Acc: 0.6058, Recall: 0.9130, Prec: 0.5691, F1: 0.7011, AUC: 0.6881
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4282  Min: 0.0000  Max: 0.9486  Median: 0.4371
+Target 1 Logit Mean: 0.5264  Min: 0.0053  Max: 0.9139  Median: 0.5313
+Acc: 0.7480, Recall: 0.4482, Prec: 0.1190, F1: 0.1881, AUC: 0.6713
+
+Epoch: 027, 0500/9999
+Epoch: 027, 1000/9999
+Epoch: 027, 1500/9999
+Epoch: 027, 2000/9999
+Epoch: 027, 2500/9999
+Epoch: 027, 3000/9999
+Epoch: 027, 3500/9999
+Epoch: 027, 4000/9999
+Epoch: 027, 4500/9999
+Epoch: 027, 5000/9999
+Epoch: 027, 5500/9999
+Epoch: 027, 6000/9999
+Epoch: 027, 6500/9999
+Epoch: 027, 7000/9999
+Epoch: 027, 7500/9999
+Epoch: 027, 8000/9999
+Epoch: 027, 8500/9999
+Epoch: 027, 9000/9999
+Epoch: 027, 9500/9999
+TRAINING LOSS: 0.62555
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4985  Min: 0.0000  Max: 0.9703  Median: 0.5311
+Target 1 Logit Mean: 0.6214  Min: 0.1106  Max: 0.9985  Median: 0.6393
+Acc: 0.6005, Recall: 0.9182, Prec: 0.5591, F1: 0.6950, AUC: 0.6852
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5012  Min: 0.0000  Max: 1.0000  Median: 0.5321
+Target 1 Logit Mean: 0.6079  Min: 0.0001  Max: 0.9975  Median: 0.6358
+Acc: 0.7378, Recall: 0.4398, Prec: 0.1126, F1: 0.1793, AUC: 0.6674
+
+Epoch: 028, 0500/9999
+Epoch: 028, 1000/9999
+Epoch: 028, 1500/9999
+Epoch: 028, 2000/9999
+Epoch: 028, 2500/9999
+Epoch: 028, 3000/9999
+Epoch: 028, 3500/9999
+Epoch: 028, 4000/9999
+Epoch: 028, 4500/9999
+Epoch: 028, 5000/9999
+Epoch: 028, 5500/9999
+Epoch: 028, 6000/9999
+Epoch: 028, 6500/9999
+Epoch: 028, 7000/9999
+Epoch: 028, 7500/9999
+Epoch: 028, 8000/9999
+Epoch: 028, 8500/9999
+Epoch: 028, 9000/9999
+Epoch: 028, 9500/9999
+TRAINING LOSS: 0.62569
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4724  Min: 0.0000  Max: 0.9165  Median: 0.4890
+Target 1 Logit Mean: 0.5837  Min: 0.0932  Max: 0.9366  Median: 0.5941
+Acc: 0.5929, Recall: 0.9399, Prec: 0.5593, F1: 0.7013, AUC: 0.6813
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4726  Min: 0.0000  Max: 0.9511  Median: 0.4856
+Target 1 Logit Mean: 0.5757  Min: 0.0002  Max: 0.9342  Median: 0.5882
+Acc: 0.8149, Recall: 0.3285, Prec: 0.1315, F1: 0.1878, AUC: 0.6744
+
+Epoch: 029, 0500/9999
+Epoch: 029, 1000/9999
+Epoch: 029, 1500/9999
+Epoch: 029, 2000/9999
+Epoch: 029, 2500/9999
+Epoch: 029, 3000/9999
+Epoch: 029, 3500/9999
+Epoch: 029, 4000/9999
+Epoch: 029, 4500/9999
+Epoch: 029, 5000/9999
+Epoch: 029, 5500/9999
+Epoch: 029, 6000/9999
+Epoch: 029, 6500/9999
+Epoch: 029, 7000/9999
+Epoch: 029, 7500/9999
+Epoch: 029, 8000/9999
+Epoch: 029, 8500/9999
+Epoch: 029, 9000/9999
+Epoch: 029, 9500/9999
+TRAINING LOSS: 0.62444
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4269  Min: 0.0000  Max: 0.9015  Median: 0.4511
+Target 1 Logit Mean: 0.5376  Min: 0.0821  Max: 0.9205  Median: 0.5382
+Acc: 0.5960, Recall: 0.9317, Prec: 0.5556, F1: 0.6961, AUC: 0.6856
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4285  Min: 0.0000  Max: 0.9381  Median: 0.4536
+Target 1 Logit Mean: 0.5238  Min: 0.0004  Max: 0.8992  Median: 0.5371
+Acc: 0.7329, Recall: 0.4574, Prec: 0.1139, F1: 0.1824, AUC: 0.6640
+
+Epoch: 030, 0500/9999
+Epoch: 030, 1000/9999
+Epoch: 030, 1500/9999
+Epoch: 030, 2000/9999
+Epoch: 030, 2500/9999
+Epoch: 030, 3000/9999
+Epoch: 030, 3500/9999
+Epoch: 030, 4000/9999
+Epoch: 030, 4500/9999
+Epoch: 030, 5000/9999
+Epoch: 030, 5500/9999
+Epoch: 030, 6000/9999
+Epoch: 030, 6500/9999
+Epoch: 030, 7000/9999
+Epoch: 030, 7500/9999
+Epoch: 030, 8000/9999
+Epoch: 030, 8500/9999
+Epoch: 030, 9000/9999
+Epoch: 030, 9500/9999
+TRAINING LOSS: 0.62869
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4688  Min: 0.0000  Max: 0.8851  Median: 0.5117
+Target 1 Logit Mean: 0.5799  Min: 0.1039  Max: 0.9893  Median: 0.5918
+Acc: 0.5912, Recall: 0.9186, Prec: 0.5524, F1: 0.6899, AUC: 0.6845
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4682  Min: 0.0000  Max: 0.9611  Median: 0.5094
+Target 1 Logit Mean: 0.5686  Min: 0.0021  Max: 0.9710  Median: 0.5896
+Acc: 0.7355, Recall: 0.4574, Prec: 0.1151, F1: 0.1839, AUC: 0.6686
+
+Epoch: 031, 0500/9999
+Epoch: 031, 1000/9999
+Epoch: 031, 1500/9999
+Epoch: 031, 2000/9999
+Epoch: 031, 2500/9999
+Epoch: 031, 3000/9999
+Epoch: 031, 3500/9999
+Epoch: 031, 4000/9999
+Epoch: 031, 4500/9999
+Epoch: 031, 5000/9999
+Epoch: 031, 5500/9999
+Epoch: 031, 6000/9999
+Epoch: 031, 6500/9999
+Epoch: 031, 7000/9999
+Epoch: 031, 7500/9999
+Epoch: 031, 8000/9999
+Epoch: 031, 8500/9999
+Epoch: 031, 9000/9999
+Epoch: 031, 9500/9999
+TRAINING LOSS: 0.62572
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4499  Min: 0.0000  Max: 0.9978  Median: 0.4794
+Target 1 Logit Mean: 0.5690  Min: 0.1387  Max: 0.9998  Median: 0.5741
+Acc: 0.5763, Recall: 0.9731, Prec: 0.5412, F1: 0.6956, AUC: 0.6914
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4519  Min: 0.0000  Max: 1.0000  Median: 0.4806
+Target 1 Logit Mean: 0.5520  Min: 0.0002  Max: 0.9189  Median: 0.5715
+Acc: 0.7603, Recall: 0.4091, Prec: 0.1170, F1: 0.1819, AUC: 0.6674
+
+Epoch: 032, 0500/9999
+Epoch: 032, 1000/9999
+Epoch: 032, 1500/9999
+Epoch: 032, 2000/9999
+Epoch: 032, 2500/9999
+Epoch: 032, 3000/9999
+Epoch: 032, 3500/9999
+Epoch: 032, 4000/9999
+Epoch: 032, 4500/9999
+Epoch: 032, 5000/9999
+Epoch: 032, 5500/9999
+Epoch: 032, 6000/9999
+Epoch: 032, 6500/9999
+Epoch: 032, 7000/9999
+Epoch: 032, 7500/9999
+Epoch: 032, 8000/9999
+Epoch: 032, 8500/9999
+Epoch: 032, 9000/9999
+Epoch: 032, 9500/9999
+TRAINING LOSS: 0.62289
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4191  Min: 0.0000  Max: 0.9109  Median: 0.4415
+Target 1 Logit Mean: 0.5433  Min: 0.0054  Max: 0.9980  Median: 0.5486
+Acc: 0.5785, Recall: 0.9711, Prec: 0.5454, F1: 0.6985, AUC: 0.6870
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4190  Min: 0.0000  Max: 0.9948  Median: 0.4410
+Target 1 Logit Mean: 0.5242  Min: 0.0000  Max: 0.8950  Median: 0.5423
+Acc: 0.7958, Recall: 0.3492, Prec: 0.1233, F1: 0.1823, AUC: 0.6651
+
+Epoch: 033, 0500/9999
+Epoch: 033, 1000/9999
+Epoch: 033, 1500/9999
+Epoch: 033, 2000/9999
+Epoch: 033, 2500/9999
+Epoch: 033, 3000/9999
+Epoch: 033, 3500/9999
+Epoch: 033, 4000/9999
+Epoch: 033, 4500/9999
+Epoch: 033, 5000/9999
+Epoch: 033, 5500/9999
+Epoch: 033, 6000/9999
+Epoch: 033, 6500/9999
+Epoch: 033, 7000/9999
+Epoch: 033, 7500/9999
+Epoch: 033, 8000/9999
+Epoch: 033, 8500/9999
+Epoch: 033, 9000/9999
+Epoch: 033, 9500/9999
+TRAINING LOSS: 0.62225
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4019  Min: 0.0000  Max: 0.8350  Median: 0.4260
+Target 1 Logit Mean: 0.5111  Min: 0.0910  Max: 0.9488  Median: 0.5066
+Acc: 0.5827, Recall: 0.9807, Prec: 0.5490, F1: 0.7039, AUC: 0.6877
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3998  Min: 0.0000  Max: 0.9484  Median: 0.4225
+Target 1 Logit Mean: 0.4901  Min: 0.0010  Max: 0.8872  Median: 0.4962
+Acc: 0.7025, Recall: 0.4896, Prec: 0.1077, F1: 0.1766, AUC: 0.6627
+
+Epoch: 034, 0500/9999
+Epoch: 034, 1000/9999
+Epoch: 034, 1500/9999
+Epoch: 034, 2000/9999
+Epoch: 034, 2500/9999
+Epoch: 034, 3000/9999
+Epoch: 034, 3500/9999
+Epoch: 034, 4000/9999
+Epoch: 034, 4500/9999
+Epoch: 034, 5000/9999
+Epoch: 034, 5500/9999
+Epoch: 034, 6000/9999
+Epoch: 034, 6500/9999
+Epoch: 034, 7000/9999
+Epoch: 034, 7500/9999
+Epoch: 034, 8000/9999
+Epoch: 034, 8500/9999
+Epoch: 034, 9000/9999
+Epoch: 034, 9500/9999
+TRAINING LOSS: 0.62259
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4609  Min: 0.0000  Max: 0.8415  Median: 0.5086
+Target 1 Logit Mean: 0.5870  Min: 0.0254  Max: 0.9706  Median: 0.6089
+Acc: 0.5807, Recall: 0.9839, Prec: 0.5479, F1: 0.7038, AUC: 0.6934
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4630  Min: 0.0000  Max: 0.9096  Median: 0.5089
+Target 1 Logit Mean: 0.5691  Min: 0.0006  Max: 0.8938  Median: 0.6002
+Acc: 0.8275, Recall: 0.3062, Prec: 0.1355, F1: 0.1879, AUC: 0.6691
+
+Epoch: 035, 0500/9999
+Epoch: 035, 1000/9999
+Epoch: 035, 1500/9999
+Epoch: 035, 2000/9999
+Epoch: 035, 2500/9999
+Epoch: 035, 3000/9999
+Epoch: 035, 3500/9999
+Epoch: 035, 4000/9999
+Epoch: 035, 4500/9999
+Epoch: 035, 5000/9999
+Epoch: 035, 5500/9999
+Epoch: 035, 6000/9999
+Epoch: 035, 6500/9999
+Epoch: 035, 7000/9999
+Epoch: 035, 7500/9999
+Epoch: 035, 8000/9999
+Epoch: 035, 8500/9999
+Epoch: 035, 9000/9999
+Epoch: 035, 9500/9999
+TRAINING LOSS: 0.62464
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4454  Min: 0.0000  Max: 0.9646  Median: 0.4654
+Target 1 Logit Mean: 0.5623  Min: 0.0527  Max: 0.9826  Median: 0.5673
+Acc: 0.5798, Recall: 0.9832, Prec: 0.5505, F1: 0.7058, AUC: 0.6928
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4494  Min: 0.0000  Max: 0.9696  Median: 0.4670
+Target 1 Logit Mean: 0.5447  Min: 0.0000  Max: 0.9169  Median: 0.5556
+Acc: 0.6954, Recall: 0.5165, Prec: 0.1097, F1: 0.1810, AUC: 0.6675
+
+Epoch: 036, 0500/9999
+Epoch: 036, 1000/9999
+Epoch: 036, 1500/9999
+Epoch: 036, 2000/9999
+Epoch: 036, 2500/9999
+Epoch: 036, 3000/9999
+Epoch: 036, 3500/9999
+Epoch: 036, 4000/9999
+Epoch: 036, 4500/9999
+Epoch: 036, 5000/9999
+Epoch: 036, 5500/9999
+Epoch: 036, 6000/9999
+Epoch: 036, 6500/9999
+Epoch: 036, 7000/9999
+Epoch: 036, 7500/9999
+Epoch: 036, 8000/9999
+Epoch: 036, 8500/9999
+Epoch: 036, 9000/9999
+Epoch: 036, 9500/9999
+TRAINING LOSS: 0.62486
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4747  Min: 0.0000  Max: 0.9968  Median: 0.4883
+Target 1 Logit Mean: 0.6034  Min: 0.1542  Max: 0.9963  Median: 0.6137
+Acc: 0.5700, Recall: 0.9779, Prec: 0.5379, F1: 0.6940, AUC: 0.6927
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4753  Min: 0.0000  Max: 1.0000  Median: 0.4869
+Target 1 Logit Mean: 0.5840  Min: 0.0041  Max: 0.9442  Median: 0.6015
+Acc: 0.7767, Recall: 0.3814, Prec: 0.1196, F1: 0.1821, AUC: 0.6672
+
+Epoch: 037, 0500/9999
+Epoch: 037, 1000/9999
+Epoch: 037, 1500/9999
+Epoch: 037, 2000/9999
+Epoch: 037, 2500/9999
+Epoch: 037, 3000/9999
+Epoch: 037, 3500/9999
+Epoch: 037, 4000/9999
+Epoch: 037, 4500/9999
+Epoch: 037, 5000/9999
+Epoch: 037, 5500/9999
+Epoch: 037, 6000/9999
+Epoch: 037, 6500/9999
+Epoch: 037, 7000/9999
+Epoch: 037, 7500/9999
+Epoch: 037, 8000/9999
+Epoch: 037, 8500/9999
+Epoch: 037, 9000/9999
+Epoch: 037, 9500/9999
+TRAINING LOSS: 0.62113
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4383  Min: 0.0000  Max: 0.9305  Median: 0.4727
+Target 1 Logit Mean: 0.5680  Min: 0.0167  Max: 0.9817  Median: 0.5779
+Acc: 0.5930, Recall: 0.9673, Prec: 0.5575, F1: 0.7073, AUC: 0.6963
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4398  Min: 0.0000  Max: 0.9964  Median: 0.4713
+Target 1 Logit Mean: 0.5467  Min: 0.0000  Max: 0.9042  Median: 0.5683
+Acc: 0.7646, Recall: 0.4098, Prec: 0.1194, F1: 0.1849, AUC: 0.6714
+
+Epoch: 038, 0500/9999
+Epoch: 038, 1000/9999
+Epoch: 038, 1500/9999
+Epoch: 038, 2000/9999
+Epoch: 038, 2500/9999
+Epoch: 038, 3000/9999
+Epoch: 038, 3500/9999
+Epoch: 038, 4000/9999
+Epoch: 038, 4500/9999
+Epoch: 038, 5000/9999
+Epoch: 038, 5500/9999
+Epoch: 038, 6000/9999
+Epoch: 038, 6500/9999
+Epoch: 038, 7000/9999
+Epoch: 038, 7500/9999
+Epoch: 038, 8000/9999
+Epoch: 038, 8500/9999
+Epoch: 038, 9000/9999
+Epoch: 038, 9500/9999
+TRAINING LOSS: 0.61842
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.3986  Min: 0.0000  Max: 0.9999  Median: 0.4356
+Target 1 Logit Mean: 0.5280  Min: 0.0000  Max: 0.9789  Median: 0.5365
+Acc: 0.5938, Recall: 0.9840, Prec: 0.5554, F1: 0.7101, AUC: 0.6918
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4039  Min: 0.0000  Max: 1.0000  Median: 0.4386
+Target 1 Logit Mean: 0.5096  Min: 0.0000  Max: 0.9062  Median: 0.5350
+Acc: 0.8379, Recall: 0.2955, Prec: 0.1422, F1: 0.1920, AUC: 0.6726
+
+Epoch: 039, 0500/9999
+Epoch: 039, 1000/9999
+Epoch: 039, 1500/9999
+Epoch: 039, 2000/9999
+Epoch: 039, 2500/9999
+Epoch: 039, 3000/9999
+Epoch: 039, 3500/9999
+Epoch: 039, 4000/9999
+Epoch: 039, 4500/9999
+Epoch: 039, 5000/9999
+Epoch: 039, 5500/9999
+Epoch: 039, 6000/9999
+Epoch: 039, 6500/9999
+Epoch: 039, 7000/9999
+Epoch: 039, 7500/9999
+Epoch: 039, 8000/9999
+Epoch: 039, 8500/9999
+Epoch: 039, 9000/9999
+Epoch: 039, 9500/9999
+TRAINING LOSS: 0.63339
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4591  Min: 0.0000  Max: 0.9997  Median: 0.4861
+Target 1 Logit Mean: 0.5964  Min: 0.0061  Max: 0.9999  Median: 0.6027
+Acc: 0.5778, Recall: 0.9627, Prec: 0.5432, F1: 0.6946, AUC: 0.6905
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4608  Min: 0.0000  Max: 0.9996  Median: 0.4863
+Target 1 Logit Mean: 0.5726  Min: 0.0001  Max: 0.9950  Median: 0.5899
+Acc: 0.7894, Recall: 0.3515, Prec: 0.1197, F1: 0.1786, AUC: 0.6610
+
+Epoch: 040, 0500/9999
+Epoch: 040, 1000/9999
+Epoch: 040, 1500/9999
+Epoch: 040, 2000/9999
+Epoch: 040, 2500/9999
+Epoch: 040, 3000/9999
+Epoch: 040, 3500/9999
+Epoch: 040, 4000/9999
+Epoch: 040, 4500/9999
+Epoch: 040, 5000/9999
+Epoch: 040, 5500/9999
+Epoch: 040, 6000/9999
+Epoch: 040, 6500/9999
+Epoch: 040, 7000/9999
+Epoch: 040, 7500/9999
+Epoch: 040, 8000/9999
+Epoch: 040, 8500/9999
+Epoch: 040, 9000/9999
+Epoch: 040, 9500/9999
+TRAINING LOSS: 0.62591
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4535  Min: 0.0000  Max: 0.9999  Median: 0.4828
+Target 1 Logit Mean: 0.5872  Min: 0.0199  Max: 1.0000  Median: 0.6031
+Acc: 0.5953, Recall: 0.9538, Prec: 0.5595, F1: 0.7053, AUC: 0.6933
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4525  Min: 0.0000  Max: 0.9998  Median: 0.4763
+Target 1 Logit Mean: 0.5644  Min: 0.0000  Max: 0.9999  Median: 0.5873
+Acc: 0.8130, Recall: 0.3346, Prec: 0.1318, F1: 0.1891, AUC: 0.6688
+
+Epoch: 041, 0500/9999
+Epoch: 041, 1000/9999
+Epoch: 041, 1500/9999
+Epoch: 041, 2000/9999
+Epoch: 041, 2500/9999
+Epoch: 041, 3000/9999
+Epoch: 041, 3500/9999
+Epoch: 041, 4000/9999
+Epoch: 041, 4500/9999
+Epoch: 041, 5000/9999
+Epoch: 041, 5500/9999
+Epoch: 041, 6000/9999
+Epoch: 041, 6500/9999
+Epoch: 041, 7000/9999
+Epoch: 041, 7500/9999
+Epoch: 041, 8000/9999
+Epoch: 041, 8500/9999
+Epoch: 041, 9000/9999
+Epoch: 041, 9500/9999
+TRAINING LOSS: 0.62019
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4642  Min: 0.0000  Max: 0.9804  Median: 0.5055
+Target 1 Logit Mean: 0.5940  Min: 0.0483  Max: 0.9998  Median: 0.6056
+Acc: 0.5802, Recall: 0.9744, Prec: 0.5455, F1: 0.6994, AUC: 0.6888
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4666  Min: 0.0000  Max: 0.9921  Median: 0.5060
+Target 1 Logit Mean: 0.5751  Min: 0.0003  Max: 0.9252  Median: 0.5949
+Acc: 0.8096, Recall: 0.3200, Prec: 0.1249, F1: 0.1797, AUC: 0.6675
+
+Epoch: 042, 0500/9999
+Epoch: 042, 1000/9999
+Epoch: 042, 1500/9999
+Epoch: 042, 2000/9999
+Epoch: 042, 2500/9999
+Epoch: 042, 3000/9999
+Epoch: 042, 3500/9999
+Epoch: 042, 4000/9999
+Epoch: 042, 4500/9999
+Epoch: 042, 5000/9999
+Epoch: 042, 5500/9999
+Epoch: 042, 6000/9999
+Epoch: 042, 6500/9999
+Epoch: 042, 7000/9999
+Epoch: 042, 7500/9999
+Epoch: 042, 8000/9999
+Epoch: 042, 8500/9999
+Epoch: 042, 9000/9999
+Epoch: 042, 9500/9999
+TRAINING LOSS: 0.61952
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4584  Min: 0.0000  Max: 0.9988  Median: 0.5034
+Target 1 Logit Mean: 0.5872  Min: 0.0459  Max: 0.9848  Median: 0.5985
+Acc: 0.5898, Recall: 0.9768, Prec: 0.5509, F1: 0.7045, AUC: 0.6945
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4595  Min: 0.0000  Max: 0.9702  Median: 0.5021
+Target 1 Logit Mean: 0.5643  Min: 0.0000  Max: 0.9839  Median: 0.5899
+Acc: 0.7254, Recall: 0.4628, Prec: 0.1118, F1: 0.1801, AUC: 0.6636
+
+Epoch: 043, 0500/9999
+Epoch: 043, 1000/9999
+Epoch: 043, 1500/9999
+Epoch: 043, 2000/9999
+Epoch: 043, 2500/9999
+Epoch: 043, 3000/9999
+Epoch: 043, 3500/9999
+Epoch: 043, 4000/9999
+Epoch: 043, 4500/9999
+Epoch: 043, 5000/9999
+Epoch: 043, 5500/9999
+Epoch: 043, 6000/9999
+Epoch: 043, 6500/9999
+Epoch: 043, 7000/9999
+Epoch: 043, 7500/9999
+Epoch: 043, 8000/9999
+Epoch: 043, 8500/9999
+Epoch: 043, 9000/9999
+Epoch: 043, 9500/9999
+TRAINING LOSS: 0.62399
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4104  Min: 0.0000  Max: 0.9986  Median: 0.4404
+Target 1 Logit Mean: 0.5251  Min: 0.0515  Max: 0.9893  Median: 0.5248
+Acc: 0.5893, Recall: 0.9792, Prec: 0.5517, F1: 0.7058, AUC: 0.6934
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4123  Min: 0.0000  Max: 0.9984  Median: 0.4398
+Target 1 Logit Mean: 0.5021  Min: 0.0000  Max: 0.9269  Median: 0.5154
+Acc: 0.7685, Recall: 0.3876, Prec: 0.1164, F1: 0.1791, AUC: 0.6583
+
+Epoch: 044, 0500/9999
+Epoch: 044, 1000/9999
+Epoch: 044, 1500/9999
+Epoch: 044, 2000/9999
+Epoch: 044, 2500/9999
+Epoch: 044, 3000/9999
+Epoch: 044, 3500/9999
+Epoch: 044, 4000/9999
+Epoch: 044, 4500/9999
+Epoch: 044, 5000/9999
+Epoch: 044, 5500/9999
+Epoch: 044, 6000/9999
+Epoch: 044, 6500/9999
+Epoch: 044, 7000/9999
+Epoch: 044, 7500/9999
+Epoch: 044, 8000/9999
+Epoch: 044, 8500/9999
+Epoch: 044, 9000/9999
+Epoch: 044, 9500/9999
+TRAINING LOSS: 0.62352
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4424  Min: 0.0000  Max: 0.8645  Median: 0.4581
+Target 1 Logit Mean: 0.5515  Min: 0.0928  Max: 0.9750  Median: 0.5556
+Acc: 0.5731, Recall: 0.9908, Prec: 0.5415, F1: 0.7003, AUC: 0.6911
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4411  Min: 0.0000  Max: 0.9367  Median: 0.4568
+Target 1 Logit Mean: 0.5319  Min: 0.0001  Max: 0.9225  Median: 0.5408
+Acc: 0.8135, Recall: 0.3170, Prec: 0.1270, F1: 0.1813, AUC: 0.6633
+
+Epoch: 045, 0500/9999
+Epoch: 045, 1000/9999
+Epoch: 045, 1500/9999
+Epoch: 045, 2000/9999
+Epoch: 045, 2500/9999
+Epoch: 045, 3000/9999
+Epoch: 045, 3500/9999
+Epoch: 045, 4000/9999
+Epoch: 045, 4500/9999
+Epoch: 045, 5000/9999
+Epoch: 045, 5500/9999
+Epoch: 045, 6000/9999
+Epoch: 045, 6500/9999
+Epoch: 045, 7000/9999
+Epoch: 045, 7500/9999
+Epoch: 045, 8000/9999
+Epoch: 045, 8500/9999
+Epoch: 045, 9000/9999
+Epoch: 045, 9500/9999
+TRAINING LOSS: 0.61783
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.3959  Min: 0.0000  Max: 0.8799  Median: 0.4085
+Target 1 Logit Mean: 0.5159  Min: 0.0001  Max: 0.9975  Median: 0.5154
+Acc: 0.5873, Recall: 0.9720, Prec: 0.5484, F1: 0.7012, AUC: 0.6902
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3955  Min: 0.0000  Max: 0.9827  Median: 0.4065
+Target 1 Logit Mean: 0.4941  Min: 0.0000  Max: 0.8909  Median: 0.4983
+Acc: 0.7081, Recall: 0.4958, Prec: 0.1108, F1: 0.1812, AUC: 0.6625
+
+Epoch: 046, 0500/9999
+Epoch: 046, 1000/9999
+Epoch: 046, 1500/9999
+Epoch: 046, 2000/9999
+Epoch: 046, 2500/9999
+Epoch: 046, 3000/9999
+Epoch: 046, 3500/9999
+Epoch: 046, 4000/9999
+Epoch: 046, 4500/9999
+Epoch: 046, 5000/9999
+Epoch: 046, 5500/9999
+Epoch: 046, 6000/9999
+Epoch: 046, 6500/9999
+Epoch: 046, 7000/9999
+Epoch: 046, 7500/9999
+Epoch: 046, 8000/9999
+Epoch: 046, 8500/9999
+Epoch: 046, 9000/9999
+Epoch: 046, 9500/9999
+TRAINING LOSS: 0.61733
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4297  Min: 0.0000  Max: 0.9892  Median: 0.4593
+Target 1 Logit Mean: 0.5571  Min: 0.0744  Max: 0.9978  Median: 0.5617
+Acc: 0.5905, Recall: 0.9779, Prec: 0.5541, F1: 0.7074, AUC: 0.6915
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4277  Min: 0.0000  Max: 0.9982  Median: 0.4549
+Target 1 Logit Mean: 0.5286  Min: 0.0000  Max: 0.9550  Median: 0.5433
+Acc: 0.8040, Recall: 0.3408, Prec: 0.1267, F1: 0.1847, AUC: 0.6621
+
+Epoch: 047, 0500/9999
+Epoch: 047, 1000/9999
+Epoch: 047, 1500/9999
+Epoch: 047, 2000/9999
+Epoch: 047, 2500/9999
+Epoch: 047, 3000/9999
+Epoch: 047, 3500/9999
+Epoch: 047, 4000/9999
+Epoch: 047, 4500/9999
+Epoch: 047, 5000/9999
+Epoch: 047, 5500/9999
+Epoch: 047, 6000/9999
+Epoch: 047, 6500/9999
+Epoch: 047, 7000/9999
+Epoch: 047, 7500/9999
+Epoch: 047, 8000/9999
+Epoch: 047, 8500/9999
+Epoch: 047, 9000/9999
+Epoch: 047, 9500/9999
+TRAINING LOSS: 0.62941
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4590  Min: 0.0000  Max: 0.9954  Median: 0.4800
+Target 1 Logit Mean: 0.5883  Min: 0.0194  Max: 0.9956  Median: 0.5985
+Acc: 0.5764, Recall: 0.9794, Prec: 0.5428, F1: 0.6985, AUC: 0.6806
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4599  Min: 0.0000  Max: 0.9801  Median: 0.4764
+Target 1 Logit Mean: 0.5746  Min: 0.0006  Max: 0.9690  Median: 0.5949
+Acc: 0.7258, Recall: 0.4866, Prec: 0.1164, F1: 0.1878, AUC: 0.6723
+
+Epoch: 048, 0500/9999
+Epoch: 048, 1000/9999
+Epoch: 048, 1500/9999
+Epoch: 048, 2000/9999
+Epoch: 048, 2500/9999
+Epoch: 048, 3000/9999
+Epoch: 048, 3500/9999
+Epoch: 048, 4000/9999
+Epoch: 048, 4500/9999
+Epoch: 048, 5000/9999
+Epoch: 048, 5500/9999
+Epoch: 048, 6000/9999
+Epoch: 048, 6500/9999
+Epoch: 048, 7000/9999
+Epoch: 048, 7500/9999
+Epoch: 048, 8000/9999
+Epoch: 048, 8500/9999
+Epoch: 048, 9000/9999
+Epoch: 048, 9500/9999
+TRAINING LOSS: 0.61929
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4289  Min: 0.0000  Max: 0.9613  Median: 0.4610
+Target 1 Logit Mean: 0.5656  Min: 0.0005  Max: 0.9627  Median: 0.5775
+Acc: 0.5866, Recall: 0.9642, Prec: 0.5505, F1: 0.7009, AUC: 0.7001
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4293  Min: 0.0000  Max: 0.9567  Median: 0.4628
+Target 1 Logit Mean: 0.5375  Min: 0.0000  Max: 0.9017  Median: 0.5595
+Acc: 0.7801, Recall: 0.3853, Prec: 0.1225, F1: 0.1859, AUC: 0.6665
+
+Epoch: 049, 0500/9999
+Epoch: 049, 1000/9999
+Epoch: 049, 1500/9999
+Epoch: 049, 2000/9999
+Epoch: 049, 2500/9999
+Epoch: 049, 3000/9999
+Epoch: 049, 3500/9999
+Epoch: 049, 4000/9999
+Epoch: 049, 4500/9999
+Epoch: 049, 5000/9999
+Epoch: 049, 5500/9999
+Epoch: 049, 6000/9999
+Epoch: 049, 6500/9999
+Epoch: 049, 7000/9999
+Epoch: 049, 7500/9999
+Epoch: 049, 8000/9999
+Epoch: 049, 8500/9999
+Epoch: 049, 9000/9999
+Epoch: 049, 9500/9999
+TRAINING LOSS: 0.63016
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4013  Min: 0.0000  Max: 0.9806  Median: 0.4061
+Target 1 Logit Mean: 0.5033  Min: 0.0815  Max: 0.8725  Median: 0.5031
+Acc: 0.5671, Recall: 0.9718, Prec: 0.5369, F1: 0.6917, AUC: 0.6909
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3996  Min: 0.0000  Max: 0.9995  Median: 0.4071
+Target 1 Logit Mean: 0.4876  Min: 0.0082  Max: 0.9991  Median: 0.4890
+Acc: 0.7246, Recall: 0.4643, Prec: 0.1117, F1: 0.1801, AUC: 0.6635
+
+Epoch: 050, 0500/9999
+Epoch: 050, 1000/9999
+Epoch: 050, 1500/9999
+Epoch: 050, 2000/9999
+Epoch: 050, 2500/9999
+Epoch: 050, 3000/9999
+Epoch: 050, 3500/9999
+Epoch: 050, 4000/9999
+Epoch: 050, 4500/9999
+Epoch: 050, 5000/9999
+Epoch: 050, 5500/9999
+Epoch: 050, 6000/9999
+Epoch: 050, 6500/9999
+Epoch: 050, 7000/9999
+Epoch: 050, 7500/9999
+Epoch: 050, 8000/9999
+Epoch: 050, 8500/9999
+Epoch: 050, 9000/9999
+Epoch: 050, 9500/9999
+TRAINING LOSS: 0.62096
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4646  Min: 0.0000  Max: 0.9281  Median: 0.4739
+Target 1 Logit Mean: 0.6035  Min: 0.1362  Max: 0.9585  Median: 0.6197
+Acc: 0.5823, Recall: 0.9726, Prec: 0.5466, F1: 0.6999, AUC: 0.6948
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4625  Min: 0.0000  Max: 0.9937  Median: 0.4698
+Target 1 Logit Mean: 0.5778  Min: 0.0000  Max: 0.9375  Median: 0.6064
+Acc: 0.7728, Recall: 0.4006, Prec: 0.1218, F1: 0.1869, AUC: 0.6668
+
+Epoch: 051, 0500/9999
+Epoch: 051, 1000/9999
+Epoch: 051, 1500/9999
+Epoch: 051, 2000/9999
+Epoch: 051, 2500/9999
+Epoch: 051, 3000/9999
+Epoch: 051, 3500/9999
+Epoch: 051, 4000/9999
+Epoch: 051, 4500/9999
+Epoch: 051, 5000/9999
+Epoch: 051, 5500/9999
+Epoch: 051, 6000/9999
+Epoch: 051, 6500/9999
+Epoch: 051, 7000/9999
+Epoch: 051, 7500/9999
+Epoch: 051, 8000/9999
+Epoch: 051, 8500/9999
+Epoch: 051, 9000/9999
+Epoch: 051, 9500/9999
+TRAINING LOSS: 0.61806
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4133  Min: 0.0000  Max: 0.9306  Median: 0.4340
+Target 1 Logit Mean: 0.5374  Min: 0.0296  Max: 0.9984  Median: 0.5436
+Acc: 0.5838, Recall: 0.9799, Prec: 0.5457, F1: 0.7010, AUC: 0.6916
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4090  Min: 0.0000  Max: 0.9948  Median: 0.4320
+Target 1 Logit Mean: 0.5069  Min: 0.0000  Max: 0.9524  Median: 0.5225
+Acc: 0.8275, Recall: 0.2909, Prec: 0.1305, F1: 0.1802, AUC: 0.6597
+
+Epoch: 052, 0500/9999
+Epoch: 052, 1000/9999
+Epoch: 052, 1500/9999
+Epoch: 052, 2000/9999
+Epoch: 052, 2500/9999
+Epoch: 052, 3000/9999
+Epoch: 052, 3500/9999
+Epoch: 052, 4000/9999
+Epoch: 052, 4500/9999
+Epoch: 052, 5000/9999
+Epoch: 052, 5500/9999
+Epoch: 052, 6000/9999
+Epoch: 052, 6500/9999
+Epoch: 052, 7000/9999
+Epoch: 052, 7500/9999
+Epoch: 052, 8000/9999
+Epoch: 052, 8500/9999
+Epoch: 052, 9000/9999
+Epoch: 052, 9500/9999
+TRAINING LOSS: 0.61600
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4231  Min: 0.0000  Max: 0.9510  Median: 0.4587
+Target 1 Logit Mean: 0.5641  Min: 0.0617  Max: 0.9790  Median: 0.5721
+Acc: 0.5910, Recall: 0.9685, Prec: 0.5494, F1: 0.7011, AUC: 0.7012
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4228  Min: 0.0000  Max: 0.9838  Median: 0.4579
+Target 1 Logit Mean: 0.5312  Min: 0.0000  Max: 0.9134  Median: 0.5561
+Acc: 0.7834, Recall: 0.3791, Prec: 0.1230, F1: 0.1857, AUC: 0.6649
+
+Epoch: 053, 0500/9999
+Epoch: 053, 1000/9999
+Epoch: 053, 1500/9999
+Epoch: 053, 2000/9999
+Epoch: 053, 2500/9999
+Epoch: 053, 3000/9999
+Epoch: 053, 3500/9999
+Epoch: 053, 4000/9999
+Epoch: 053, 4500/9999
+Epoch: 053, 5000/9999
+Epoch: 053, 5500/9999
+Epoch: 053, 6000/9999
+Epoch: 053, 6500/9999
+Epoch: 053, 7000/9999
+Epoch: 053, 7500/9999
+Epoch: 053, 8000/9999
+Epoch: 053, 8500/9999
+Epoch: 053, 9000/9999
+Epoch: 053, 9500/9999
+TRAINING LOSS: 0.62730
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4145  Min: 0.0000  Max: 0.8592  Median: 0.4185
+Target 1 Logit Mean: 0.5409  Min: 0.0001  Max: 0.9998  Median: 0.5376
+Acc: 0.5909, Recall: 0.9685, Prec: 0.5499, F1: 0.7015, AUC: 0.6981
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4109  Min: 0.0000  Max: 1.0000  Median: 0.4122
+Target 1 Logit Mean: 0.5086  Min: 0.0000  Max: 0.9557  Median: 0.5203
+Acc: 0.7549, Recall: 0.4190, Prec: 0.1164, F1: 0.1822, AUC: 0.6625
+
+Epoch: 054, 0500/9999
+Epoch: 054, 1000/9999
+Epoch: 054, 1500/9999
+Epoch: 054, 2000/9999
+Epoch: 054, 2500/9999
+Epoch: 054, 3000/9999
+Epoch: 054, 3500/9999
+Epoch: 054, 4000/9999
+Epoch: 054, 4500/9999
+Epoch: 054, 5000/9999
+Epoch: 054, 5500/9999
+Epoch: 054, 6000/9999
+Epoch: 054, 6500/9999
+Epoch: 054, 7000/9999
+Epoch: 054, 7500/9999
+Epoch: 054, 8000/9999
+Epoch: 054, 8500/9999
+Epoch: 054, 9000/9999
+Epoch: 054, 9500/9999
+TRAINING LOSS: 0.61407
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4600  Min: 0.0000  Max: 0.9155  Median: 0.4460
+Target 1 Logit Mean: 0.5734  Min: 0.1374  Max: 0.9975  Median: 0.5750
+Acc: 0.5822, Recall: 0.9786, Prec: 0.5457, F1: 0.7007, AUC: 0.6868
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4600  Min: 0.0000  Max: 0.9668  Median: 0.4402
+Target 1 Logit Mean: 0.5566  Min: 0.0000  Max: 0.9795  Median: 0.5616
+Acc: 0.7554, Recall: 0.4213, Prec: 0.1171, F1: 0.1833, AUC: 0.6642
+
+Epoch: 055, 0500/9999
+Epoch: 055, 1000/9999
+Epoch: 055, 1500/9999
+Epoch: 055, 2000/9999
+Epoch: 055, 2500/9999
+Epoch: 055, 3000/9999
+Epoch: 055, 3500/9999
+Epoch: 055, 4000/9999
+Epoch: 055, 4500/9999
+Epoch: 055, 5000/9999
+Epoch: 055, 5500/9999
+Epoch: 055, 6000/9999
+Epoch: 055, 6500/9999
+Epoch: 055, 7000/9999
+Epoch: 055, 7500/9999
+Epoch: 055, 8000/9999
+Epoch: 055, 8500/9999
+Epoch: 055, 9000/9999
+Epoch: 055, 9500/9999
+TRAINING LOSS: 0.61703
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4335  Min: 0.0000  Max: 0.9585  Median: 0.4563
+Target 1 Logit Mean: 0.5752  Min: 0.0007  Max: 1.0000  Median: 0.5861
+Acc: 0.5961, Recall: 0.9749, Prec: 0.5567, F1: 0.7087, AUC: 0.7055
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4343  Min: 0.0000  Max: 0.9913  Median: 0.4541
+Target 1 Logit Mean: 0.5400  Min: 0.0000  Max: 0.9529  Median: 0.5594
+Acc: 0.7681, Recall: 0.3991, Prec: 0.1189, F1: 0.1832, AUC: 0.6605
+
+Epoch: 056, 0500/9999
+Epoch: 056, 1000/9999
+Epoch: 056, 1500/9999
+Epoch: 056, 2000/9999
+Epoch: 056, 2500/9999
+Epoch: 056, 3000/9999
+Epoch: 056, 3500/9999
+Epoch: 056, 4000/9999
+Epoch: 056, 4500/9999
+Epoch: 056, 5000/9999
+Epoch: 056, 5500/9999
+Epoch: 056, 6000/9999
+Epoch: 056, 6500/9999
+Epoch: 056, 7000/9999
+Epoch: 056, 7500/9999
+Epoch: 056, 8000/9999
+Epoch: 056, 8500/9999
+Epoch: 056, 9000/9999
+Epoch: 056, 9500/9999
+TRAINING LOSS: 0.61860
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4400  Min: 0.0000  Max: 0.9715  Median: 0.4552
+Target 1 Logit Mean: 0.5517  Min: 0.1689  Max: 0.9991  Median: 0.5545
+Acc: 0.5705, Recall: 0.9944, Prec: 0.5385, F1: 0.6986, AUC: 0.6962
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4420  Min: 0.0000  Max: 0.9959  Median: 0.4556
+Target 1 Logit Mean: 0.5292  Min: 0.0022  Max: 0.8644  Median: 0.5430
+Acc: 0.8205, Recall: 0.3108, Prec: 0.1308, F1: 0.1841, AUC: 0.6625
+
+Epoch: 057, 0500/9999
+Epoch: 057, 1000/9999
+Epoch: 057, 1500/9999
+Epoch: 057, 2000/9999
+Epoch: 057, 2500/9999
+Epoch: 057, 3000/9999
+Epoch: 057, 3500/9999
+Epoch: 057, 4000/9999
+Epoch: 057, 4500/9999
+Epoch: 057, 5000/9999
+Epoch: 057, 5500/9999
+Epoch: 057, 6000/9999
+Epoch: 057, 6500/9999
+Epoch: 057, 7000/9999
+Epoch: 057, 7500/9999
+Epoch: 057, 8000/9999
+Epoch: 057, 8500/9999
+Epoch: 057, 9000/9999
+Epoch: 057, 9500/9999
+TRAINING LOSS: 0.61220
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4586  Min: 0.0000  Max: 0.9854  Median: 0.4837
+Target 1 Logit Mean: 0.5883  Min: 0.0538  Max: 1.0000  Median: 0.6082
+Acc: 0.5958, Recall: 0.9769, Prec: 0.5586, F1: 0.7107, AUC: 0.6940
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4583  Min: 0.0000  Max: 0.9711  Median: 0.4785
+Target 1 Logit Mean: 0.5617  Min: 0.0000  Max: 0.9598  Median: 0.5991
+Acc: 0.7204, Recall: 0.4965, Prec: 0.1159, F1: 0.1879, AUC: 0.6622
+
+Epoch: 058, 0500/9999
+Epoch: 058, 1000/9999
+Epoch: 058, 1500/9999
+Epoch: 058, 2000/9999
+Epoch: 058, 2500/9999
+Epoch: 058, 3000/9999
+Epoch: 058, 3500/9999
+Epoch: 058, 4000/9999
+Epoch: 058, 4500/9999
+Epoch: 058, 5000/9999
+Epoch: 058, 5500/9999
+Epoch: 058, 6000/9999
+Epoch: 058, 6500/9999
+Epoch: 058, 7000/9999
+Epoch: 058, 7500/9999
+Epoch: 058, 8000/9999
+Epoch: 058, 8500/9999
+Epoch: 058, 9000/9999
+Epoch: 058, 9500/9999
+TRAINING LOSS: 0.61693
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4269  Min: 0.0000  Max: 0.9971  Median: 0.4641
+Target 1 Logit Mean: 0.5702  Min: 0.0091  Max: 0.9988  Median: 0.5856
+Acc: 0.5949, Recall: 0.9579, Prec: 0.5557, F1: 0.7034, AUC: 0.7007
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4271  Min: 0.0000  Max: 1.0000  Median: 0.4649
+Target 1 Logit Mean: 0.5312  Min: 0.0000  Max: 0.9717  Median: 0.5589
+Acc: 0.7630, Recall: 0.3922, Prec: 0.1146, F1: 0.1773, AUC: 0.6509
+
+Epoch: 059, 0500/9999
+Epoch: 059, 1000/9999
+Epoch: 059, 1500/9999
+Epoch: 059, 2000/9999
+Epoch: 059, 2500/9999
+Epoch: 059, 3000/9999
+Epoch: 059, 3500/9999
+Epoch: 059, 4000/9999
+Epoch: 059, 4500/9999
+Epoch: 059, 5000/9999
+Epoch: 059, 5500/9999
+Epoch: 059, 6000/9999
+Epoch: 059, 6500/9999
+Epoch: 059, 7000/9999
+Epoch: 059, 7500/9999
+Epoch: 059, 8000/9999
+Epoch: 059, 8500/9999
+Epoch: 059, 9000/9999
+Epoch: 059, 9500/9999
+TRAINING LOSS: 0.67046
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4297  Min: 0.0000  Max: 0.8651  Median: 0.4593
+Target 1 Logit Mean: 0.5504  Min: 0.0529  Max: 0.9532  Median: 0.5596
+Acc: 0.5920, Recall: 0.9825, Prec: 0.5548, F1: 0.7092, AUC: 0.6989
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4313  Min: 0.0000  Max: 1.0000  Median: 0.4557
+Target 1 Logit Mean: 0.5232  Min: 0.0000  Max: 0.9207  Median: 0.5404
+Acc: 0.7167, Recall: 0.4728, Prec: 0.1101, F1: 0.1786, AUC: 0.6600
+
+Epoch: 060, 0500/9999
+Epoch: 060, 1000/9999
+Epoch: 060, 1500/9999
+Epoch: 060, 2000/9999
+Epoch: 060, 2500/9999
+Epoch: 060, 3000/9999
+Epoch: 060, 3500/9999
+Epoch: 060, 4000/9999
+Epoch: 060, 4500/9999
+Epoch: 060, 5000/9999
+Epoch: 060, 5500/9999
+Epoch: 060, 6000/9999
+Epoch: 060, 6500/9999
+Epoch: 060, 7000/9999
+Epoch: 060, 7500/9999
+Epoch: 060, 8000/9999
+Epoch: 060, 8500/9999
+Epoch: 060, 9000/9999
+Epoch: 060, 9500/9999
+TRAINING LOSS: 0.61894
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4105  Min: 0.0000  Max: 0.9923  Median: 0.4395
+Target 1 Logit Mean: 0.5424  Min: 0.0254  Max: 0.9816  Median: 0.5476
+Acc: 0.5944, Recall: 0.9732, Prec: 0.5508, F1: 0.7035, AUC: 0.7097
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4148  Min: 0.0000  Max: 0.9988  Median: 0.4434
+Target 1 Logit Mean: 0.5125  Min: 0.0000  Max: 0.8942  Median: 0.5303
+Acc: 0.7439, Recall: 0.4505, Prec: 0.1176, F1: 0.1865, AUC: 0.6638
+
+Epoch: 061, 0500/9999
+Epoch: 061, 1000/9999
+Epoch: 061, 1500/9999
+Epoch: 061, 2000/9999
+Epoch: 061, 2500/9999
+Epoch: 061, 3000/9999
+Epoch: 061, 3500/9999
+Epoch: 061, 4000/9999
+Epoch: 061, 4500/9999
+Epoch: 061, 5000/9999
+Epoch: 061, 5500/9999
+Epoch: 061, 6000/9999
+Epoch: 061, 6500/9999
+Epoch: 061, 7000/9999
+Epoch: 061, 7500/9999
+Epoch: 061, 8000/9999
+Epoch: 061, 8500/9999
+Epoch: 061, 9000/9999
+Epoch: 061, 9500/9999
+TRAINING LOSS: 0.61555
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4409  Min: 0.0000  Max: 0.9355  Median: 0.4391
+Target 1 Logit Mean: 0.5889  Min: 0.0630  Max: 0.9913  Median: 0.6018
+Acc: 0.5807, Recall: 0.9864, Prec: 0.5428, F1: 0.7002, AUC: 0.7008
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4420  Min: 0.0000  Max: 0.9981  Median: 0.4438
+Target 1 Logit Mean: 0.5549  Min: 0.0009  Max: 0.9747  Median: 0.5663
+Acc: 0.8038, Recall: 0.3377, Prec: 0.1257, F1: 0.1832, AUC: 0.6641
+
+Epoch: 062, 0500/9999
+Epoch: 062, 1000/9999
+Epoch: 062, 1500/9999
+Epoch: 062, 2000/9999
+Epoch: 062, 2500/9999
+Epoch: 062, 3000/9999
+Epoch: 062, 3500/9999
+Epoch: 062, 4000/9999
+Epoch: 062, 4500/9999
+Epoch: 062, 5000/9999
+Epoch: 062, 5500/9999
+Epoch: 062, 6000/9999
+Epoch: 062, 6500/9999
+Epoch: 062, 7000/9999
+Epoch: 062, 7500/9999
+Epoch: 062, 8000/9999
+Epoch: 062, 8500/9999
+Epoch: 062, 9000/9999
+Epoch: 062, 9500/9999
+TRAINING LOSS: 0.61684
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4123  Min: 0.0000  Max: 0.9899  Median: 0.4332
+Target 1 Logit Mean: 0.5718  Min: 0.0029  Max: 0.9991  Median: 0.5791
+Acc: 0.6038, Recall: 0.9711, Prec: 0.5655, F1: 0.7148, AUC: 0.6985
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4143  Min: 0.0000  Max: 0.9993  Median: 0.4308
+Target 1 Logit Mean: 0.5376  Min: 0.0000  Max: 0.9828  Median: 0.5646
+Acc: 0.6859, Recall: 0.5249, Prec: 0.1078, F1: 0.1788, AUC: 0.6593
+
+Epoch: 063, 0500/9999
+Epoch: 063, 1000/9999
+Epoch: 063, 1500/9999
+Epoch: 063, 2000/9999
+Epoch: 063, 2500/9999
+Epoch: 063, 3000/9999
+Epoch: 063, 3500/9999
+Epoch: 063, 4000/9999
+Epoch: 063, 4500/9999
+Epoch: 063, 5000/9999
+Epoch: 063, 5500/9999
+Epoch: 063, 6000/9999
+Epoch: 063, 6500/9999
+Epoch: 063, 7000/9999
+Epoch: 063, 7500/9999
+Epoch: 063, 8000/9999
+Epoch: 063, 8500/9999
+Epoch: 063, 9000/9999
+Epoch: 063, 9500/9999
+TRAINING LOSS: 0.61292
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4362  Min: 0.0000  Max: 0.9412  Median: 0.4485
+Target 1 Logit Mean: 0.5807  Min: 0.1301  Max: 1.0000  Median: 0.5862
+Acc: 0.5900, Recall: 0.9850, Prec: 0.5491, F1: 0.7052, AUC: 0.7020
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4420  Min: 0.0000  Max: 0.9983  Median: 0.4530
+Target 1 Logit Mean: 0.5443  Min: 0.0000  Max: 0.9520  Median: 0.5581
+Acc: 0.7566, Recall: 0.4045, Prec: 0.1141, F1: 0.1780, AUC: 0.6538
+
+Epoch: 064, 0500/9999
+Epoch: 064, 1000/9999
+Epoch: 064, 1500/9999
+Epoch: 064, 2000/9999
+Epoch: 064, 2500/9999
+Epoch: 064, 3000/9999
+Epoch: 064, 3500/9999
+Epoch: 064, 4000/9999
+Epoch: 064, 4500/9999
+Epoch: 064, 5000/9999
+Epoch: 064, 5500/9999
+Epoch: 064, 6000/9999
+Epoch: 064, 6500/9999
+Epoch: 064, 7000/9999
+Epoch: 064, 7500/9999
+Epoch: 064, 8000/9999
+Epoch: 064, 8500/9999
+Epoch: 064, 9000/9999
+Epoch: 064, 9500/9999
+TRAINING LOSS: 0.61643
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.3890  Min: 0.0000  Max: 0.9751  Median: 0.4191
+Target 1 Logit Mean: 0.5251  Min: 0.0371  Max: 1.0000  Median: 0.5134
+Acc: 0.6095, Recall: 0.9819, Prec: 0.5686, F1: 0.7202, AUC: 0.7003
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3909  Min: 0.0000  Max: 1.0000  Median: 0.4191
+Target 1 Logit Mean: 0.4895  Min: 0.0000  Max: 0.9998  Median: 0.4847
+Acc: 0.7948, Recall: 0.3392, Prec: 0.1200, F1: 0.1773, AUC: 0.6551
+
+Epoch: 065, 0500/9999
+Epoch: 065, 1000/9999
+Epoch: 065, 1500/9999
+Epoch: 065, 2000/9999
+Epoch: 065, 2500/9999
+Epoch: 065, 3000/9999
+Epoch: 065, 3500/9999
+Epoch: 065, 4000/9999
+Epoch: 065, 4500/9999
+Epoch: 065, 5000/9999
+Epoch: 065, 5500/9999
+Epoch: 065, 6000/9999
+Epoch: 065, 6500/9999
+Epoch: 065, 7000/9999
+Epoch: 065, 7500/9999
+Epoch: 065, 8000/9999
+Epoch: 065, 8500/9999
+Epoch: 065, 9000/9999
+Epoch: 065, 9500/9999
+TRAINING LOSS: 0.62492
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4751  Min: 0.0000  Max: 1.0000  Median: 0.5077
+Target 1 Logit Mean: 0.5921  Min: 0.0319  Max: 0.9975  Median: 0.6023
+Acc: 0.5698, Recall: 0.9851, Prec: 0.5351, F1: 0.6935, AUC: 0.6883
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4766  Min: 0.0000  Max: 1.0000  Median: 0.5067
+Target 1 Logit Mean: 0.5706  Min: 0.0002  Max: 0.9985  Median: 0.5961
+Acc: 0.7160, Recall: 0.4820, Prec: 0.1115, F1: 0.1811, AUC: 0.6624
+
+Epoch: 066, 0500/9999
+Epoch: 066, 1000/9999
+Epoch: 066, 1500/9999
+Epoch: 066, 2000/9999
+Epoch: 066, 2500/9999
+Epoch: 066, 3000/9999
+Epoch: 066, 3500/9999
+Epoch: 066, 4000/9999
+Epoch: 066, 4500/9999
+Epoch: 066, 5000/9999
+Epoch: 066, 5500/9999
+Epoch: 066, 6000/9999
+Epoch: 066, 6500/9999
+Epoch: 066, 7000/9999
+Epoch: 066, 7500/9999
+Epoch: 066, 8000/9999
+Epoch: 066, 8500/9999
+Epoch: 066, 9000/9999
+Epoch: 066, 9500/9999
+TRAINING LOSS: 0.61357
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4185  Min: 0.0000  Max: 0.8911  Median: 0.4480
+Target 1 Logit Mean: 0.5557  Min: 0.0151  Max: 0.9597  Median: 0.5553
+Acc: 0.5976, Recall: 0.9833, Prec: 0.5559, F1: 0.7102, AUC: 0.7039
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4215  Min: 0.0000  Max: 1.0000  Median: 0.4480
+Target 1 Logit Mean: 0.5288  Min: 0.0000  Max: 0.9384  Median: 0.5442
+Acc: 0.7250, Recall: 0.4835, Prec: 0.1154, F1: 0.1864, AUC: 0.6715
+
+Epoch: 067, 0500/9999
+Epoch: 067, 1000/9999
+Epoch: 067, 1500/9999
+Epoch: 067, 2000/9999
+Epoch: 067, 2500/9999
+Epoch: 067, 3000/9999
+Epoch: 067, 3500/9999
+Epoch: 067, 4000/9999
+Epoch: 067, 4500/9999
+Epoch: 067, 5000/9999
+Epoch: 067, 5500/9999
+Epoch: 067, 6000/9999
+Epoch: 067, 6500/9999
+Epoch: 067, 7000/9999
+Epoch: 067, 7500/9999
+Epoch: 067, 8000/9999
+Epoch: 067, 8500/9999
+Epoch: 067, 9000/9999
+Epoch: 067, 9500/9999
+TRAINING LOSS: 0.61401
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4288  Min: 0.0000  Max: 0.9558  Median: 0.4348
+Target 1 Logit Mean: 0.5812  Min: 0.0003  Max: 1.0000  Median: 0.5792
+Acc: 0.5967, Recall: 0.9729, Prec: 0.5565, F1: 0.7080, AUC: 0.7038
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4284  Min: 0.0000  Max: 0.9996  Median: 0.4310
+Target 1 Logit Mean: 0.5411  Min: 0.0000  Max: 0.9825  Median: 0.5462
+Acc: 0.8201, Recall: 0.3001, Prec: 0.1271, F1: 0.1785, AUC: 0.6569
+
+Epoch: 068, 0500/9999
+Epoch: 068, 1000/9999
+Epoch: 068, 1500/9999
+Epoch: 068, 2000/9999
+Epoch: 068, 2500/9999
+Epoch: 068, 3000/9999
+Epoch: 068, 3500/9999
+Epoch: 068, 4000/9999
+Epoch: 068, 4500/9999
+Epoch: 068, 5000/9999
+Epoch: 068, 5500/9999
+Epoch: 068, 6000/9999
+Epoch: 068, 6500/9999
+Epoch: 068, 7000/9999
+Epoch: 068, 7500/9999
+Epoch: 068, 8000/9999
+Epoch: 068, 8500/9999
+Epoch: 068, 9000/9999
+Epoch: 068, 9500/9999
+TRAINING LOSS: 0.61376
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4501  Min: 0.0000  Max: 0.9998  Median: 0.4787
+Target 1 Logit Mean: 0.6180  Min: 0.0000  Max: 1.0000  Median: 0.6505
+Acc: 0.5926, Recall: 0.9535, Prec: 0.5532, F1: 0.7001, AUC: 0.7059
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4489  Min: 0.0000  Max: 1.0000  Median: 0.4792
+Target 1 Logit Mean: 0.5805  Min: 0.0000  Max: 0.9916  Median: 0.6225
+Acc: 0.8144, Recall: 0.3231, Prec: 0.1295, F1: 0.1849, AUC: 0.6642
+
+Epoch: 069, 0500/9999
+Epoch: 069, 1000/9999
+Epoch: 069, 1500/9999
+Epoch: 069, 2000/9999
+Epoch: 069, 2500/9999
+Epoch: 069, 3000/9999
+Epoch: 069, 3500/9999
+Epoch: 069, 4000/9999
+Epoch: 069, 4500/9999
+Epoch: 069, 5000/9999
+Epoch: 069, 5500/9999
+Epoch: 069, 6000/9999
+Epoch: 069, 6500/9999
+Epoch: 069, 7000/9999
+Epoch: 069, 7500/9999
+Epoch: 069, 8000/9999
+Epoch: 069, 8500/9999
+Epoch: 069, 9000/9999
+Epoch: 069, 9500/9999
+TRAINING LOSS: 0.61552
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4031  Min: 0.0000  Max: 0.9975  Median: 0.4157
+Target 1 Logit Mean: 0.5671  Min: 0.0142  Max: 0.9999  Median: 0.5573
+Acc: 0.6076, Recall: 0.9663, Prec: 0.5622, F1: 0.7108, AUC: 0.7119
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4022  Min: 0.0000  Max: 0.9978  Median: 0.4157
+Target 1 Logit Mean: 0.5167  Min: 0.0000  Max: 0.9438  Median: 0.5172
+Acc: 0.7340, Recall: 0.4428, Prec: 0.1116, F1: 0.1783, AUC: 0.6545
+
+Epoch: 070, 0500/9999
+Epoch: 070, 1000/9999
+Epoch: 070, 1500/9999
+Epoch: 070, 2000/9999
+Epoch: 070, 2500/9999
+Epoch: 070, 3000/9999
+Epoch: 070, 3500/9999
+Epoch: 070, 4000/9999
+Epoch: 070, 4500/9999
+Epoch: 070, 5000/9999
+Epoch: 070, 5500/9999
+Epoch: 070, 6000/9999
+Epoch: 070, 6500/9999
+Epoch: 070, 7000/9999
+Epoch: 070, 7500/9999
+Epoch: 070, 8000/9999
+Epoch: 070, 8500/9999
+Epoch: 070, 9000/9999
+Epoch: 070, 9500/9999
+TRAINING LOSS: 0.61115
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4223  Min: 0.0000  Max: 1.0000  Median: 0.4408
+Target 1 Logit Mean: 0.5828  Min: 0.1062  Max: 1.0000  Median: 0.5830
+Acc: 0.5962, Recall: 0.9958, Prec: 0.5545, F1: 0.7123, AUC: 0.7144
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4250  Min: 0.0000  Max: 1.0000  Median: 0.4395
+Target 1 Logit Mean: 0.5422  Min: 0.0000  Max: 0.9558  Median: 0.5644
+Acc: 0.7592, Recall: 0.4121, Prec: 0.1170, F1: 0.1823, AUC: 0.6653
+
+Epoch: 071, 0500/9999
+Epoch: 071, 1000/9999
+Epoch: 071, 1500/9999
+Epoch: 071, 2000/9999
+Epoch: 071, 2500/9999
+Epoch: 071, 3000/9999
+Epoch: 071, 3500/9999
+Epoch: 071, 4000/9999
+Epoch: 071, 4500/9999
+Epoch: 071, 5000/9999
+Epoch: 071, 5500/9999
+Epoch: 071, 6000/9999
+Epoch: 071, 6500/9999
+Epoch: 071, 7000/9999
+Epoch: 071, 7500/9999
+Epoch: 071, 8000/9999
+Epoch: 071, 8500/9999
+Epoch: 071, 9000/9999
+Epoch: 071, 9500/9999
+TRAINING LOSS: 0.61083
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4366  Min: 0.0000  Max: 0.9935  Median: 0.4094
+Target 1 Logit Mean: 0.5778  Min: 0.2066  Max: 1.0000  Median: 0.5745
+Acc: 0.6021, Recall: 0.9784, Prec: 0.5601, F1: 0.7124, AUC: 0.7046
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4382  Min: 0.0000  Max: 1.0000  Median: 0.4092
+Target 1 Logit Mean: 0.5374  Min: 0.0000  Max: 1.0000  Median: 0.5372
+Acc: 0.7645, Recall: 0.3814, Prec: 0.1129, F1: 0.1743, AUC: 0.6515
+
+Epoch: 072, 0500/9999
+Epoch: 072, 1000/9999
+Epoch: 072, 1500/9999
+Epoch: 072, 2000/9999
+Epoch: 072, 2500/9999
+Epoch: 072, 3000/9999
+Epoch: 072, 3500/9999
+Epoch: 072, 4000/9999
+Epoch: 072, 4500/9999
+Epoch: 072, 5000/9999
+Epoch: 072, 5500/9999
+Epoch: 072, 6000/9999
+Epoch: 072, 6500/9999
+Epoch: 072, 7000/9999
+Epoch: 072, 7500/9999
+Epoch: 072, 8000/9999
+Epoch: 072, 8500/9999
+Epoch: 072, 9000/9999
+Epoch: 072, 9500/9999
+TRAINING LOSS: 0.61344
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4204  Min: 0.0000  Max: 0.9981  Median: 0.4295
+Target 1 Logit Mean: 0.5719  Min: 0.0002  Max: 1.0000  Median: 0.5740
+Acc: 0.5933, Recall: 0.9722, Prec: 0.5499, F1: 0.7024, AUC: 0.7023
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4217  Min: 0.0000  Max: 1.0000  Median: 0.4287
+Target 1 Logit Mean: 0.5371  Min: 0.0000  Max: 0.9997  Median: 0.5487
+Acc: 0.7639, Recall: 0.3991, Prec: 0.1166, F1: 0.1805, AUC: 0.6584
+
+Epoch: 073, 0500/9999
+Epoch: 073, 1000/9999
+Epoch: 073, 1500/9999
+Epoch: 073, 2000/9999
+Epoch: 073, 2500/9999
+Epoch: 073, 3000/9999
+Epoch: 073, 3500/9999
+Epoch: 073, 4000/9999
+Epoch: 073, 4500/9999
+Epoch: 073, 5000/9999
+Epoch: 073, 5500/9999
+Epoch: 073, 6000/9999
+Epoch: 073, 6500/9999
+Epoch: 073, 7000/9999
+Epoch: 073, 7500/9999
+Epoch: 073, 8000/9999
+Epoch: 073, 8500/9999
+Epoch: 073, 9000/9999
+Epoch: 073, 9500/9999
+TRAINING LOSS: 0.61273
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.3722  Min: 0.0000  Max: 0.8961  Median: 0.3969
+Target 1 Logit Mean: 0.4791  Min: 0.0086  Max: 1.0000  Median: 0.4628
+Acc: 0.5822, Recall: 0.9796, Prec: 0.5471, F1: 0.7021, AUC: 0.6845
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3731  Min: 0.0000  Max: 0.9984  Median: 0.3969
+Target 1 Logit Mean: 0.4603  Min: 0.0002  Max: 0.9957  Median: 0.4496
+Acc: 0.7985, Recall: 0.3361, Prec: 0.1216, F1: 0.1786, AUC: 0.6647
+
+Epoch: 074, 0500/9999
+Epoch: 074, 1000/9999
+Epoch: 074, 1500/9999
+Epoch: 074, 2000/9999
+Epoch: 074, 2500/9999
+Epoch: 074, 3000/9999
+Epoch: 074, 3500/9999
+Epoch: 074, 4000/9999
+Epoch: 074, 4500/9999
+Epoch: 074, 5000/9999
+Epoch: 074, 5500/9999
+Epoch: 074, 6000/9999
+Epoch: 074, 6500/9999
+Epoch: 074, 7000/9999
+Epoch: 074, 7500/9999
+Epoch: 074, 8000/9999
+Epoch: 074, 8500/9999
+Epoch: 074, 9000/9999
+Epoch: 074, 9500/9999
+TRAINING LOSS: 0.61608
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4565  Min: 0.0000  Max: 1.0000  Median: 0.4897
+Target 1 Logit Mean: 0.6214  Min: 0.0098  Max: 1.0000  Median: 0.6300
+Acc: 0.5853, Recall: 0.9901, Prec: 0.5474, F1: 0.7050, AUC: 0.6975
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4593  Min: 0.0000  Max: 1.0000  Median: 0.4866
+Target 1 Logit Mean: 0.5812  Min: 0.0000  Max: 1.0000  Median: 0.6077
+Acc: 0.7511, Recall: 0.4075, Prec: 0.1121, F1: 0.1758, AUC: 0.6518
+
+Epoch: 075, 0500/9999
+Epoch: 075, 1000/9999
+Epoch: 075, 1500/9999
+Epoch: 075, 2000/9999
+Epoch: 075, 2500/9999
+Epoch: 075, 3000/9999
+Epoch: 075, 3500/9999
+Epoch: 075, 4000/9999
+Epoch: 075, 4500/9999
+Epoch: 075, 5000/9999
+Epoch: 075, 5500/9999
+Epoch: 075, 6000/9999
+Epoch: 075, 6500/9999
+Epoch: 075, 7000/9999
+Epoch: 075, 7500/9999
+Epoch: 075, 8000/9999
+Epoch: 075, 8500/9999
+Epoch: 075, 9000/9999
+Epoch: 075, 9500/9999
+TRAINING LOSS: 0.61242
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4139  Min: 0.0000  Max: 0.9726  Median: 0.4309
+Target 1 Logit Mean: 0.5784  Min: 0.0095  Max: 1.0000  Median: 0.5775
+Acc: 0.6092, Recall: 0.9711, Prec: 0.5653, F1: 0.7146, AUC: 0.7165
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4155  Min: 0.0000  Max: 1.0000  Median: 0.4341
+Target 1 Logit Mean: 0.5268  Min: 0.0000  Max: 0.9653  Median: 0.5454
+Acc: 0.7727, Recall: 0.3891, Prec: 0.1191, F1: 0.1823, AUC: 0.6541
+
+Epoch: 076, 0500/9999
+Epoch: 076, 1000/9999
+Epoch: 076, 1500/9999
+Epoch: 076, 2000/9999
+Epoch: 076, 2500/9999
+Epoch: 076, 3000/9999
+Epoch: 076, 3500/9999
+Epoch: 076, 4000/9999
+Epoch: 076, 4500/9999
+Epoch: 076, 5000/9999
+Epoch: 076, 5500/9999
+Epoch: 076, 6000/9999
+Epoch: 076, 6500/9999
+Epoch: 076, 7000/9999
+Epoch: 076, 7500/9999
+Epoch: 076, 8000/9999
+Epoch: 076, 8500/9999
+Epoch: 076, 9000/9999
+Epoch: 076, 9500/9999
+TRAINING LOSS: 0.61415
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4336  Min: 0.0000  Max: 0.9654  Median: 0.4403
+Target 1 Logit Mean: 0.5585  Min: 0.0946  Max: 1.0000  Median: 0.5591
+Acc: 0.5920, Recall: 0.9591, Prec: 0.5518, F1: 0.7006, AUC: 0.6937
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4315  Min: 0.0000  Max: 0.9999  Median: 0.4358
+Target 1 Logit Mean: 0.5299  Min: 0.0000  Max: 0.9982  Median: 0.5381
+Acc: 0.7937, Recall: 0.3523, Prec: 0.1227, F1: 0.1820, AUC: 0.6584
+
+Epoch: 077, 0500/9999
+Epoch: 077, 1000/9999
+Epoch: 077, 1500/9999
+Epoch: 077, 2000/9999
+Epoch: 077, 2500/9999
+Epoch: 077, 3000/9999
+Epoch: 077, 3500/9999
+Epoch: 077, 4000/9999
+Epoch: 077, 4500/9999
+Epoch: 077, 5000/9999
+Epoch: 077, 5500/9999
+Epoch: 077, 6000/9999
+Epoch: 077, 6500/9999
+Epoch: 077, 7000/9999
+Epoch: 077, 7500/9999
+Epoch: 077, 8000/9999
+Epoch: 077, 8500/9999
+Epoch: 077, 9000/9999
+Epoch: 077, 9500/9999
+TRAINING LOSS: 0.60941
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4179  Min: 0.0000  Max: 0.9723  Median: 0.4394
+Target 1 Logit Mean: 0.5660  Min: 0.0015  Max: 0.9999  Median: 0.5613
+Acc: 0.5984, Recall: 0.9618, Prec: 0.5574, F1: 0.7058, AUC: 0.7054
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4156  Min: 0.0000  Max: 0.9961  Median: 0.4379
+Target 1 Logit Mean: 0.5234  Min: 0.0000  Max: 0.9825  Median: 0.5350
+Acc: 0.7934, Recall: 0.3446, Prec: 0.1205, F1: 0.1786, AUC: 0.6538
+
+Epoch: 078, 0500/9999
+Epoch: 078, 1000/9999
+Epoch: 078, 1500/9999
+Epoch: 078, 2000/9999
+Epoch: 078, 2500/9999
+Epoch: 078, 3000/9999
+Epoch: 078, 3500/9999
+Epoch: 078, 4000/9999
+Epoch: 078, 4500/9999
+Epoch: 078, 5000/9999
+Epoch: 078, 5500/9999
+Epoch: 078, 6000/9999
+Epoch: 078, 6500/9999
+Epoch: 078, 7000/9999
+Epoch: 078, 7500/9999
+Epoch: 078, 8000/9999
+Epoch: 078, 8500/9999
+Epoch: 078, 9000/9999
+Epoch: 078, 9500/9999
+TRAINING LOSS: 0.61103
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4555  Min: 0.0000  Max: 0.9998  Median: 0.4950
+Target 1 Logit Mean: 0.6360  Min: 0.0074  Max: 1.0000  Median: 0.6588
+Acc: 0.6004, Recall: 0.9711, Prec: 0.5547, F1: 0.7061, AUC: 0.7082
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4554  Min: 0.0000  Max: 1.0000  Median: 0.4954
+Target 1 Logit Mean: 0.5924  Min: 0.0000  Max: 1.0000  Median: 0.6328
+Acc: 0.7995, Recall: 0.3438, Prec: 0.1244, F1: 0.1827, AUC: 0.6641
+
+Epoch: 079, 0500/9999
+Epoch: 079, 1000/9999
+Epoch: 079, 1500/9999
+Epoch: 079, 2000/9999
+Epoch: 079, 2500/9999
+Epoch: 079, 3000/9999
+Epoch: 079, 3500/9999
+Epoch: 079, 4000/9999
+Epoch: 079, 4500/9999
+Epoch: 079, 5000/9999
+Epoch: 079, 5500/9999
+Epoch: 079, 6000/9999
+Epoch: 079, 6500/9999
+Epoch: 079, 7000/9999
+Epoch: 079, 7500/9999
+Epoch: 079, 8000/9999
+Epoch: 079, 8500/9999
+Epoch: 079, 9000/9999
+Epoch: 079, 9500/9999
+TRAINING LOSS: 0.62053
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4427  Min: 0.0000  Max: 0.9861  Median: 0.4432
+Target 1 Logit Mean: 0.5790  Min: 0.0487  Max: 0.9991  Median: 0.5890
+Acc: 0.5864, Recall: 0.9932, Prec: 0.5507, F1: 0.7085, AUC: 0.6988
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4401  Min: 0.0000  Max: 0.9993  Median: 0.4376
+Target 1 Logit Mean: 0.5472  Min: 0.0001  Max: 0.9270  Median: 0.5660
+Acc: 0.8202, Recall: 0.3070, Prec: 0.1294, F1: 0.1820, AUC: 0.6600
+
+Epoch: 080, 0500/9999
+Epoch: 080, 1000/9999
+Epoch: 080, 1500/9999
+Epoch: 080, 2000/9999
+Epoch: 080, 2500/9999
+Epoch: 080, 3000/9999
+Epoch: 080, 3500/9999
+Epoch: 080, 4000/9999
+Epoch: 080, 4500/9999
+Epoch: 080, 5000/9999
+Epoch: 080, 5500/9999
+Epoch: 080, 6000/9999
+Epoch: 080, 6500/9999
+Epoch: 080, 7000/9999
+Epoch: 080, 7500/9999
+Epoch: 080, 8000/9999
+Epoch: 080, 8500/9999
+Epoch: 080, 9000/9999
+Epoch: 080, 9500/9999
+TRAINING LOSS: 0.61239
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4521  Min: 0.0000  Max: 0.9830  Median: 0.4696
+Target 1 Logit Mean: 0.5705  Min: 0.2466  Max: 1.0000  Median: 0.5690
+Acc: 0.5958, Recall: 0.9689, Prec: 0.5541, F1: 0.7050, AUC: 0.7066
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4546  Min: 0.0000  Max: 0.9999  Median: 0.4721
+Target 1 Logit Mean: 0.5437  Min: 0.0000  Max: 0.9526  Median: 0.5518
+Acc: 0.7931, Recall: 0.3546, Prec: 0.1229, F1: 0.1825, AUC: 0.6628
+
+Epoch: 081, 0500/9999
+Epoch: 081, 1000/9999
+Epoch: 081, 1500/9999
+Epoch: 081, 2000/9999
+Epoch: 081, 2500/9999
+Epoch: 081, 3000/9999
+Epoch: 081, 3500/9999
+Epoch: 081, 4000/9999
+Epoch: 081, 4500/9999
+Epoch: 081, 5000/9999
+Epoch: 081, 5500/9999
+Epoch: 081, 6000/9999
+Epoch: 081, 6500/9999
+Epoch: 081, 7000/9999
+Epoch: 081, 7500/9999
+Epoch: 081, 8000/9999
+Epoch: 081, 8500/9999
+Epoch: 081, 9000/9999
+Epoch: 081, 9500/9999
+TRAINING LOSS: 0.62872
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4101  Min: 0.0000  Max: 0.8688  Median: 0.4090
+Target 1 Logit Mean: 0.5376  Min: 0.0985  Max: 0.9997  Median: 0.5200
+Acc: 0.5955, Recall: 0.9816, Prec: 0.5555, F1: 0.7095, AUC: 0.6958
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4124  Min: 0.0000  Max: 0.9989  Median: 0.4090
+Target 1 Logit Mean: 0.5075  Min: 0.0000  Max: 0.9129  Median: 0.5034
+Acc: 0.8303, Recall: 0.2901, Prec: 0.1327, F1: 0.1821, AUC: 0.6537
+
+Epoch: 082, 0500/9999
+Epoch: 082, 1000/9999
+Epoch: 082, 1500/9999
+Epoch: 082, 2000/9999
+Epoch: 082, 2500/9999
+Epoch: 082, 3000/9999
+Epoch: 082, 3500/9999
+Epoch: 082, 4000/9999
+Epoch: 082, 4500/9999
+Epoch: 082, 5000/9999
+Epoch: 082, 5500/9999
+Epoch: 082, 6000/9999
+Epoch: 082, 6500/9999
+Epoch: 082, 7000/9999
+Epoch: 082, 7500/9999
+Epoch: 082, 8000/9999
+Epoch: 082, 8500/9999
+Epoch: 082, 9000/9999
+Epoch: 082, 9500/9999
+TRAINING LOSS: 0.61925
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4731  Min: 0.0000  Max: 0.9997  Median: 0.4770
+Target 1 Logit Mean: 0.6260  Min: 0.0268  Max: 1.0000  Median: 0.6378
+Acc: 0.5880, Recall: 0.9820, Prec: 0.5509, F1: 0.7058, AUC: 0.7022
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4767  Min: 0.0000  Max: 1.0000  Median: 0.4803
+Target 1 Logit Mean: 0.5941  Min: 0.0000  Max: 1.0000  Median: 0.6113
+Acc: 0.7538, Recall: 0.4305, Prec: 0.1183, F1: 0.1855, AUC: 0.6606
+
+Epoch: 083, 0500/9999
+Epoch: 083, 1000/9999
+Epoch: 083, 1500/9999
+Epoch: 083, 2000/9999
+Epoch: 083, 2500/9999
+Epoch: 083, 3000/9999
+Epoch: 083, 3500/9999
+Epoch: 083, 4000/9999
+Epoch: 083, 4500/9999
+Epoch: 083, 5000/9999
+Epoch: 083, 5500/9999
+Epoch: 083, 6000/9999
+Epoch: 083, 6500/9999
+Epoch: 083, 7000/9999
+Epoch: 083, 7500/9999
+Epoch: 083, 8000/9999
+Epoch: 083, 8500/9999
+Epoch: 083, 9000/9999
+Epoch: 083, 9500/9999
+TRAINING LOSS: 0.61502
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4295  Min: 0.0000  Max: 0.9657  Median: 0.3919
+Target 1 Logit Mean: 0.5130  Min: 0.3423  Max: 0.9387  Median: 0.5145
+Acc: 0.6454, Recall: 0.7718, Prec: 0.6177, F1: 0.6862, AUC: 0.7085
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4302  Min: 0.0000  Max: 0.9615  Median: 0.3973
+Target 1 Logit Mean: 0.4947  Min: 0.0000  Max: 0.8954  Median: 0.4914
+Acc: 0.8025, Recall: 0.3323, Prec: 0.1233, F1: 0.1798, AUC: 0.6622
+
+Epoch: 084, 0500/9999
+Epoch: 084, 1000/9999
+Epoch: 084, 1500/9999
+Epoch: 084, 2000/9999
+Epoch: 084, 2500/9999
+Epoch: 084, 3000/9999
+Epoch: 084, 3500/9999
+Epoch: 084, 4000/9999
+Epoch: 084, 4500/9999
+Epoch: 084, 5000/9999
+Epoch: 084, 5500/9999
+Epoch: 084, 6000/9999
+Epoch: 084, 6500/9999
+Epoch: 084, 7000/9999
+Epoch: 084, 7500/9999
+Epoch: 084, 8000/9999
+Epoch: 084, 8500/9999
+Epoch: 084, 9000/9999
+Epoch: 084, 9500/9999
+TRAINING LOSS: 0.61954
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4411  Min: 0.0000  Max: 0.9939  Median: 0.4491
+Target 1 Logit Mean: 0.5440  Min: 0.0204  Max: 0.9970  Median: 0.5407
+Acc: 0.5606, Recall: 0.9897, Prec: 0.5355, F1: 0.6950, AUC: 0.6849
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4426  Min: 0.0000  Max: 0.9994  Median: 0.4489
+Target 1 Logit Mean: 0.5339  Min: 0.0035  Max: 0.9808  Median: 0.5359
+Acc: 0.7374, Recall: 0.4658, Prec: 0.1176, F1: 0.1878, AUC: 0.6706
+
+Epoch: 085, 0500/9999
+Epoch: 085, 1000/9999
+Epoch: 085, 1500/9999
+Epoch: 085, 2000/9999
+Epoch: 085, 2500/9999
+Epoch: 085, 3000/9999
+Epoch: 085, 3500/9999
+Epoch: 085, 4000/9999
+Epoch: 085, 4500/9999
+Epoch: 085, 5000/9999
+Epoch: 085, 5500/9999
+Epoch: 085, 6000/9999
+Epoch: 085, 6500/9999
+Epoch: 085, 7000/9999
+Epoch: 085, 7500/9999
+Epoch: 085, 8000/9999
+Epoch: 085, 8500/9999
+Epoch: 085, 9000/9999
+Epoch: 085, 9500/9999
+TRAINING LOSS: 0.61936
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4461  Min: 0.0000  Max: 1.0000  Median: 0.4497
+Target 1 Logit Mean: 0.5986  Min: 0.1176  Max: 1.0000  Median: 0.5917
+Acc: 0.5876, Recall: 0.9820, Prec: 0.5463, F1: 0.7020, AUC: 0.7122
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4512  Min: 0.0000  Max: 1.0000  Median: 0.4503
+Target 1 Logit Mean: 0.5562  Min: 0.0000  Max: 1.0000  Median: 0.5617
+Acc: 0.7469, Recall: 0.4244, Prec: 0.1136, F1: 0.1793, AUC: 0.6557
+
+Epoch: 086, 0500/9999
+Epoch: 086, 1000/9999
+Epoch: 086, 1500/9999
+Epoch: 086, 2000/9999
+Epoch: 086, 2500/9999
+Epoch: 086, 3000/9999
+Epoch: 086, 3500/9999
+Epoch: 086, 4000/9999
+Epoch: 086, 4500/9999
+Epoch: 086, 5000/9999
+Epoch: 086, 5500/9999
+Epoch: 086, 6000/9999
+Epoch: 086, 6500/9999
+Epoch: 086, 7000/9999
+Epoch: 086, 7500/9999
+Epoch: 086, 8000/9999
+Epoch: 086, 8500/9999
+Epoch: 086, 9000/9999
+Epoch: 086, 9500/9999
+TRAINING LOSS: 0.62616
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4400  Min: 0.0000  Max: 0.9892  Median: 0.4697
+Target 1 Logit Mean: 0.5976  Min: 0.0279  Max: 0.9986  Median: 0.6005
+Acc: 0.6019, Recall: 0.9769, Prec: 0.5602, F1: 0.7121, AUC: 0.7170
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4438  Min: 0.0000  Max: 0.9996  Median: 0.4717
+Target 1 Logit Mean: 0.5583  Min: 0.0000  Max: 0.9766  Median: 0.5692
+Acc: 0.8209, Recall: 0.3078, Prec: 0.1302, F1: 0.1830, AUC: 0.6639
+
+Epoch: 087, 0500/9999
+Epoch: 087, 1000/9999
+Epoch: 087, 1500/9999
+Epoch: 087, 2000/9999
+Epoch: 087, 2500/9999
+Epoch: 087, 3000/9999
+Epoch: 087, 3500/9999
+Epoch: 087, 4000/9999
+Epoch: 087, 4500/9999
+Epoch: 087, 5000/9999
+Epoch: 087, 5500/9999
+Epoch: 087, 6000/9999
+Epoch: 087, 6500/9999
+Epoch: 087, 7000/9999
+Epoch: 087, 7500/9999
+Epoch: 087, 8000/9999
+Epoch: 087, 8500/9999
+Epoch: 087, 9000/9999
+Epoch: 087, 9500/9999
+TRAINING LOSS: 0.62012
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4279  Min: 0.0000  Max: 0.9972  Median: 0.4513
+Target 1 Logit Mean: 0.5727  Min: 0.0063  Max: 1.0000  Median: 0.5767
+Acc: 0.5948, Recall: 0.9823, Prec: 0.5542, F1: 0.7086, AUC: 0.7077
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4264  Min: 0.0000  Max: 1.0000  Median: 0.4505
+Target 1 Logit Mean: 0.5312  Min: 0.0000  Max: 0.9991  Median: 0.5471
+Acc: 0.7838, Recall: 0.3638, Prec: 0.1194, F1: 0.1798, AUC: 0.6556
+
+Epoch: 088, 0500/9999
+Epoch: 088, 1000/9999
+Epoch: 088, 1500/9999
+Epoch: 088, 2000/9999
+Epoch: 088, 2500/9999
+Epoch: 088, 3000/9999
+Epoch: 088, 3500/9999
+Epoch: 088, 4000/9999
+Epoch: 088, 4500/9999
+Epoch: 088, 5000/9999
+Epoch: 088, 5500/9999
+Epoch: 088, 6000/9999
+Epoch: 088, 6500/9999
+Epoch: 088, 7000/9999
+Epoch: 088, 7500/9999
+Epoch: 088, 8000/9999
+Epoch: 088, 8500/9999
+Epoch: 088, 9000/9999
+Epoch: 088, 9500/9999
+TRAINING LOSS: 0.61628
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4621  Min: 0.0000  Max: 0.9977  Median: 0.4646
+Target 1 Logit Mean: 0.6166  Min: 0.0030  Max: 0.9999  Median: 0.6354
+Acc: 0.5794, Recall: 0.9899, Prec: 0.5409, F1: 0.6995, AUC: 0.7044
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4659  Min: 0.0000  Max: 0.9989  Median: 0.4636
+Target 1 Logit Mean: 0.5838  Min: 0.0000  Max: 0.9980  Median: 0.6060
+Acc: 0.8184, Recall: 0.3078, Prec: 0.1281, F1: 0.1809, AUC: 0.6615
+
+Epoch: 089, 0500/9999
+Epoch: 089, 1000/9999
+Epoch: 089, 1500/9999
+Epoch: 089, 2000/9999
+Epoch: 089, 2500/9999
+Epoch: 089, 3000/9999
+Epoch: 089, 3500/9999
+Epoch: 089, 4000/9999
+Epoch: 089, 4500/9999
+Epoch: 089, 5000/9999
+Epoch: 089, 5500/9999
+Epoch: 089, 6000/9999
+Epoch: 089, 6500/9999
+Epoch: 089, 7000/9999
+Epoch: 089, 7500/9999
+Epoch: 089, 8000/9999
+Epoch: 089, 8500/9999
+Epoch: 089, 9000/9999
+Epoch: 089, 9500/9999
+TRAINING LOSS: 0.61276
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.3715  Min: 0.0000  Max: 0.8623  Median: 0.3973
+Target 1 Logit Mean: 0.4950  Min: 0.0019  Max: 0.9292  Median: 0.4859
+Acc: 0.6036, Recall: 0.9787, Prec: 0.5630, F1: 0.7148, AUC: 0.7014
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3751  Min: 0.0000  Max: 1.0000  Median: 0.3973
+Target 1 Logit Mean: 0.4654  Min: 0.0000  Max: 0.8801  Median: 0.4696
+Acc: 0.8411, Recall: 0.2701, Prec: 0.1364, F1: 0.1813, AUC: 0.6580
+
+Epoch: 090, 0500/9999
+Epoch: 090, 1000/9999
+Epoch: 090, 1500/9999
+Epoch: 090, 2000/9999
+Epoch: 090, 2500/9999
+Epoch: 090, 3000/9999
+Epoch: 090, 3500/9999
+Epoch: 090, 4000/9999
+Epoch: 090, 4500/9999
+Epoch: 090, 5000/9999
+Epoch: 090, 5500/9999
+Epoch: 090, 6000/9999
+Epoch: 090, 6500/9999
+Epoch: 090, 7000/9999
+Epoch: 090, 7500/9999
+Epoch: 090, 8000/9999
+Epoch: 090, 8500/9999
+Epoch: 090, 9000/9999
+Epoch: 090, 9500/9999
+TRAINING LOSS: 0.62291
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4473  Min: 0.0000  Max: 0.9895  Median: 0.4486
+Target 1 Logit Mean: 0.5762  Min: 0.0209  Max: 1.0000  Median: 0.5789
+Acc: 0.5799, Recall: 0.9861, Prec: 0.5476, F1: 0.7041, AUC: 0.7023
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4499  Min: 0.0000  Max: 1.0000  Median: 0.4505
+Target 1 Logit Mean: 0.5500  Min: 0.0081  Max: 1.0000  Median: 0.5542
+Acc: 0.8358, Recall: 0.2778, Prec: 0.1338, F1: 0.1806, AUC: 0.6671
+
+Epoch: 091, 0500/9999
+Epoch: 091, 1000/9999
+Epoch: 091, 1500/9999
+Epoch: 091, 2000/9999
+Epoch: 091, 2500/9999
+Epoch: 091, 3000/9999
+Epoch: 091, 3500/9999
+Epoch: 091, 4000/9999
+Epoch: 091, 4500/9999
+Epoch: 091, 5000/9999
+Epoch: 091, 5500/9999
+Epoch: 091, 6000/9999
+Epoch: 091, 6500/9999
+Epoch: 091, 7000/9999
+Epoch: 091, 7500/9999
+Epoch: 091, 8000/9999
+Epoch: 091, 8500/9999
+Epoch: 091, 9000/9999
+Epoch: 091, 9500/9999
+TRAINING LOSS: 0.64417
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4705  Min: 0.0000  Max: 0.9466  Median: 0.5058
+Target 1 Logit Mean: 0.6079  Min: 0.0102  Max: 0.9954  Median: 0.6350
+Acc: 0.6122, Recall: 0.8971, Prec: 0.5739, F1: 0.7000, AUC: 0.6929
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4692  Min: 0.0000  Max: 0.9931  Median: 0.5049
+Target 1 Logit Mean: 0.5860  Min: 0.0000  Max: 0.9277  Median: 0.6155
+Acc: 0.7655, Recall: 0.3929, Prec: 0.1160, F1: 0.1792, AUC: 0.6646
+
+Epoch: 092, 0500/9999
+Epoch: 092, 1000/9999
+Epoch: 092, 1500/9999
+Epoch: 092, 2000/9999
+Epoch: 092, 2500/9999
+Epoch: 092, 3000/9999
+Epoch: 092, 3500/9999
+Epoch: 092, 4000/9999
+Epoch: 092, 4500/9999
+Epoch: 092, 5000/9999
+Epoch: 092, 5500/9999
+Epoch: 092, 6000/9999
+Epoch: 092, 6500/9999
+Epoch: 092, 7000/9999
+Epoch: 092, 7500/9999
+Epoch: 092, 8000/9999
+Epoch: 092, 8500/9999
+Epoch: 092, 9000/9999
+Epoch: 092, 9500/9999
+TRAINING LOSS: 0.63629
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4522  Min: 0.0000  Max: 0.9996  Median: 0.4630
+Target 1 Logit Mean: 0.5506  Min: 0.0683  Max: 1.0000  Median: 0.5470
+Acc: 0.6055, Recall: 0.9139, Prec: 0.5637, F1: 0.6973, AUC: 0.6878
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4510  Min: 0.0000  Max: 0.9997  Median: 0.4625
+Target 1 Logit Mean: 0.5385  Min: 0.0430  Max: 0.9962  Median: 0.5357
+Acc: 0.8292, Recall: 0.3024, Prec: 0.1358, F1: 0.1874, AUC: 0.6720
+
+Epoch: 093, 0500/9999
+Epoch: 093, 1000/9999
+Epoch: 093, 1500/9999
+Epoch: 093, 2000/9999
+Epoch: 093, 2500/9999
+Epoch: 093, 3000/9999
+Epoch: 093, 3500/9999
+Epoch: 093, 4000/9999
+Epoch: 093, 4500/9999
+Epoch: 093, 5000/9999
+Epoch: 093, 5500/9999
+Epoch: 093, 6000/9999
+Epoch: 093, 6500/9999
+Epoch: 093, 7000/9999
+Epoch: 093, 7500/9999
+Epoch: 093, 8000/9999
+Epoch: 093, 8500/9999
+Epoch: 093, 9000/9999
+Epoch: 093, 9500/9999
+TRAINING LOSS: 0.62216
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4377  Min: 0.0000  Max: 1.0000  Median: 0.4143
+Target 1 Logit Mean: 0.5675  Min: 0.0852  Max: 1.0000  Median: 0.5673
+Acc: 0.5670, Recall: 0.9966, Prec: 0.5348, F1: 0.6961, AUC: 0.7038
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4362  Min: 0.0000  Max: 1.0000  Median: 0.4145
+Target 1 Logit Mean: 0.5385  Min: 0.0004  Max: 0.9261  Median: 0.5441
+Acc: 0.7768, Recall: 0.3891, Prec: 0.1214, F1: 0.1851, AUC: 0.6637
+
+Epoch: 094, 0500/9999
+Epoch: 094, 1000/9999
+Epoch: 094, 1500/9999
+Epoch: 094, 2000/9999
+Epoch: 094, 2500/9999
+Epoch: 094, 3000/9999
+Epoch: 094, 3500/9999
+Epoch: 094, 4000/9999
+Epoch: 094, 4500/9999
+Epoch: 094, 5000/9999
+Epoch: 094, 5500/9999
+Epoch: 094, 6000/9999
+Epoch: 094, 6500/9999
+Epoch: 094, 7000/9999
+Epoch: 094, 7500/9999
+Epoch: 094, 8000/9999
+Epoch: 094, 8500/9999
+Epoch: 094, 9000/9999
+Epoch: 094, 9500/9999
+TRAINING LOSS: 0.62057
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4106  Min: 0.0000  Max: 0.9930  Median: 0.4232
+Target 1 Logit Mean: 0.5525  Min: 0.0347  Max: 0.9962  Median: 0.5537
+Acc: 0.5841, Recall: 0.9895, Prec: 0.5441, F1: 0.7021, AUC: 0.7082
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4098  Min: 0.0000  Max: 1.0000  Median: 0.4217
+Target 1 Logit Mean: 0.5159  Min: 0.0000  Max: 0.9696  Median: 0.5229
+Acc: 0.7462, Recall: 0.4336, Prec: 0.1153, F1: 0.1821, AUC: 0.6609
+
+Epoch: 095, 0500/9999
+Epoch: 095, 1000/9999
+Epoch: 095, 1500/9999
+Epoch: 095, 2000/9999
+Epoch: 095, 2500/9999
+Epoch: 095, 3000/9999
+Epoch: 095, 3500/9999
+Epoch: 095, 4000/9999
+Epoch: 095, 4500/9999
+Epoch: 095, 5000/9999
+Epoch: 095, 5500/9999
+Epoch: 095, 6000/9999
+Epoch: 095, 6500/9999
+Epoch: 095, 7000/9999
+Epoch: 095, 7500/9999
+Epoch: 095, 8000/9999
+Epoch: 095, 8500/9999
+Epoch: 095, 9000/9999
+Epoch: 095, 9500/9999
+TRAINING LOSS: 0.61945
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.3845  Min: 0.0000  Max: 1.0000  Median: 0.3912
+Target 1 Logit Mean: 0.5125  Min: 0.0000  Max: 1.0000  Median: 0.5022
+Acc: 0.5797, Recall: 0.9838, Prec: 0.5399, F1: 0.6972, AUC: 0.7077
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.3883  Min: 0.0000  Max: 1.0000  Median: 0.3941
+Target 1 Logit Mean: 0.4811  Min: 0.0000  Max: 0.9998  Median: 0.4787
+Acc: 0.7365, Recall: 0.4490, Prec: 0.1139, F1: 0.1817, AUC: 0.6564
+
+Epoch: 096, 0500/9999
+Epoch: 096, 1000/9999
+Epoch: 096, 1500/9999
+Epoch: 096, 2000/9999
+Epoch: 096, 2500/9999
+Epoch: 096, 3000/9999
+Epoch: 096, 3500/9999
+Epoch: 096, 4000/9999
+Epoch: 096, 4500/9999
+Epoch: 096, 5000/9999
+Epoch: 096, 5500/9999
+Epoch: 096, 6000/9999
+Epoch: 096, 6500/9999
+Epoch: 096, 7000/9999
+Epoch: 096, 7500/9999
+Epoch: 096, 8000/9999
+Epoch: 096, 8500/9999
+Epoch: 096, 9000/9999
+Epoch: 096, 9500/9999
+TRAINING LOSS: 0.61963
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4045  Min: 0.0000  Max: 0.9268  Median: 0.4065
+Target 1 Logit Mean: 0.5151  Min: 0.0006  Max: 0.9990  Median: 0.5017
+Acc: 0.5771, Recall: 0.9760, Prec: 0.5422, F1: 0.6972, AUC: 0.6976
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4043  Min: 0.0000  Max: 0.9581  Median: 0.4046
+Target 1 Logit Mean: 0.4934  Min: 0.0009  Max: 0.9664  Median: 0.4866
+Acc: 0.7339, Recall: 0.4605, Prec: 0.1149, F1: 0.1840, AUC: 0.6644
+
+Epoch: 097, 0500/9999
+Epoch: 097, 1000/9999
+Epoch: 097, 1500/9999
+Epoch: 097, 2000/9999
+Epoch: 097, 2500/9999
+Epoch: 097, 3000/9999
+Epoch: 097, 3500/9999
+Epoch: 097, 4000/9999
+Epoch: 097, 4500/9999
+Epoch: 097, 5000/9999
+Epoch: 097, 5500/9999
+Epoch: 097, 6000/9999
+Epoch: 097, 6500/9999
+Epoch: 097, 7000/9999
+Epoch: 097, 7500/9999
+Epoch: 097, 8000/9999
+Epoch: 097, 8500/9999
+Epoch: 097, 9000/9999
+Epoch: 097, 9500/9999
+TRAINING LOSS: 0.61858
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4273  Min: 0.0000  Max: 0.9946  Median: 0.4357
+Target 1 Logit Mean: 0.5496  Min: 0.0120  Max: 1.0000  Median: 0.5582
+Acc: 0.5730, Recall: 0.9895, Prec: 0.5371, F1: 0.6963, AUC: 0.6984
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4266  Min: 0.0000  Max: 1.0000  Median: 0.4345
+Target 1 Logit Mean: 0.5205  Min: 0.0000  Max: 0.9497  Median: 0.5322
+Acc: 0.7207, Recall: 0.4543, Prec: 0.1083, F1: 0.1749, AUC: 0.6567
+
+Epoch: 098, 0500/9999
+Epoch: 098, 1000/9999
+Epoch: 098, 1500/9999
+Epoch: 098, 2000/9999
+Epoch: 098, 2500/9999
+Epoch: 098, 3000/9999
+Epoch: 098, 3500/9999
+Epoch: 098, 4000/9999
+Epoch: 098, 4500/9999
+Epoch: 098, 5000/9999
+Epoch: 098, 5500/9999
+Epoch: 098, 6000/9999
+Epoch: 098, 6500/9999
+Epoch: 098, 7000/9999
+Epoch: 098, 7500/9999
+Epoch: 098, 8000/9999
+Epoch: 098, 8500/9999
+Epoch: 098, 9000/9999
+Epoch: 098, 9500/9999
+TRAINING LOSS: 0.61547
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4123  Min: 0.0000  Max: 1.0000  Median: 0.4059
+Target 1 Logit Mean: 0.5728  Min: 0.0000  Max: 1.0000  Median: 0.5718
+Acc: 0.6071, Recall: 0.9670, Prec: 0.5653, F1: 0.7135, AUC: 0.7108
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4196  Min: 0.0000  Max: 1.0000  Median: 0.4061
+Target 1 Logit Mean: 0.5389  Min: 0.0000  Max: 0.9980  Median: 0.5320
+Acc: 0.7831, Recall: 0.3776, Prec: 0.1224, F1: 0.1849, AUC: 0.6653
+
+Epoch: 099, 0500/9999
+Epoch: 099, 1000/9999
+Epoch: 099, 1500/9999
+Epoch: 099, 2000/9999
+Epoch: 099, 2500/9999
+Epoch: 099, 3000/9999
+Epoch: 099, 3500/9999
+Epoch: 099, 4000/9999
+Epoch: 099, 4500/9999
+Epoch: 099, 5000/9999
+Epoch: 099, 5500/9999
+Epoch: 099, 6000/9999
+Epoch: 099, 6500/9999
+Epoch: 099, 7000/9999
+Epoch: 099, 7500/9999
+Epoch: 099, 8000/9999
+Epoch: 099, 8500/9999
+Epoch: 099, 9000/9999
+Epoch: 099, 9500/9999
+TRAINING LOSS: 0.62131
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4331  Min: 0.0000  Max: 0.9937  Median: 0.4419
+Target 1 Logit Mean: 0.5816  Min: 0.0065  Max: 1.0000  Median: 0.5919
+Acc: 0.5855, Recall: 0.9747, Prec: 0.5482, F1: 0.7018, AUC: 0.6959
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4358  Min: 0.0000  Max: 0.9707  Median: 0.4449
+Target 1 Logit Mean: 0.5597  Min: 0.0000  Max: 0.9679  Median: 0.5638
+Acc: 0.7546, Recall: 0.4321, Prec: 0.1190, F1: 0.1866, AUC: 0.6689
+
+Epoch: 100, 0500/9999
+Epoch: 100, 1000/9999
+Epoch: 100, 1500/9999
+Epoch: 100, 2000/9999
+Epoch: 100, 2500/9999
+Epoch: 100, 3000/9999
+Epoch: 100, 3500/9999
+Epoch: 100, 4000/9999
+Epoch: 100, 4500/9999
+Epoch: 100, 5000/9999
+Epoch: 100, 5500/9999
+Epoch: 100, 6000/9999
+Epoch: 100, 6500/9999
+Epoch: 100, 7000/9999
+Epoch: 100, 7500/9999
+Epoch: 100, 8000/9999
+Epoch: 100, 8500/9999
+Epoch: 100, 9000/9999
+Epoch: 100, 9500/9999
+TRAINING LOSS: 0.61983
+
+--- TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4688  Min: 0.0000  Max: 0.9801  Median: 0.4792
+Target 1 Logit Mean: 0.5987  Min: 0.1544  Max: 1.0000  Median: 0.5998
+Acc: 0.5782, Recall: 0.9924, Prec: 0.5452, F1: 0.7038, AUC: 0.6982
+
+--- TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4720  Min: 0.0000  Max: 1.0000  Median: 0.4824
+Target 1 Logit Mean: 0.5747  Min: 0.0020  Max: 0.9836  Median: 0.5847
+Acc: 0.7315, Recall: 0.4628, Prec: 0.1144, F1: 0.1834, AUC: 0.6634
+
