@@ -44,7 +44,7 @@ train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-batch_size = 8
+batch_size = 64
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
@@ -94,7 +94,7 @@ class Net(torch.nn.Module):
         self.conv3 = PointConv(MLP(128 + 3, 256, 256))
         self.conv3_2 = PointConv(MLP(128 + 3, 256, 256))
 
-        self.lin1 = Lin(2*256, 128)  # Jumping Knowledge.
+        self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
         self.lin2 = Lin(128, 64)
         self.lin3 = Lin(64, 1)
 
@@ -109,7 +109,7 @@ class Net(torch.nn.Module):
         x3 = F.relu(self.conv3(x2, pos, edge_index_tracks))
         x3_2 = F.relu(self.conv3_2(x2_2, pos, edge_index_z))
 
-        x = torch.cat([x3, x3_2], dim=-1)
+        x = torch.cat([x1, x1_2, x2, x2_2, x3, x3_2], dim=-1)
         x = global_max_pool(x, batch, size=batch_size)
 
         x = F.relu(self.lin1(x))
@@ -184,9 +184,9 @@ def test(loader):
     for t in range(1, 21):  # Try out different thresholds.
         pred = (logits > (t / 20)).to(torch.long)
         accs.append(pred.eq(target).sum().item() / len(loader.dataset))
-        recalls.append(metrics.recall_score(target, pred, [1]))
-        precs.append(metrics.precision_score(target, pred, [1]))
-        f1s.append(metrics.f1_score(target, pred, [1]))
+        recalls.append(metrics.recall_score(target, pred))
+        precs.append(metrics.precision_score(target, pred))
+        f1s.append(metrics.f1_score(target, pred))
 
     f1s = torch.tensor(f1s)
     i = f1s.argmax()
@@ -200,7 +200,7 @@ def test(loader):
 
     print('Acc: {:.4f}, Recall: {:.4f}, Prec: {:.4f}, F1: {:.4f}, AUC: {:.4f}\n'.format(acc, recall, prec, f1, auc))
 
-    return acc, f1, auc
+#    return acc, f1, auc
 
 
 for epoch in range(1, 101):
@@ -210,7 +210,7 @@ for epoch in range(1, 101):
     else:
         loss = train(epoch, train_loader)
 
-    print('TRAINING LOSS: {:.5f}\n'.format(loss))
+    print('\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
 
     print('--- TESTING TRAIN DATA ---')
     test(small_train_loader)
