@@ -44,7 +44,7 @@ train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-batch_size = 64
+batch_size = 16
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
@@ -85,18 +85,18 @@ class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
-        self.conv1_2 = PointConv(MLP(00 + 3, 64, 64))
+        self.conv1 = PointConv(MLP(00 + 3, 64*2, 64*2))
+        self.conv1_2 = PointConv(MLP(00 + 3, 64*2, 64*2))
 
-        self.conv2 = PointConv(MLP(64 + 3, 128, 128))
-        self.conv2_2 = PointConv(MLP(64 + 3, 128, 128))
+        self.conv2 = PointConv(MLP(64*2 + 3, 128*2, 128*2))
+        self.conv2_2 = PointConv(MLP(64*2 + 3, 128*2, 128*2))
 
-        self.conv3 = PointConv(MLP(128 + 3, 256, 256))
-        self.conv3_2 = PointConv(MLP(128 + 3, 256, 256))
+        self.conv3 = PointConv(MLP(128*2 + 3, 256*2, 256*2))
+        self.conv3_2 = PointConv(MLP(128*2 + 3, 256*2, 256*2))
 
-        self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
-        self.lin2 = Lin(128, 64)
-        self.lin3 = Lin(64, 1)
+        self.lin1 = Lin(2*64*2 + 2*128*2 + 2*256*2, 128*2)  # Jumping Knowledge.
+        self.lin2 = Lin(128*2, 64*2)
+        self.lin3 = Lin(64*2, 1)
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
