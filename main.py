@@ -86,13 +86,13 @@ class Net(torch.nn.Module):
         super(Net, self).__init__()
 
         self.conv1 = PointConv(MLP(00 + 3, 64*2, 64*2))
-        self.conv1_2 = PointConv(MLP(00 + 3, 64*2, 64*2))
+        self.conv1_2 = PointConv(MLP(64*2 + 3, 64*2, 64*2))
 
         self.conv2 = PointConv(MLP(64*2 + 3, 128*2, 128*2))
-        self.conv2_2 = PointConv(MLP(64*2 + 3, 128*2, 128*2))
+        self.conv2_2 = PointConv(MLP(128*2 + 3, 128*2, 128*2))
 
         self.conv3 = PointConv(MLP(128*2 + 3, 256*2, 256*2))
-        self.conv3_2 = PointConv(MLP(128*2 + 3, 256*2, 256*2))
+        self.conv3_2 = PointConv(MLP(256*2 + 3, 256*2, 256*2))
 
         self.lin1 = Lin(2*64*2 + 2*128*2 + 2*256*2, 128*2)  # Jumping Knowledge.
         self.lin2 = Lin(128*2, 64*2)
@@ -101,13 +101,13 @@ class Net(torch.nn.Module):
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
         x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
-        x1_2 = F.relu(self.conv1_2(None, pos, edge_index_z))
+        x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
-        x2 = F.relu(self.conv2(x1, pos, edge_index_tracks))
-        x2_2 = F.relu(self.conv2_2(x1_2, pos, edge_index_z))
+        x2 = F.relu(self.conv2(x1_2, pos, edge_index_tracks))
+        x2_2 = F.relu(self.conv2_2(x2, pos, edge_index_z))
 
-        x3 = F.relu(self.conv3(x2, pos, edge_index_tracks))
-        x3_2 = F.relu(self.conv3_2(x2_2, pos, edge_index_z))
+        x3 = F.relu(self.conv3(x2_2, pos, edge_index_tracks))
+        x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
 
         x = torch.cat([x1, x1_2, x2, x2_2, x3, x3_2], dim=-1)
         x = global_max_pool(x, batch, size=batch_size)
@@ -161,6 +161,20 @@ def update_dict(data,dict):
         dict['='] += 1
     return dict
 
+
+def recall(prediction, label, target_class):
+    tp = torch.sum(prediction[label == target_class] == target_class).float()
+    fn = torch.sum(prediction[label == target_class] != target_class).float()
+    return (tp/(tp+fn)).item()
+
+def precision(prediction, label, target_class):
+    tp = torch.sum(prediction[label == target_class] == target_class).float()
+    fp = torch.sum(prediction[label != target_class] == target_class).float()
+    return (tp/(tp+fp)).item()
+
+def f1_score(recall, precision):
+    return 2*precision*recall/(precision+recall)
+
 def test(loader):
     model.eval()
 
@@ -181,36 +195,57 @@ def test(loader):
         logits_1.mean().item(), logits_1.min().item(), logits_1.max().item(), logits_1.median().item()))
 
     accs, recalls, precs, f1s = [], [], [], []
+    recalls_1, precs_1, f1s_1 = [], [], []
     for t in range(1, 21):  # Try out different thresholds.
         pred = (logits > (t / 20)).to(torch.long)
         accs.append(pred.eq(target).sum().item() / len(loader.dataset))
-        recalls.append(metrics.recall_score(target, pred))
-        precs.append(metrics.precision_score(target, pred))
-        f1s.append(metrics.f1_score(target, pred))
+
+#        recalls.append(metrics.recall_score(target, pred))
+#        precs.append(metrics.precision_score(target, pred))
+#        f1s.append(metrics.f1_score(target, pred))
+
+        recalls.append(recall(target, pred, 0))
+        precs.append(precision(target, pred, 0))
+        f1s.append(f1_score(target, pred, 0))
+
+        recalls_1.append(recall(target, pred, 1))
+        precs_1.append(precision(target, pred, 1))
+        f1s_1.append(f1_score(target, pred, 1))
+
 
     f1s = torch.tensor(f1s)
+    f1s_1 = torch.tensor(f1s_1)
+
     i = f1s.argmax()
+    i_1 = f1s_1.argmax()
 
     f1 = f1s[i].item()
+    f1_1 = f1s_1[i_1].item()
+
     acc = torch.tensor(accs)[i].item()
     recall = torch.tensor(recalls)[i].item()
     prec = torch.tensor(precs)[i].item()
 
+    recall_1 = torch.tensor(recalls_1)[i_1].item()
+    prec_1 = torch.tensor(precs_1)[i_1].item()
+
+
     auc = metrics.roc_auc_score(target, logits)
 
-    print('Acc: {:.4f}, Recall: {:.4f}, Prec: {:.4f}, F1: {:.4f}, AUC: {:.4f}\n'.format(acc, recall, prec, f1, auc))
+    print('Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}\n'.format(acc, recall, prec, f1, auc))
+    print('             Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
 
 #    return acc, f1, auc
 
 
-for epoch in range(1, 101):
+for epoch in range(1, 15):
 
     if train_with_small:
         loss = train(epoch, small_train_loader)
     else:
         loss = train(epoch, train_loader)
 
-    print('\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
+    print('\033[93m\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
 
     print('--- TESTING TRAIN DATA ---')
     test(small_train_loader)
