@@ -1,0 +1,15 @@
+DataLoader Ready, Time Elapsed 29min
+Epoch: 001, 0500/4999
+Epoch: 001, 1000/4999
+Epoch: 001, 1500/4999
+Epoch: 001, 2000/4999
+Epoch: 001, 2500/4999
+Epoch: 001, 3000/4999
+Epoch: 001, 3500/4999
+Epoch: 001, 4000/4999
+Epoch: 001, 4500/4999
+
+EPOCH 1  TRAINING LOSS: 0.65707
+
+--- TESTING TRAIN DATA ---
+

@@ -33,8 +33,8 @@ num_pos_examples = len(dataset_pos)
 train_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples)))
 train_dataset_pos = Subset(dataset_pos, range(int(0.8 * num_pos_examples)))
 
-small_train_dataset_neg = Subset(train_dataset_neg, range(int(0.2 * len(train_dataset_neg))))
-small_train_dataset_pos = Subset(train_dataset_pos, range(int(0.2 * len(train_dataset_pos))))
+small_train_dataset_neg = Subset(train_dataset_neg, range(int(0.5 * len(train_dataset_neg))))
+small_train_dataset_pos = Subset(train_dataset_pos, range(int(0.5 * len(train_dataset_pos))))
 
 test_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples), num_neg_examples))
 test_dataset_pos = Subset(dataset_pos, range(int(0.8 * num_pos_examples), num_pos_examples))
@@ -44,11 +44,11 @@ train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-batch_size = 16
+batch_size = 32
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
-augment = False
+augment = True
 
 # Remove later
 print_degree = True
@@ -162,12 +162,12 @@ def update_dict(data,dict):
     return dict
 
 
-def recall(prediction, label, target_class):
+def recall(label, prediction, target_class):
     tp = torch.sum(prediction[label == target_class] == target_class).float()
     fn = torch.sum(prediction[label == target_class] != target_class).float()
     return (tp/(tp+fn)).item()
 
-def precision(prediction, label, target_class):
+def precision(label, prediction, target_class):
     tp = torch.sum(prediction[label == target_class] == target_class).float()
     fp = torch.sum(prediction[label != target_class] == target_class).float()
     return (tp/(tp+fp)).item()
@@ -194,7 +194,7 @@ def test(loader):
     print('Target 1 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}'.format(\
         logits_1.mean().item(), logits_1.min().item(), logits_1.max().item(), logits_1.median().item()))
 
-    accs, recalls, precs, f1s = [], [], [], []
+    accs, recalls_0, precs_0, f1s_0 = [], [], [], []
     recalls_1, precs_1, f1s_1 = [], [], []
     for t in range(1, 21):  # Try out different thresholds.
         pred = (logits > (t / 20)).to(torch.long)
@@ -204,27 +204,31 @@ def test(loader):
 #        precs.append(metrics.precision_score(target, pred))
 #        f1s.append(metrics.f1_score(target, pred))
 
-        recalls.append(recall(target, pred, 0))
-        precs.append(precision(target, pred, 0))
-        f1s.append(f1_score(target, pred, 0))
+        r = recall(target, pred, 0)
+        p = precision(target, pred, 0)
+        recalls_0.append(r)
+        precs_0.append(p)
+        f1s_0.append(f1_score(r,p))
 
-        recalls_1.append(recall(target, pred, 1))
-        precs_1.append(precision(target, pred, 1))
-        f1s_1.append(f1_score(target, pred, 1))
+        r = recall(target, pred, 1)
+        p = precision(target, pred, 1)
+        recalls_1.append(r)
+        precs_1.append(p)
+        f1s_1.append(f1_score(r,p))
 
 
-    f1s = torch.tensor(f1s)
+    f1s_0 = torch.tensor(f1s_0)
     f1s_1 = torch.tensor(f1s_1)
 
-    i = f1s.argmax()
+    i_0 = f1s_0.argmax()
     i_1 = f1s_1.argmax()
 
-    f1 = f1s[i].item()
+    f1_0 = f1s_0[i_0].item()
     f1_1 = f1s_1[i_1].item()
 
-    acc = torch.tensor(accs)[i].item()
-    recall = torch.tensor(recalls)[i].item()
-    prec = torch.tensor(precs)[i].item()
+    acc = torch.tensor(accs)[i_0].item()
+    recall_0 = torch.tensor(recalls_0)[i_0].item()
+    prec_0 = torch.tensor(precs_0)[i_0].item()
 
     recall_1 = torch.tensor(recalls_1)[i_1].item()
     prec_1 = torch.tensor(precs_1)[i_1].item()
@@ -232,7 +236,7 @@ def test(loader):
 
     auc = metrics.roc_auc_score(target, logits)
 
-    print('Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}\n'.format(acc, recall, prec, f1, auc))
+    print('Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
     print('             Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
 
 #    return acc, f1, auc
@@ -245,7 +249,7 @@ for epoch in range(1, 15):
     else:
         loss = train(epoch, train_loader)
 
-    print('\033[93m\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
+    print('\033[93m\nEPOCH {}  TRAINING LOSS: {:.5f}\n\033[0m'.format(epoch, loss))
 
     print('--- TESTING TRAIN DATA ---')
     test(small_train_loader)
