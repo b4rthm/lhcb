@@ -1,3 +1,15 @@
+# sampling entfernt im small_train_loader
+
+
+# anzahl auf 0 oder 1 gemappt
+# pos mit reinpacken, erste MLP auf 6 ändern und pos reinnehmen
+# vor global max pool ein MLP, concat pos mit x
+# mehrere z zusammenfassen, tracks in beide richtungen + selfloops
+# z normalisieren
+# batchnorm
+
+# email an frank 
+
 import time
 import warnings
 import random
@@ -33,22 +45,21 @@ num_pos_examples = len(dataset_pos)
 train_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples)))
 train_dataset_pos = Subset(dataset_pos, range(int(0.8 * num_pos_examples)))
 
-small_train_dataset_neg = Subset(train_dataset_neg, range(int(0.5 * len(train_dataset_neg))))
-small_train_dataset_pos = Subset(train_dataset_pos, range(int(0.5 * len(train_dataset_pos))))
+small_train_dataset_neg = Subset(train_dataset_neg, range(6514))
 
 test_dataset_neg = Subset(dataset_neg, range(int(0.8 * num_neg_examples), num_neg_examples))
 test_dataset_pos = Subset(dataset_pos, range(int(0.8 * num_pos_examples), num_pos_examples))
 
 # concatenating datasets
 train_dataset = train_dataset_neg.__add__(train_dataset_pos)
-small_train_dataset = small_train_dataset_neg.__add__(small_train_dataset_pos)
+small_train_dataset = small_train_dataset_neg.__add__(train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
 batch_size = 32
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
-augment = True
+augment = False
 
 # Remove later
 print_degree = True
@@ -59,8 +70,7 @@ train_with_small = True
 
 train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
                           sampler=ImbalancedDatasetSampler(train_dataset))
-small_train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers,
-                          sampler=ImbalancedDatasetSampler(small_train_dataset))
+small_train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers)
 test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 
 
@@ -85,18 +95,18 @@ class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        self.conv1 = PointConv(MLP(00 + 3, 64*2, 64*2))
-        self.conv1_2 = PointConv(MLP(64*2 + 3, 64*2, 64*2))
+        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
+        self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
 
-        self.conv2 = PointConv(MLP(64*2 + 3, 128*2, 128*2))
-        self.conv2_2 = PointConv(MLP(128*2 + 3, 128*2, 128*2))
+        self.conv2 = PointConv(MLP(64 + 3, 128, 128))
+        self.conv2_2 = PointConv(MLP(128 + 3, 128, 128))
 
-        self.conv3 = PointConv(MLP(128*2 + 3, 256*2, 256*2))
-        self.conv3_2 = PointConv(MLP(256*2 + 3, 256*2, 256*2))
+        self.conv3 = PointConv(MLP(128 + 3, 256, 256))
+        self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
 
-        self.lin1 = Lin(2*64*2 + 2*128*2 + 2*256*2, 128*2)  # Jumping Knowledge.
-        self.lin2 = Lin(128*2, 64*2)
-        self.lin3 = Lin(64*2, 1)
+        self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
+        self.lin2 = Lin(128, 64)
+        self.lin3 = Lin(64, 1)
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
@@ -173,6 +183,8 @@ def precision(label, prediction, target_class):
     return (tp/(tp+fp)).item()
 
 def f1_score(recall, precision):
+    if torch.any(torch.isnan(torch.tensor([recall, precision]))):
+        return 0
     return 2*precision*recall/(precision+recall)
 
 def test(loader):
@@ -216,28 +228,42 @@ def test(loader):
         precs_1.append(p)
         f1s_1.append(f1_score(r,p))
 
+    auc = metrics.roc_auc_score(target, logits)
 
     f1s_0 = torch.tensor(f1s_0)
     f1s_1 = torch.tensor(f1s_1)
 
-    i_0 = f1s_0.argmax()
-    i_1 = f1s_1.argmax()
+    i = f1s_0.argmax()
 
-    f1_0 = f1s_0[i_0].item()
-    f1_1 = f1s_1[i_1].item()
+    f1_0 = f1s_0[i].item()
+    f1_1 = f1s_1[i].item()
 
-    acc = torch.tensor(accs)[i_0].item()
-    recall_0 = torch.tensor(recalls_0)[i_0].item()
-    prec_0 = torch.tensor(precs_0)[i_0].item()
+    acc = torch.tensor(accs)[i].item()
+    recall_0 = torch.tensor(recalls_0)[i].item()
+    prec_0 = torch.tensor(precs_0)[i].item()
 
-    recall_1 = torch.tensor(recalls_1)[i_1].item()
-    prec_1 = torch.tensor(precs_1)[i_1].item()
+    recall_1 = torch.tensor(recalls_1)[i].item()
+    prec_1 = torch.tensor(precs_1)[i].item()
 
+    print('\n---- Best threshold for f1 ccore of target 0:')
+    print('---- Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
+    print('----              Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
 
-    auc = metrics.roc_auc_score(target, logits)
+    i = f1s_1.argmax()
 
-    print('Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
-    print('             Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
+    f1_0 = f1s_0[i].item()
+    f1_1 = f1s_1[i].item()
+
+    acc = torch.tensor(accs)[i].item()
+    recall_0 = torch.tensor(recalls_0)[i].item()
+    prec_0 = torch.tensor(precs_0)[i].item()
+
+    recall_1 = torch.tensor(recalls_1)[i].item()
+    prec_1 = torch.tensor(precs_1)[i].item()
+
+    print('---- Best threshold for f1 ccore of target 1:')
+    print('---- Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
+    print('----              Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
 
 #    return acc, f1, auc
 
@@ -249,7 +275,7 @@ for epoch in range(1, 15):
     else:
         loss = train(epoch, train_loader)
 
-    print('\033[93m\nEPOCH {}  TRAINING LOSS: {:.5f}\n\033[0m'.format(epoch, loss))
+    print('-'*10,'EPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss), '-'*10)
 
     print('--- TESTING TRAIN DATA ---')
     test(small_train_loader)
