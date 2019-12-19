@@ -1,14 +1,14 @@
 # sampling entfernt im small_train_loader
+# Confusion Matrix
+# batchnorm in MLP (before or after relu?)
 
 
-# anzahl auf 0 oder 1 gemappt
+
 # pos mit reinpacken, erste MLP auf 6 ändern und pos reinnehmen
 # vor global max pool ein MLP, concat pos mit x
 # mehrere z zusammenfassen, tracks in beide richtungen + selfloops
 # z normalisieren
-# batchnorm
 
-# email an frank 
 
 import time
 import warnings
@@ -67,19 +67,21 @@ print_degree = True
 
 # DataLoader
 train_with_small = True
-
-train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
-                          sampler=ImbalancedDatasetSampler(train_dataset))
-small_train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers)
-test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
-
-
 if train_with_small: print('Training with small_train_loader')
+
+if train_with_small:
+    train_loader = DataLoader(small_train_dataset, batch_size, drop_last=True, num_workers=num_workers)
+else:
+    train_loader = DataLoader(train_dataset, batch_size, drop_last=True, num_workers=num_workers,
+                              sampler=ImbalancedDatasetSampler(train_dataset))
+test_loader = DataLoader(test_dataset, batch_size, shuffle=False, drop_last=True, num_workers=num_workers)
 
 print('DataLoader Ready, Time Elapsed {:.0f}min'.format((time.time() - s_time)/60))
 
+
 def MLP(arg1, arg2, arg3):
-    return Seq(Lin(arg1, arg2), ReLU(), Lin(arg2, arg3))
+    # return Seq(Lin(arg1, arg2), ReLU(), Lin(arg2, arg3))
+    return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3))
 
 
 def augment_pos(data):
@@ -105,7 +107,9 @@ class Net(torch.nn.Module):
         self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
 
         self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
+        self.bn1 = BN(128)
         self.lin2 = Lin(128, 64)
+        self.bn2 = BN(64)
         self.lin3 = Lin(64, 1)
 
 
@@ -122,13 +126,13 @@ class Net(torch.nn.Module):
         x = torch.cat([x1, x1_2, x2, x2_2, x3, x3_2], dim=-1)
         x = global_max_pool(x, batch, size=batch_size)
 
-        x = F.relu(self.lin1(x))
-        x = F.relu(self.lin2(x))
+        x = self.bn1(F.relu(self.lin1(x)))
+        x = self.bn2(F.relu(self.lin2(x)))
         x = self.lin3(x)
         return x.flatten()
 
 
-device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 model = Net().to(device)
 #model = DataParallel(model)
 
@@ -183,7 +187,8 @@ def precision(label, prediction, target_class):
     return (tp/(tp+fp)).item()
 
 def f1_score(recall, precision):
-    if torch.any(torch.isnan(torch.tensor([recall, precision]))):
+    r_p = torch.tensor([recall, precision])
+    if torch.any(torch.isnan(r_p)) or torch.all(r_p == 0):
         return 0
     return 2*precision*recall/(precision+recall)
 
@@ -203,11 +208,13 @@ def test(loader):
     logits_1 = logits[target == 1]
     print('Target 0 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}'.format(\
         logits_0.mean().item(), logits_0.min().item(), logits_0.max().item(), logits_0.median().item()))
-    print('Target 1 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}'.format(\
+    print('Target 1 Logit Mean: {:.4f}  Min: {:.4f}  Max: {:.4f}  Median: {:.4f}\n'.format(\
         logits_1.mean().item(), logits_1.min().item(), logits_1.max().item(), logits_1.median().item()))
 
     accs, recalls_0, precs_0, f1s_0 = [], [], [], []
     recalls_1, precs_1, f1s_1 = [], [], []
+    confusion_matrixs = [] # contains (#target0_pred0, #target0_pred1, #target1_pred0, #target1_pred1)
+
     for t in range(1, 21):  # Try out different thresholds.
         pred = (logits > (t / 20)).to(torch.long)
         accs.append(pred.eq(target).sum().item() / len(loader.dataset))
@@ -228,57 +235,61 @@ def test(loader):
         precs_1.append(p)
         f1s_1.append(f1_score(r,p))
 
+        cm = (torch.sum(pred[target == 0] == 0).item(),
+              torch.sum(pred[target == 0] == 1).item(),
+              torch.sum(pred[target == 1] == 0).item(),
+              torch.sum(pred[target == 1] == 1).item())
+        confusion_matrixs.append(cm)
+
     auc = metrics.roc_auc_score(target, logits)
 
     f1s_0 = torch.tensor(f1s_0)
     f1s_1 = torch.tensor(f1s_1)
 
-    i = f1s_0.argmax()
+    for j in range(2):
+        if j == 0:
+            i = f1s_0.argmax()
+        else:
+            i = f1s_1.argmax()
 
-    f1_0 = f1s_0[i].item()
-    f1_1 = f1s_1[i].item()
+        f1_0 = f1s_0[i].item()
+        f1_1 = f1s_1[i].item()
 
-    acc = torch.tensor(accs)[i].item()
-    recall_0 = torch.tensor(recalls_0)[i].item()
-    prec_0 = torch.tensor(precs_0)[i].item()
+        acc = torch.tensor(accs)[i].item()
+        recall_0 = torch.tensor(recalls_0)[i].item()
+        prec_0 = torch.tensor(precs_0)[i]
+        if torch.isnan(prec_0):
+            prec_0 = 0
+        else:
+            prec_0 = prec_0.item()
 
-    recall_1 = torch.tensor(recalls_1)[i].item()
-    prec_1 = torch.tensor(precs_1)[i].item()
+        recall_1 = torch.tensor(recalls_1)[i].item()
+        prec_1 = torch.tensor(precs_1)[i]
+        if torch.isnan(prec_1):
+            prec_1 = 0
+        else:
+            prec_1 = prec_1.item()
 
-    print('\n---- Best threshold for f1 ccore of target 0:')
-    print('---- Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
-    print('----              Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
+        print('Best threshold for f1 score of target {}:'.format(j))
+        print('Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
+        print('             Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
 
-    i = f1s_1.argmax()
-
-    f1_0 = f1s_0[i].item()
-    f1_1 = f1s_1[i].item()
-
-    acc = torch.tensor(accs)[i].item()
-    recall_0 = torch.tensor(recalls_0)[i].item()
-    prec_0 = torch.tensor(precs_0)[i].item()
-
-    recall_1 = torch.tensor(recalls_1)[i].item()
-    prec_1 = torch.tensor(precs_1)[i].item()
-
-    print('---- Best threshold for f1 ccore of target 1:')
-    print('---- Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
-    print('----              Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
-
-#    return acc, f1, auc
+        cm = confusion_matrixs[i]
+        print('         |  Pred 0  |  Pred 1 ')
+        print('------------------------------')
+        print('Target 0 | {:8d} | {:8d}'.format(cm[0],cm[1]))
+        print('------------------------------')
+        print('Target 1 | {:8d} | {:8d}'.format(cm[2],cm[3])) 
+        print('------------------------------\n\n')
 
 
 for epoch in range(1, 15):
 
-    if train_with_small:
-        loss = train(epoch, small_train_loader)
-    else:
-        loss = train(epoch, train_loader)
-
-    print('-'*10,'EPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss), '-'*10)
+    loss = train(epoch, train_loader)
+    print('\n\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
 
     print('--- TESTING TRAIN DATA ---')
-    test(small_train_loader)
+    test(train_loader)
 
     print('--- TESTING TEST DATA ---')
     test(test_loader)
