@@ -82,7 +82,8 @@ print('DataLoader Ready, Time Elapsed {:.0f}min'.format((time.time() - s_time)/6
 
 def MLP(arg1, arg2, arg3):
     # return Seq(Lin(arg1, arg2), ReLU(), Lin(arg2, arg3))
-    return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3))
+    # return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3))
+    return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3), ReLU(), BN(arg3))
 
 
 def augment_pos(data):
@@ -298,10 +299,10 @@ for epoch in range(1, 15):
     loss = train(epoch, train_loader)
     print('\n\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
 
-    print('--- TESTING TRAIN DATA ---')
+    print('--- EPOCH {} TESTING TRAIN DATA ---'.format(epoch))
     test(train_loader)
 
-    print('--- TESTING TEST DATA ---')
+    print('--- EPOCH {} TESTING TEST DATA ---'.format(epoch))
     test(test_loader)
 
     #torch.save(model.state_dict(), 'model_{:03d}.pt'.format(epoch))
