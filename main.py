@@ -2,9 +2,8 @@
 # Confusion Matrix
 # batchnorm in MLP (before or after relu?)
 # pos im ersten MLP (keine erkennbare Verbesserung)
+# concat (pos,x) + extra MLP vor global max pool
 
-
-# vor global max pool ein MLP, concat pos mit x
 # mehrere z zusammenfassen, tracks in beide richtungen + selfloops
 # z normalisieren
 
@@ -298,7 +297,7 @@ def test(loader):
         print('------------------------------\n\n')
 
 
-for epoch in range(1, 15):
+for epoch in range(1, 50):
 
     loss = train(epoch, train_loader)
     print('\n\nEPOCH {}  TRAINING LOSS: {:.5f}\n'.format(epoch, loss))
