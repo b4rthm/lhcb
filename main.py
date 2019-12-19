@@ -1,10 +1,9 @@
 # sampling entfernt im small_train_loader
 # Confusion Matrix
 # batchnorm in MLP (before or after relu?)
+# pos im ersten MLP (keine erkennbare Verbesserung)
 
 
-
-# pos mit reinpacken, erste MLP auf 6 ändern und pos reinnehmen
 # vor global max pool ein MLP, concat pos mit x
 # mehrere z zusammenfassen, tracks in beide richtungen + selfloops
 # z normalisieren
@@ -82,8 +81,8 @@ print('DataLoader Ready, Time Elapsed {:.0f}min'.format((time.time() - s_time)/6
 
 def MLP(arg1, arg2, arg3):
     # return Seq(Lin(arg1, arg2), ReLU(), Lin(arg2, arg3))
-    # return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3))
-    return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3), ReLU(), BN(arg3))
+    # return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3), ReLU(), BN(arg3))
+    return Seq(Lin(arg1, arg2), ReLU(), BN(arg2), Lin(arg2, arg3))
 
 
 def augment_pos(data):
@@ -99,7 +98,7 @@ class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
+        self.conv1 = PointConv(MLP(3 + 3, 64, 64))
         self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
 
         self.conv2 = PointConv(MLP(64 + 3, 128, 128))
@@ -116,7 +115,7 @@ class Net(torch.nn.Module):
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
-        x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
+        x1 = F.relu(self.conv1(pos, pos, edge_index_tracks))
         x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
         x2 = F.relu(self.conv2(x1_2, pos, edge_index_tracks))
