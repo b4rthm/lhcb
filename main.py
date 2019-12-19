@@ -98,7 +98,7 @@ class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        self.conv1 = PointConv(MLP(3 + 3, 64, 64))
+        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
         self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
 
         self.conv2 = PointConv(MLP(64 + 3, 128, 128))
@@ -106,6 +106,9 @@ class Net(torch.nn.Module):
 
         self.conv3 = PointConv(MLP(128 + 3, 256, 256))
         self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
+
+        self.lin0 = Lin(2*64 + 2*128 + 2*256 + 3, 2*64 + 2*128 + 2*256)
+        self.bn0 = BN(2*64 + 2*128 + 2*256)
 
         self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
         self.bn1 = BN(128)
@@ -115,7 +118,7 @@ class Net(torch.nn.Module):
 
 
     def forward(self, pos, batch, edge_index_tracks, edge_index_z):
-        x1 = F.relu(self.conv1(pos, pos, edge_index_tracks))
+        x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
         x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
         x2 = F.relu(self.conv2(x1_2, pos, edge_index_tracks))
@@ -124,7 +127,9 @@ class Net(torch.nn.Module):
         x3 = F.relu(self.conv3(x2_2, pos, edge_index_tracks))
         x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
 
-        x = torch.cat([x1, x1_2, x2, x2_2, x3, x3_2], dim=-1)
+        x = torch.cat([x1, x1_2, x2, x2_2, x3, x3_2, pos], dim=-1)
+        x = self.bn0(F.relu(self.lin0(x)))
+
         x = global_max_pool(x, batch, size=batch_size)
 
         x = self.bn1(F.relu(self.lin1(x)))
