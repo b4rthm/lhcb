@@ -13,6 +13,7 @@
 import time
 import warnings
 import random
+import numpy as np
 
 import torch
 import torch.nn.functional as F
@@ -215,7 +216,7 @@ def test(loader):
     recalls_1, precs_1, f1s_1 = [], [], []
     confusion_matrixs = [] # contains (#target0_pred0, #target0_pred1, #target1_pred0, #target1_pred1)
 
-    for t in range(1, 21):  # Try out different thresholds.
+    for t in range(1, 20):  # Try out different thresholds.
         pred = (logits > (t / 20)).to(torch.long)
         accs.append(pred.eq(target).sum().item() / len(loader.dataset))
 
@@ -243,14 +244,23 @@ def test(loader):
 
     auc = metrics.roc_auc_score(target, logits)
 
-    f1s_0 = torch.tensor(f1s_0)
-    f1s_1 = torch.tensor(f1s_1)
+    # using numpy, because argmax() returns first index, which torch doesn't
+    ff = np.array([f1_score(a,b) for a,b in zip(f1s_0,f1s_1)])
+    f1s_0 = np.array(f1s_0)
+    f1s_1 = np.array(f1s_1)
+    thresholds = torch.tensor(range(1,20)).float() / 20
 
-    for j in range(2):
+    for j in range(3):
         if j == 0:
             i = f1s_0.argmax()
-        else:
+            _s = 'Best threshold ({:.2f}) for f1 score of target {}:'.format(thresholds[i],j)
+        elif j == 1:
             i = f1s_1.argmax()
+            _s = 'Best threshold ({:.2f}) for f1 score of target {}:'.format(thresholds[i],j)
+        else:
+            i = ff.argmax()
+            _s = 'Best threshold ({:.2f}) for f1 score of f1 scores'.format(thresholds[i])
+
 
         f1_0 = f1s_0[i].item()
         f1_1 = f1s_1[i].item()
@@ -270,7 +280,7 @@ def test(loader):
         else:
             prec_1 = prec_1.item()
 
-        print('Best threshold for f1 score of target {}:'.format(j))
+        print(_s)
         print('Acc: {:.4f}, Recall_0: {:.4f}, Prec_0: {:.4f}, F1_0: {:.4f}, AUC: {:.4f}'.format(acc, recall_0, prec_0, f1_0, auc))
         print('             Recall_1: {:.4f}, Prec_1: {:.4f}, F1_1: {:.4f}\n'.format(recall_1, prec_1, f1_1))
 
