@@ -117,7 +117,7 @@ class Net(torch.nn.Module):
         self.lin3 = Lin(64, 1)
 
 
-    def forward(self, pos, batch, edge_index_tracks, edge_index_z):
+    def forward(self, pos, batch, edge_index_z, edge_index_tracks):
         x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
         x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
@@ -149,14 +149,14 @@ def train(epoch, loader):
     total_loss = 0
 
     i = 0
-    dict = {'0':0, '1':0 , '=':0}
+    # dict = {'0':0, '1':0 , '=':0}
     for data in loader:
         data.to(device)
         if augment:
             data = augment_pos(data)
 
         # check which label dominates
-        dict = update_dict(data, dict)
+        # dict = update_dict(data, dict)
 
         optimizer.zero_grad()
         out = model(data.pos, data.batch, data.edge_index_tracks, data.edge_index_z)

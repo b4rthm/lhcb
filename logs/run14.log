@@ -1,0 +1,636 @@
+run14 switched edge indices in forward function
+Training with small_train_loader
+DataLoader Ready, Time Elapsed 0min
+
+
+EPOCH 1  TRAINING LOSS: 0.69671
+
+--- EPOCH 1 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5420  Min: 0.5210  Max: 1.0000  Median: 0.5417
+Target 1 Logit Mean: 0.5420  Min: 0.5226  Max: 0.6849  Median: 0.5420
+
+Best threshold (0.95) for f1 score of target 0:
+Acc: 0.5555, Recall_0: 0.9998, Prec_0: 0.5561, F1_0: 0.7147, AUC: 0.5385
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6513 |        1
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.4433, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5385
+             Recall_1: 1.0000, Prec_1: 0.4438, F1_1: 0.6148
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |     6514
+------------------------------
+Target 1 |        0 |     5198
+------------------------------
+
+
+Best threshold (0.55) for f1 score of f1 scores
+Acc: 0.5547, Recall_0: 0.9982, Prec_0: 0.5558, F1_0: 0.7140, AUC: 0.5385
+             Recall_1: 0.0004, Prec_1: 0.1429, F1_1: 0.0008
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6502 |       12
+------------------------------
+Target 1 |     5196 |        2
+------------------------------
+
+
+--- EPOCH 1 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5419  Min: 0.0000  Max: 0.9999  Median: 0.5418
+Target 1 Logit Mean: 0.5421  Min: 0.5259  Max: 0.5502  Median: 0.5421
+
+Best threshold (0.95) for f1 score of target 0:
+Acc: 0.9346, Recall_0: 0.9997, Prec_0: 0.9348, F1_0: 0.9662, AUC: 0.5513
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18692 |        5
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.25) for f1 score of target 1:
+Acc: 0.0654, Recall_0: 0.0002, Prec_0: 1.0000, F1_0: 0.0004, AUC: 0.5513
+             Recall_1: 1.0000, Prec_1: 0.0652, F1_1: 0.1224
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        4 |    18693
+------------------------------
+Target 1 |        0 |     1303
+------------------------------
+
+
+Best threshold (0.55) for f1 score of f1 scores
+Acc: 0.9337, Recall_0: 0.9987, Prec_0: 0.9348, F1_0: 0.9657, AUC: 0.5513
+             Recall_1: 0.0008, Prec_1: 0.0385, F1_1: 0.0015
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18672 |       25
+------------------------------
+Target 1 |     1302 |        1
+------------------------------
+
+
+
+
+EPOCH 2  TRAINING LOSS: 0.68214
+
+--- EPOCH 2 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5664  Min: 0.5514  Max: 0.8226  Median: 0.5664
+Target 1 Logit Mean: 0.5663  Min: 0.5441  Max: 0.9078  Median: 0.5664
+
+Best threshold (0.85) for f1 score of target 0:
+Acc: 0.5557, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.4987
+             Recall_1: 0.0002, Prec_1: 1.0000, F1_1: 0.0004
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5197 |        1
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.4433, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.4987
+             Recall_1: 1.0000, Prec_1: 0.4438, F1_1: 0.6148
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |     6514
+------------------------------
+Target 1 |        0 |     5198
+------------------------------
+
+
+Best threshold (0.85) for f1 score of f1 scores
+Acc: 0.5557, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.4987
+             Recall_1: 0.0002, Prec_1: 1.0000, F1_1: 0.0004
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5197 |        1
+------------------------------
+
+
+--- EPOCH 2 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5664  Min: 0.5335  Max: 0.7252  Median: 0.5664
+Target 1 Logit Mean: 0.5663  Min: 0.5494  Max: 0.5776  Median: 0.5665
+
+Best threshold (0.75) for f1 score of target 0:
+Acc: 0.9348, Recall_0: 1.0000, Prec_0: 0.9348, F1_0: 0.9663, AUC: 0.5085
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18697 |        0
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.0652, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5085
+             Recall_1: 1.0000, Prec_1: 0.0652, F1_1: 0.1223
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |    18697
+------------------------------
+Target 1 |        0 |     1303
+------------------------------
+
+
+Best threshold (0.55) for f1 score of f1 scores
+Acc: 0.0653, Recall_0: 0.0002, Prec_0: 0.7500, F1_0: 0.0003, AUC: 0.5085
+             Recall_1: 0.9992, Prec_1: 0.0651, F1_1: 0.1223
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        3 |    18694
+------------------------------
+Target 1 |        1 |     1302
+------------------------------
+
+
+
+
+EPOCH 3  TRAINING LOSS: 0.70227
+
+--- EPOCH 3 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5424  Min: 0.5180  Max: 0.5486  Median: 0.5426
+Target 1 Logit Mean: 0.5425  Min: 0.5212  Max: 0.5490  Median: 0.5430
+
+Best threshold (0.55) for f1 score of target 0:
+Acc: 0.5556, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.5406
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.4433, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5406
+             Recall_1: 1.0000, Prec_1: 0.4438, F1_1: 0.6148
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |     6514
+------------------------------
+Target 1 |        0 |     5198
+------------------------------
+
+
+Best threshold (0.05) for f1 score of f1 scores
+Acc: 0.4433, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5406
+             Recall_1: 1.0000, Prec_1: 0.4438, F1_1: 0.6148
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |     6514
+------------------------------
+Target 1 |        0 |     5198
+------------------------------
+
+
+--- EPOCH 3 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5424  Min: 0.5144  Max: 0.5877  Median: 0.5426
+Target 1 Logit Mean: 0.5427  Min: 0.5199  Max: 0.5489  Median: 0.5432
+
+Best threshold (0.60) for f1 score of target 0:
+Acc: 0.9348, Recall_0: 1.0000, Prec_0: 0.9348, F1_0: 0.9663, AUC: 0.5688
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18697 |        0
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.0652, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5688
+             Recall_1: 1.0000, Prec_1: 0.0652, F1_1: 0.1223
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |    18697
+------------------------------
+Target 1 |        0 |     1303
+------------------------------
+
+
+Best threshold (0.05) for f1 score of f1 scores
+Acc: 0.0652, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5688
+             Recall_1: 1.0000, Prec_1: 0.0652, F1_1: 0.1223
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |    18697
+------------------------------
+Target 1 |        0 |     1303
+------------------------------
+
+
+
+
+EPOCH 4  TRAINING LOSS: 0.70293
+
+--- EPOCH 4 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5160  Min: 0.4647  Max: 0.5267  Median: 0.5158
+Target 1 Logit Mean: 0.5162  Min: 0.0175  Max: 0.5261  Median: 0.5167
+
+Best threshold (0.55) for f1 score of target 0:
+Acc: 0.5556, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.5616
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.4432, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5616
+             Recall_1: 0.9998, Prec_1: 0.4438, F1_1: 0.6147
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |     6514
+------------------------------
+Target 1 |        1 |     5197
+------------------------------
+
+
+Best threshold (0.50) for f1 score of f1 scores
+Acc: 0.4405, Recall_0: 0.0081, Prec_0: 0.3813, F1_0: 0.0159, AUC: 0.5616
+             Recall_1: 0.9835, Prec_1: 0.4417, F1_1: 0.6096
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |       53 |     6461
+------------------------------
+Target 1 |       86 |     5112
+------------------------------
+
+
+--- EPOCH 4 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.5159  Min: 0.0049  Max: 0.7191  Median: 0.5157
+Target 1 Logit Mean: 0.5164  Min: 0.4807  Max: 0.5274  Median: 0.5167
+
+Best threshold (0.75) for f1 score of target 0:
+Acc: 0.9348, Recall_0: 1.0000, Prec_0: 0.9348, F1_0: 0.9663, AUC: 0.5734
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18697 |        0
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.30) for f1 score of target 1:
+Acc: 0.0653, Recall_0: 0.0002, Prec_0: 1.0000, F1_0: 0.0003, AUC: 0.5734
+             Recall_1: 1.0000, Prec_1: 0.0652, F1_1: 0.1223
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        3 |    18694
+------------------------------
+Target 1 |        0 |     1303
+------------------------------
+
+
+Best threshold (0.50) for f1 score of f1 scores
+Acc: 0.0721, Recall_0: 0.0087, Prec_0: 0.8757, F1_0: 0.0172, AUC: 0.5734
+             Recall_1: 0.9823, Prec_1: 0.0646, F1_1: 0.1212
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      162 |    18535
+------------------------------
+Target 1 |       23 |     1280
+------------------------------
+
+
+
+
+EPOCH 5  TRAINING LOSS: 0.69914
+
+--- EPOCH 5 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4985  Min: 0.4301  Max: 0.5167  Median: 0.4996
+Target 1 Logit Mean: 0.5001  Min: 0.4293  Max: 0.5167  Median: 0.5019
+
+Best threshold (0.55) for f1 score of target 0:
+Acc: 0.5556, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.5553
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.4433, Recall_0: 0.0000, Prec_0: 0.0000, F1_0: 0.0000, AUC: 0.5553
+             Recall_1: 1.0000, Prec_1: 0.4438, F1_1: 0.6148
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        0 |     6514
+------------------------------
+Target 1 |        0 |     5198
+------------------------------
+
+
+Best threshold (0.50) for f1 score of f1 scores
+Acc: 0.5406, Recall_0: 0.5166, Prec_0: 0.6020, F1_0: 0.5560, AUC: 0.5553
+             Recall_1: 0.5720, Prec_1: 0.4856, F1_1: 0.5253
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     3365 |     3149
+------------------------------
+Target 1 |     2225 |     2973
+------------------------------
+
+
+--- EPOCH 5 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4984  Min: 0.2200  Max: 0.5169  Median: 0.4994
+Target 1 Logit Mean: 0.5006  Min: 0.4577  Max: 0.5164  Median: 0.5021
+
+Best threshold (0.55) for f1 score of target 0:
+Acc: 0.9348, Recall_0: 1.0000, Prec_0: 0.9348, F1_0: 0.9663, AUC: 0.5683
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18697 |        0
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.50) for f1 score of target 1:
+Acc: 0.5246, Recall_0: 0.5199, Prec_0: 0.9480, F1_0: 0.6715, AUC: 0.5683
+             Recall_1: 0.5909, Prec_1: 0.0790, F1_1: 0.1394
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     9721 |     8976
+------------------------------
+Target 1 |      533 |      770
+------------------------------
+
+
+Best threshold (0.50) for f1 score of f1 scores
+Acc: 0.5246, Recall_0: 0.5199, Prec_0: 0.9480, F1_0: 0.6715, AUC: 0.5683
+             Recall_1: 0.5909, Prec_1: 0.0790, F1_1: 0.1394
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     9721 |     8976
+------------------------------
+Target 1 |      533 |      770
+------------------------------
+
+
+
+
+EPOCH 6  TRAINING LOSS: 0.69485
+
+--- EPOCH 6 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4262  Min: 0.0000  Max: 0.4415  Median: 0.4359
+Target 1 Logit Mean: 0.4288  Min: 0.0000  Max: 0.4414  Median: 0.4350
+
+Best threshold (0.45) for f1 score of target 0:
+Acc: 0.5556, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.4177
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.15) for f1 score of target 1:
+Acc: 0.4495, Recall_0: 0.0203, Prec_0: 0.6875, F1_0: 0.0394, AUC: 0.4177
+             Recall_1: 0.9885, Prec_1: 0.4460, F1_1: 0.6147
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      132 |     6382
+------------------------------
+Target 1 |       60 |     5138
+------------------------------
+
+
+Best threshold (0.40) for f1 score of f1 scores
+Acc: 0.4507, Recall_0: 0.0246, Prec_0: 0.6838, F1_0: 0.0474, AUC: 0.4177
+             Recall_1: 0.9858, Prec_1: 0.4464, F1_1: 0.6145
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      160 |     6354
+------------------------------
+Target 1 |       74 |     5124
+------------------------------
+
+
+--- EPOCH 6 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4267  Min: 0.0000  Max: 0.4430  Median: 0.4359
+Target 1 Logit Mean: 0.4282  Min: 0.0000  Max: 0.4427  Median: 0.4348
+
+Best threshold (0.45) for f1 score of target 0:
+Acc: 0.9348, Recall_0: 1.0000, Prec_0: 0.9348, F1_0: 0.9663, AUC: 0.4089
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18697 |        0
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.10) for f1 score of target 1:
+Acc: 0.0813, Recall_0: 0.0181, Prec_0: 0.9576, F1_0: 0.0356, AUC: 0.4089
+             Recall_1: 0.9885, Prec_1: 0.0656, F1_1: 0.1230
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      339 |    18358
+------------------------------
+Target 1 |       15 |     1288
+------------------------------
+
+
+Best threshold (0.40) for f1 score of f1 scores
+Acc: 0.0861, Recall_0: 0.0237, Prec_0: 0.9506, F1_0: 0.0462, AUC: 0.4089
+             Recall_1: 0.9823, Prec_1: 0.0655, F1_1: 0.1229
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      443 |    18254
+------------------------------
+Target 1 |       23 |     1280
+------------------------------
+
+
+
+
+EPOCH 7  TRAINING LOSS: 0.69549
+
+--- EPOCH 7 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.4822  Min: 0.0175  Max: 0.4930  Median: 0.4822
+Target 1 Logit Mean: 0.4825  Min: 0.4277  Max: 0.4930  Median: 0.4826
+
+Best threshold (0.50) for f1 score of target 0:
+Acc: 0.5556, Recall_0: 1.0000, Prec_0: 0.5562, F1_0: 0.7148, AUC: 0.5771
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6514 |        0
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.05) for f1 score of target 1:
+Acc: 0.4434, Recall_0: 0.0002, Prec_0: 1.0000, F1_0: 0.0003, AUC: 0.5771
+             Recall_1: 1.0000, Prec_1: 0.4439, F1_1: 0.6148
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        1 |     6513
+------------------------------
+Target 1 |        0 |     5198
+------------------------------
+
+
+Best threshold (0.45) for f1 score of f1 scores
+Acc: 0.4434, Recall_0: 0.0029, Prec_0: 0.5135, F1_0: 0.0058, AUC: 0.5771
+             Recall_1: 0.9965, Prec_1: 0.4437, F1_1: 0.6140
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |       19 |     6495
+------------------------------
+Target 1 |       18 |     5180
+------------------------------
+
+
+--- EPOCH 7 TESTING TEST DATA ---
+Target 0 Logit Mean: 0.4824  Min: 0.0010  Max: 0.4932  Median: 0.4822
+Target 1 Logit Mean: 0.4823  Min: 0.4275  Max: 0.4925  Median: 0.4826
+
+Best threshold (0.50) for f1 score of target 0:
+Acc: 0.9348, Recall_0: 1.0000, Prec_0: 0.9348, F1_0: 0.9663, AUC: 0.5775
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |    18697 |        0
+------------------------------
+Target 1 |     1303 |        0
+------------------------------
+
+
+Best threshold (0.40) for f1 score of target 1:
+Acc: 0.0653, Recall_0: 0.0001, Prec_0: 1.0000, F1_0: 0.0002, AUC: 0.5775
+             Recall_1: 1.0000, Prec_1: 0.0652, F1_1: 0.1223
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |        2 |    18695
+------------------------------
+Target 1 |        0 |     1303
+------------------------------
+
+
+Best threshold (0.45) for f1 score of f1 scores
+Acc: 0.0666, Recall_0: 0.0018, Prec_0: 0.8500, F1_0: 0.0036, AUC: 0.5775
+             Recall_1: 0.9954, Prec_1: 0.0650, F1_1: 0.1220
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |       34 |    18663
+------------------------------
+Target 1 |        6 |     1297
+------------------------------
+
+
+
+
+EPOCH 8  TRAINING LOSS: 0.68680
+
+--- EPOCH 8 TESTING TRAIN DATA ---
+Target 0 Logit Mean: 0.5166  Min: 0.4786  Max: 1.0000  Median: 0.5102
+Target 1 Logit Mean: 0.5172  Min: 0.4918  Max: 0.6403  Median: 0.5123
+
+Best threshold (0.70) for f1 score of target 0:
+Acc: 0.5555, Recall_0: 0.9998, Prec_0: 0.5561, F1_0: 0.7147, AUC: 0.5508
+             Recall_1: 0.0000, Prec_1: 0.0000, F1_1: 0.0000
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |     6513 |        1
+------------------------------
+Target 1 |     5198 |        0
+------------------------------
+
+
+Best threshold (0.50) for f1 score of target 1:
+Acc: 0.4639, Recall_0: 0.0523, Prec_0: 0.7732, F1_0: 0.0981, AUC: 0.5508
+             Recall_1: 0.9808, Prec_1: 0.4523, F1_1: 0.6191
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      341 |     6173
+------------------------------
+Target 1 |      100 |     5098
+------------------------------
+
+
+Best threshold (0.50) for f1 score of f1 scores
+Acc: 0.4639, Recall_0: 0.0523, Prec_0: 0.7732, F1_0: 0.0981, AUC: 0.5508
+             Recall_1: 0.9808, Prec_1: 0.4523, F1_1: 0.6191
+
+         |  Pred 0  |  Pred 1 
+------------------------------
+Target 0 |      341 |     6173
+------------------------------
+Target 1 |      100 |     5098
+------------------------------
+
+
+--- EPOCH 8 TESTING TEST DATA ---
