@@ -55,7 +55,7 @@ train_dataset = train_dataset_neg.__add__(train_dataset_pos)
 small_train_dataset = small_train_dataset_neg.__add__(train_dataset_pos)
 test_dataset = test_dataset_neg.__add__(test_dataset_pos)
 
-batch_size = 32
+batch_size = 8
 num_workers = 6
 radius = 0.7  # 0.7
 lr = 0.001
@@ -98,16 +98,16 @@ class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
-        self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
+        self.conv1 = PointConv(MLP(00 + 3, 256, 256))
+        self.conv1_2 = PointConv(MLP(256 + 3, 256, 256))
 
-        self.conv2 = PointConv(MLP(64 + 3, 128, 128))
-        self.conv2_2 = PointConv(MLP(128 + 3, 128, 128))
+        self.conv2 = PointConv(MLP(256 + 3, 512, 512))
+        self.conv2_2 = PointConv(MLP(512 + 3, 512, 512))
 
-        self.conv3 = PointConv(MLP(128 + 3, 256, 256))
-        self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
+        self.conv3 = PointConv(MLP(512 + 3, 1024, 1024))
+        self.conv3_2 = PointConv(MLP(1024 + 3, 1024, 1024))
 
-        self.lin0 = Lin(2*64 + 2*128 + 2*256 + 3, 2*64 + 2*128 + 2*256)
+        self.lin0 = Lin(2*256 + 2*512 + 2*1024 + 3, 2*64 + 2*128 + 2*256)
         self.bn0 = BN(2*64 + 2*128 + 2*256)
 
         self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
@@ -117,7 +117,7 @@ class Net(torch.nn.Module):
         self.lin3 = Lin(64, 1)
 
 
-    def forward(self, pos, batch, edge_index_z, edge_index_tracks):
+    def forward(self, pos, batch, edge_index_tracks, edge_index_z):
         x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
         x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
 
@@ -137,6 +137,50 @@ class Net(torch.nn.Module):
         x = self.lin3(x)
         return x.flatten()
 
+'''
+class Net(torch.nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+
+        self.conv1 = PointConv(MLP(00 + 3, 64, 64))
+        self.conv1_2 = PointConv(MLP(64 + 3, 64, 64))
+
+        self.conv2 = PointConv(MLP(64 + 3, 128, 128))
+        self.conv2_2 = PointConv(MLP(128 + 3, 128, 128))
+
+        self.conv3 = PointConv(MLP(128 + 3, 256, 256))
+        self.conv3_2 = PointConv(MLP(256 + 3, 256, 256))
+
+        self.lin0 = Lin(2*64 + 2*128 + 2*256 + 3, 2*64 + 2*128 + 2*256)
+        self.bn0 = BN(2*64 + 2*128 + 2*256)
+
+        self.lin1 = Lin(2*64 + 2*128 + 2*256, 128)  # Jumping Knowledge.
+        self.bn1 = BN(128)
+        self.lin2 = Lin(128, 64)
+        self.bn2 = BN(64)
+        self.lin3 = Lin(64, 1)
+
+
+    def forward(self, pos, batch, edge_index_tracks, edge_index_z):
+        x1 = F.relu(self.conv1(None, pos, edge_index_tracks))
+        x1_2 = F.relu(self.conv1_2(x1, pos, edge_index_z))
+
+        x2 = F.relu(self.conv2(x1_2, pos, edge_index_tracks))
+        x2_2 = F.relu(self.conv2_2(x2, pos, edge_index_z))
+
+        x3 = F.relu(self.conv3(x2_2, pos, edge_index_tracks))
+        x3_2 = F.relu(self.conv3_2(x3, pos, edge_index_z))
+
+        x = torch.cat([x1, x1_2, x2, x2_2, x3, x3_2, pos], dim=-1)
+        x = self.bn0(F.relu(self.lin0(x)))
+
+        x = global_max_pool(x, batch, size=batch_size)
+
+        x = self.bn1(F.relu(self.lin1(x)))
+        x = self.bn2(F.relu(self.lin2(x)))
+        x = self.lin3(x)
+        return x.flatten()
+'''
 
 device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 model = Net().to(device)
