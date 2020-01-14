@@ -3,9 +3,10 @@
 # batchnorm in MLP (before or after relu?)
 # pos im ersten MLP (keine erkennbare Verbesserung)
 # concat (pos,x) + extra MLP vor global max pool
+# tracks in beide Richtungen, selfloops, normalisierung von x,y,z
 
-# mehrere z zusammenfassen, tracks in beide richtungen + selfloops
-# z normalisieren
+# mehrere z zusammenfassen
+# nur z normalisieren
 
 
 import time

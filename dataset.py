@@ -98,6 +98,12 @@ class LHCbDataset(Dataset):
         if clusters.size(0) == 0:
            return None
 
+        # normalization to range [0,1] on every axis
+        clusters_min = clusters.min(dim = 0).values
+        clusters_max = clusters.max(dim = 0).values
+        clusters -= clusters_min
+        clusters /= (clusters_max - clusters_min)
+
         tracks = []
         track_indices = []
         for key, item in obj['VeloTracks'].items():
@@ -110,6 +116,9 @@ class LHCbDataset(Dataset):
             for i in range(len(track) - 1):
                 edge_index_0.append(track[i])
                 edge_index_1.append(track[i+1])
+
+                edge_index_0.append(track[i+1])
+                edge_index_1.append(track[i])
         edge_index_tracks = torch.tensor([edge_index_0, edge_index_1])
 
         edge_index_0 = []
@@ -125,7 +134,6 @@ class LHCbDataset(Dataset):
 
             for j in range(len(clusters_z_ci)):
               for k in range(len(clusters_z_ci)):
-#                 if j != k:    # Selfloops?
                    edge_index_0.append(from_assoc(cluster_assoc, cluster_indices[j]))
                    edge_index_1.append(from_assoc(cluster_assoc, cluster_indices[k]))
         edge_index_z = torch.tensor([edge_index_0, edge_index_1])
